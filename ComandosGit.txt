@@ -1,0 +1,47 @@
+git init : para iniciar git y va a empezar a guardar los cambios
+git add archivo | git add . (para agregar todo lo que hay en la carpeta) : para agregar el archivo o para agregar todos los archivos
+git commit -m "Aquí va un comentarios de los cambios realizados" : para enviar los comentarios al historia, sino colocas el -m, te lo va a pedir con VIM y lo agregas, para salir es Esc + Shift + Z + Z
+git diff aqui-va-el-número-de-la-version aqui-va-el-otro-número-de-la-otra-version-a-comparar : para ver los cambios entre versiones
+git log archivo : para ver el historial del archivo
+git show archivo.ext : muestra los cambios realizados de la ultima version con la anterior
+git status : para ver el estado de un archivo o carpeta en seguimiento, sí se envio o no al repositorio de cambios git
+git log archivo.ext : Para ver el historia de cambios y sus comentarios, junto con el número
+git log --stat (archivo.ext(opcional)) : para ver el historial de cambios con sus commit y su cantidad de cambios binarios, es más completo 
+git config --global user.email "sebastian.sanhueza.t@usach.cl" : para agregar el mail de usuario
+git config --global user.name "Seba Sanhueza" : para agregar el nombre de usuario
+git config --list --show-origin : te muestra donde estan los archivos de configuraciones de git
+git config --list : te muestra la lista de configuraciones que se pueden hacer a git
+git config : algo hace realcionado con las 2 de arribas
+git rm : saca al archivo del cache y no va a detectar si hubo cambios en el archivo, aún no lo remueve de estar guardando cambios en git
+git rm --cached historia.txt : Saca el archivo de git y guardará mas cambios en el arbol de git
+git rm --cached: Elimina los archivos del área de Staging y del próximo commit pero los mantiene en nuestro disco duro.
+git rm --force: Elimina los archivos de Git y del disco duro. Git siempre guarda todo, por lo que podemos acceder al registro de la existencia de los archivos, de modo que podremos recuperarlos si es necesario (pero debemos usar comandos más avanzados).
+git reset aqui-va-el-número-de-la-version-a-la-que-se-desea-volver --hard : para volver a una version anterior | --hard (vuelve a la version anterior y se pierde todo lo avanzado) --soft (lo que esta en stagin (en git add .) sigue ahí)
+git reset --soft: Borramos todo el historial y los registros de Git pero guardamos los cambios que tengamos en Staging, así podemos aplicar las últimas actualizaciones a un nuevo commit.
+git reset --hard: Borra todo. Todo todito, absolutamente todo. Toda la información de los commits y del área de staging se borra del historial.
+git reset HEAD: Este es el comando para sacar archivos del área de Staging. No para borrarlos ni nada de eso, solo para que los últimos cambios de estos archivos no se envíen al último commit, a menos que cambiemos de opinión y los incluyamos de nuevo en staging con git add, por supuesto.
+git checkout aqui-va-el-número-de-la-version archivo.ext : para ver como era ese archivo (siempre colocar el archivo.ext porque o si no vuelve todos los archivos atras (puede borrar los que no existian)
+git checkout master archivo.ext : para volver a la ultima version que estaba en stagin (cuando se envia con add)
+git checkout aqui-va-el-número-de-la-version archivo.ext : trae un archivo como rama, uno lo puede editar y despues enviar a la linea master
+git checkout master archivo.ext : para enviar el archivo editado como rama a la linea master
+
+code archivo.ext : para abrir el archivo en VSC
+ls : para listar los archivos en la carpeta en la que estas
+pwd : para ver en la carpeta en la que estas
+cd nombre-de-la-carpeta : para entrar a la carpeta 
+cd .. : para volver a la carpeta de arriba
+cat archivo.ext : para ver el archivo en el mismo visor de linux
+mkdir nombre-del-directorio : crear un directorio
+rm --help : para ver todas las opciones que tiene el comando
+touce archivo.ext : Si el archivo no existe lo crea vacío y si existe se modifica la fecha con actual del sistema
+clear : para limpiar la pantalla
+
+aaaaaaaaaaahhhhhhhhhhh
+estes es un
+
+agrgar los de 
+git commit -am "mensaje del commit" : "-a" reemplaza al paso de "git add archivo.ext" entonces te ahorras un paso, el detalle esta que solo sirve si ya hiciste una vez un "git add" antes a ese archivo, es decir ya estaba siendo rastreado
+git branch nombre-de-la-rama : con esto creo la rama, con "git show" puedo ver que HEAD esta apuntando a master y a la rama
+git checkout nombre-de-la-rama : nos movimos de MASTER a la BRACNH (a la rama)
+git merge nombre-de-la-rama : con el checkout nos movimos a mastes "git checkout master" y desde ahí ejecutamos este comando y traemos la rama y hacemos la fusion
+git branch : Vemos las ramas y la que esta en verde, es en la que estoy
