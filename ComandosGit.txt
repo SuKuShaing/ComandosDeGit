@@ -1,6 +1,7 @@
 git init : para iniciar git y va a empezar a guardar los cambios
 git add archivo | git add . (para agregar todo lo que hay en la carpeta) : para agregar el archivo o para agregar todos los archivos
 git commit -m "Aquí va un comentarios de los cambios realizados" : para enviar los comentarios al historia, sino colocas el -m, te lo va a pedir con VIM y lo agregas, para salir es Esc + Shift + Z + Z
+git commit -am "mensaje del commit" : "-a" reemplaza al paso de "git add archivo.ext" entonces te ahorras un paso, el detalle esta que solo sirve si ya hiciste una vez un "git add" antes a ese archivo, es decir ya estaba siendo rastreado
 git diff aqui-va-el-número-de-la-version aqui-va-el-otro-número-de-la-otra-version-a-comparar : para ver los cambios entre versiones
 git log archivo : para ver el historial del archivo
 git show archivo.ext : muestra los cambios realizados de la ultima version con la anterior
@@ -24,6 +25,10 @@ git checkout aqui-va-el-número-de-la-version archivo.ext : para ver como era es
 git checkout master archivo.ext : para volver a la ultima version que estaba en stagin (cuando se envia con add)
 git checkout aqui-va-el-número-de-la-version archivo.ext : trae un archivo como rama, uno lo puede editar y despues enviar a la linea master
 git checkout master archivo.ext : para enviar el archivo editado como rama a la linea master
+git checkout nombre-de-la-rama : nos movimos de MASTER a la BRACNH (a la rama)
+git branch nombre-de-la-rama : con esto creo la rama, con "git show" puedo ver que HEAD esta apuntando a master y a la rama
+git merge nombre-de-la-rama : con el checkout nos movimos a mastes "git checkout master" y desde ahí ejecutamos este comando y traemos la rama y hacemos la fusion
+git branch : Vemos las ramas y la que esta en verde, es en la que estoy
 
 code archivo.ext : para abrir el archivo en VSC
 ls : para listar los archivos en la carpeta en la que estas
@@ -35,10 +40,3 @@ mkdir nombre-del-directorio : crear un directorio
 rm --help : para ver todas las opciones que tiene el comando
 touce archivo.ext : Si el archivo no existe lo crea vacío y si existe se modifica la fecha con actual del sistema
 clear : para limpiar la pantalla
-
-agrgar los de 
-git commit -am "mensaje del commit" : "-a" reemplaza al paso de "git add archivo.ext" entonces te ahorras un paso, el detalle esta que solo sirve si ya hiciste una vez un "git add" antes a ese archivo, es decir ya estaba siendo rastreado
-git branch nombre-de-la-rama : con esto creo la rama, con "git show" puedo ver que HEAD esta apuntando a master y a la rama
-git checkout nombre-de-la-rama : nos movimos de MASTER a la BRACNH (a la rama)
-git merge nombre-de-la-rama : con el checkout nos movimos a mastes "git checkout master" y desde ahí ejecutamos este comando y traemos la rama y hacemos la fusion
-git branch : Vemos las ramas y la que esta en verde, es en la que estoy
