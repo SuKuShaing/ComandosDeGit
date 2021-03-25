@@ -36,9 +36,6 @@ rm --help : para ver todas las opciones que tiene el comando
 touce archivo.ext : Si el archivo no existe lo crea vacío y si existe se modifica la fecha con actual del sistema
 clear : para limpiar la pantalla
 
-aaaaaaaaaaahhhhhhhhhhh
-estes es un
-
 agrgar los de 
 git commit -am "mensaje del commit" : "-a" reemplaza al paso de "git add archivo.ext" entonces te ahorras un paso, el detalle esta que solo sirve si ya hiciste una vez un "git add" antes a ese archivo, es decir ya estaba siendo rastreado
 git branch nombre-de-la-rama : con esto creo la rama, con "git show" puedo ver que HEAD esta apuntando a master y a la rama
