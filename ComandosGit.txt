@@ -13,6 +13,7 @@ git config --global user.name "Seba Sanhueza" : para agregar el nombre de usuari
 git config --list --show-origin : te muestra donde estan los archivos de configuraciones de git
 git config --list : te muestra la lista de configuraciones que se pueden hacer a git
 git config : algo hace realcionado con las 2 de arribas
+git config -l : para ver todas las configuraciones incluido el usuario
 git rm : saca al archivo del cache y no va a detectar si hubo cambios en el archivo, aún no lo remueve de estar guardando cambios en git
 git rm --cached historia.txt : Saca el archivo de git y guardará mas cambios en el arbol de git
 git rm --cached: Elimina los archivos del área de Staging y del próximo commit pero los mantiene en nuestro disco duro.
@@ -29,6 +30,14 @@ git checkout nombre-de-la-rama : nos movimos de MASTER a la BRACNH (a la rama)
 git branch nombre-de-la-rama : con esto creo la rama, con "git show" puedo ver que HEAD esta apuntando a master y a la rama
 git merge nombre-de-la-rama : con el checkout nos movimos a mastes "git checkout master" y desde ahí ejecutamos este comando y traemos la rama y hacemos la fusion
 git branch : Vemos las ramas y la que esta en verde, es en la que estoy
+
+git remote add origin https://github.com/SuKuShaing/Hyperblog.git : para enviar mi git a github, a un origin y ese link lo da github en su esquina https
+git remote : para ver a donde lo estoy enviando, va a responder "origin"
+git remote -v : responde origin https://github.com/SuKuShaing/Hyperblog.git (fetch) {fetch es como "traer"} <br> origin https://github.com/SuKuShaing/Hyperblog.git (push) {empujar}
+git push origin master : para enviar mi repositorio master a origin | aquí pide tu mail usuario y tu contraseña, despues pide la llava ssh y ahí colocas el usuario "SuKuShaing" y nuevamente la clave
+git pull origin master : para traer lo que esta el servidor, uncluyendo las actualizaciones
+git pull origin master --allow-unrelated-histories : para fusionar la historia de mi git a la historia de github
+
 
 code archivo.ext : para abrir el archivo en VSC
 ls : para listar los archivos en la carpeta en la que estas
