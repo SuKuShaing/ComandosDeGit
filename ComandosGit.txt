@@ -1,3 +1,6 @@
+
+::::::::Comandos para usar Git local:::::::::::::::::
+
 git init : para iniciar git y va a empezar a guardar los cambios
 git add archivo | git add . (para agregar todo lo que hay en la carpeta) : para agregar el archivo o para agregar todos los archivos
 git commit -m "Aquí va un comentarios de los cambios realizados" : para enviar los comentarios al historia, sino colocas el -m, te lo va a pedir con VIM y lo agregas, para salir es Esc + Shift + Z + Z
@@ -32,12 +35,16 @@ git branch nombre-de-la-rama : con esto creo la rama, con "git show" puedo ver q
 git merge nombre-de-la-rama : con el checkout nos movimos a mastes "git checkout master" y desde ahí ejecutamos este comando y traemos la rama y hacemos la fusion
 git branch : Vemos las ramas y la que esta en verde, es en la que estoy
 
+::::::::Comandos para usar con GitHub:::::::::::::::::
+
 git remote add origin https://github.com/SuKuShaing/Hyperblog.git : para enviar mi git a github, a un origin y ese link lo da github en su esquina https
 git remote : para ver a donde lo estoy enviando, va a responder "origin"
 git remote -v : responde origin https://github.com/SuKuShaing/Hyperblog.git (fetch) {fetch es como "traer"} <br> origin https://github.com/SuKuShaing/Hyperblog.git (push) {empujar}
 git push origin master : para enviar mi repositorio master a origin | aquí pide tu mail usuario y tu contraseña, despues pide la llava ssh y ahí colocas el usuario "SuKuShaing" y nuevamente la clave
 git pull origin master : para traer lo que esta el servidor, uncluyendo las actualizaciones
 git pull origin master --allow-unrelated-histories : para fusionar la historia de mi git a la historia de github
+
+::::::::Comando generales para usar la consola de linux:::::::::::::::::
 
 code archivo.ext : para abrir el archivo en VSC
 ls : para listar los archivos en la carpeta en la que estas
@@ -49,6 +56,9 @@ mkdir nombre-del-directorio : crear un directorio
 rm --help : para ver todas las opciones que tiene el comando
 touce archivo.ext : Si el archivo no existe lo crea vacío y si existe se modifica la fecha con actual del sistema
 clear : para limpiar la pantalla
+
+::::::::Crear llaves ssh:::::::::::::::::
+
 ssh-keygen -t rsa -b 4096 -C "sebastian.sanhueza.t@usach.cl" : para generar una llave publica-privada, "-t" es para elegir el algoritmo, "rsa" es el algoritmo de generación, "-b" para elegir la complejidad, "4096" es la cantidad de digitos de nuestra llave numerica, "-C" tiene que ser en mayuscula, y nuestro email de github (si es que nos vamos a conectar con ese servicio)
 eval $(ssh-agent -s) : comando para hacer correr un verificador de llaves publicas y privadas, "pid" process id, para que el pc identifique el proceso
 ~ es una varible de /c/Users/Seba-PC, ~ es una ruta
