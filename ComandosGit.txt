@@ -14,6 +14,7 @@ git config --list --show-origin : te muestra donde estan los archivos de configu
 git config --list : te muestra la lista de configuraciones que se pueden hacer a git
 git config : algo hace realcionado con las 2 de arribas
 git config -l : para ver todas las configuraciones incluido el usuario
+git config : Para ver todas las opciones disponibles a usar en git config
 git rm : saca al archivo del cache y no va a detectar si hubo cambios en el archivo, aún no lo remueve de estar guardando cambios en git
 git rm --cached historia.txt : Saca el archivo de git y guardará mas cambios en el arbol de git
 git rm --cached: Elimina los archivos del área de Staging y del próximo commit pero los mantiene en nuestro disco duro.
@@ -38,7 +39,6 @@ git push origin master : para enviar mi repositorio master a origin | aquí pide
 git pull origin master : para traer lo que esta el servidor, uncluyendo las actualizaciones
 git pull origin master --allow-unrelated-histories : para fusionar la historia de mi git a la historia de github
 
-
 code archivo.ext : para abrir el archivo en VSC
 ls : para listar los archivos en la carpeta en la que estas
 pwd : para ver en la carpeta en la que estas
@@ -49,3 +49,7 @@ mkdir nombre-del-directorio : crear un directorio
 rm --help : para ver todas las opciones que tiene el comando
 touce archivo.ext : Si el archivo no existe lo crea vacío y si existe se modifica la fecha con actual del sistema
 clear : para limpiar la pantalla
+ssh-keygen -t rsa -b 4096 -C "sebastian.sanhueza.t@usach.cl" : para generar una llave publica-privada, "-t" es para elegir el algoritmo, "rsa" es el algoritmo de generación, "-b" para elegir la complejidad, "4096" es la cantidad de digitos de nuestra llave numerica, "-C" tiene que ser en mayuscula, y nuestro email de github (si es que nos vamos a conectar con ese servicio)
+eval $(ssh-agent -s) : comando para hacer correr un verificador de llaves publicas y privadas, "pid" process id, para que el pc identifique el proceso
+~ es una varible de /c/Users/Seba-PC, ~ es una ruta
+ssh-add ~/.ssh/id_rsa : para decirle al pc que ahí esta la llave y agregarla
