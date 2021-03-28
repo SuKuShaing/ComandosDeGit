@@ -40,8 +40,9 @@ git branch : Vemos las ramas y la que esta en verde, es en la que estoy
 git remote add origin https://github.com/SuKuShaing/Hyperblog.git : para enviar mi git a github, a un origin y ese link lo da github en su esquina https
 git remote : para ver a donde lo estoy enviando, va a responder "origin"
 git remote -v : responde origin https://github.com/SuKuShaing/Hyperblog.git (fetch) {fetch es como "traer"} <br> origin https://github.com/SuKuShaing/Hyperblog.git (push) {empujar}
+git remote set-url origin url-de-la-ssh-de-git-hub : esto es para cambiar la URL de conexión con el repositorio
 git push origin master : para enviar mi repositorio master a origin | aquí pide tu mail usuario y tu contraseña, despues pide la llava ssh y ahí colocas el usuario "SuKuShaing" y nuevamente la clave
-git pull origin master : para traer lo que esta el servidor, uncluyendo las actualizaciones
+git pull origin master : para traer lo que esta el servidor, uncluyendo las actualizaciones, de la rama origin (la principal en github) a master (la principal acá)
 git pull origin master --allow-unrelated-histories : para fusionar la historia de mi git a la historia de github
 
 ::::::::Comando generales para usar la consola de linux:::::::::::::::::
