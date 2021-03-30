@@ -1,4 +1,3 @@
-
 ::::::::Comandos para usar Git local:::::::::::::::::
 
 git init : para iniciar git y va a empezar a guardar los cambios
@@ -37,6 +36,7 @@ git checkout nombre-de-la-rama : nos movimos de MASTER a la BRACNH (a la rama)
 git branch nombre-de-la-rama : con esto creo la rama, con "git show" puedo ver que HEAD esta apuntando a master y a la rama
 git merge nombre-de-la-rama : con el checkout nos movimos a mastes "git checkout master" y desde ahí ejecutamos este comando y traemos la rama y hacemos la fusion
 git branch : Vemos las ramas y la que esta en verde, es en la que estoy
+git branch -M main : Trae la rama master a main y esa pasa a ser la principal, trae a ella todo le historial
 
 ::::::::Comandos para usar con GitHub:::::::::::::::::
 
@@ -53,6 +53,10 @@ git tag -a v0.1 -m "resultado de las primeras clases del curso" 902bc21 : añade
 git tag : te muestra las etiqueta que hay
 git tag -d nombre-del-tag : borra ese tag (borra esa etiqueta) de manera local
 git show-ref --tags : te muestra el tag y el hash del commit
+git show-branch : Nos muestras las ramas que existen y cual ha sido su historia
+git show-branch --all : Nos muestra lo mismo que lo de arriba con más detalle
+gitk : te abre las ramas en un software visual
+git clone url-del-repositorio-en-github : para clonar un proyecto publico
 
 ::::::::Comando generales para usar la consola de linux:::::::::::::::::
 
