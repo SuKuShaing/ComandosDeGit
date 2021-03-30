@@ -44,11 +44,11 @@ git remote add origin https://github.com/SuKuShaing/Hyperblog.git : para enviar 
 git remote : para ver a donde lo estoy enviando, va a responder "origin"
 git remote -v : responde origin https://github.com/SuKuShaing/Hyperblog.git (fetch) {fetch es como "traer"} <br> origin https://github.com/SuKuShaing/Hyperblog.git (push) {empujar}
 git remote set-url origin url-de-la-ssh-de-git-hub : esto es para cambiar la URL de conexión con el repositorio
-git push origin master : para enviar mi repositorio master a origin | aquí pide tu mail usuario y tu contraseña, despues pide la llava ssh y ahí colocas el usuario "SuKuShaing" y nuevamente la clave
+git push origin main : para enviar mi repositorio main a origin | aquí pide tu mail usuario y tu contraseña, despues pide la llava ssh y ahí colocas el usuario "SuKuShaing" y nuevamente la clave
 git push origin --tags : para enviar los tags, siempre hacer antes el git git pull origin master
 git push origin :refs/tags/nombre-del-tag-a-borrar : con esto borra el tag en github
-git pull origin master : para traer lo que esta el servidor, uncluyendo las actualizaciones, de la rama origin (la principal en github) a master (la principal acá)
-git pull origin master --allow-unrelated-histories : para fusionar la historia de mi git a la historia de github
+git pull origin main : para traer lo que esta el servidor, uncluyendo las actualizaciones, de la rama origin (la principal en github) a master (la principal acá)
+git pull origin main --allow-unrelated-histories : para fusionar la historia de mi git a la historia de github
 git tag -a v0.1 -m "resultado de las primeras clases del curso" 902bc21 : añade un tag a una versión de todo tu historial de versiones, "-a" añadir, despues va el nombre "v0.1", -m para colocar el mensaje de acontinuacion, el mensaje, y el hash de la versión (¿de dónde saco el hash? ese número, del git log, cada commit tiene su número hash, se copia y se pega)
 git tag : te muestra las etiqueta que hay
 git tag -d nombre-del-tag : borra ese tag (borra esa etiqueta) de manera local
