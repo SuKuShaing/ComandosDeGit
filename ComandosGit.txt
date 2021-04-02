@@ -43,6 +43,7 @@ git branch -M main : Trae la rama master a main y esa pasa a ser la principal, t
 git remote add origin https://github.com/SuKuShaing/Hyperblog.git : para enviar mi git a github, a un origin y ese link lo da github en su esquina https
 git remote : para ver a donde lo estoy enviando, va a responder "origin"
 git remote -v : responde origin https://github.com/SuKuShaing/Hyperblog.git (fetch) {fetch es como "traer"} <br> origin https://github.com/SuKuShaing/Hyperblog.git (push) {empujar}
+git remote add upstream url-del-repositorio-en-github : para agregar una nueva fuente de dato y sale 2 veces lo de arriba pero con distintas fuetes, una mia y otra de otra persona con el mismo proyecto
 git remote set-url origin url-de-la-ssh-de-git-hub : esto es para cambiar la URL de conexión con el repositorio
 git push origin main : para enviar mi repositorio main a origin | aquí pide tu mail usuario y tu contraseña, despues pide la llava ssh y ahí colocas el usuario "SuKuShaing" y nuevamente la clave
 git push origin --tags : para enviar los tags, siempre hacer antes el git git pull origin master
