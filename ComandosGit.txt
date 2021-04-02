@@ -36,7 +36,7 @@ git checkout nombre-de-la-rama : nos movimos de MASTER a la BRACNH (a la rama)
 git branch nombre-de-la-rama : con esto creo la rama, con "git show" puedo ver que HEAD esta apuntando a master y a la rama
 git merge nombre-de-la-rama : con el checkout nos movimos a mastes "git checkout master" y desde ahí ejecutamos este comando y traemos la rama y hacemos la fusion
 git branch : Vemos las ramas y la que esta en verde, es en la que estoy
-git branch -M main : Trae la rama master a main y esa pasa a ser la principal, trae a ella todo le historial
+git branch -M main : Trae la rama master (o la rama en la que estes) a main (a la rama objetivo) y esa pasa a ser la principal, trae a ella todo le historial
 
 ::::::::Comandos para usar con GitHub:::::::::::::::::
 
