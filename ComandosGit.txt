@@ -50,6 +50,7 @@ git push origin --tags : para enviar los tags, siempre hacer antes el git git pu
 git push origin :refs/tags/nombre-del-tag-a-borrar : con esto borra el tag en github
 git pull origin main : para traer lo que esta el servidor, uncluyendo las actualizaciones, de la rama origin (la principal en github) a master (la principal acá)
 git pull origin main --allow-unrelated-histories : para fusionar la historia de mi git a la historia de github
+git pull origin master --allow-unrelated-histories : para fusionar la historia de mi github a la de mi git, para cuando no se quieren fusionar, hay que forzarlo
 git tag -a v0.1 -m "resultado de las primeras clases del curso" 902bc21 : añade un tag a una versión de todo tu historial de versiones, "-a" añadir, despues va el nombre "v0.1", -m para colocar el mensaje de acontinuacion, el mensaje, y el hash de la versión (¿de dónde saco el hash? ese número, del git log, cada commit tiene su número hash, se copia y se pega)
 git tag : te muestra las etiqueta que hay
 git tag -d nombre-del-tag : borra ese tag (borra esa etiqueta) de manera local
