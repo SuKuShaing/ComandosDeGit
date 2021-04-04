@@ -13,6 +13,7 @@ git log archivo.ext : Para ver el historia de cambios y sus comentarios, junto c
 git log --stat (archivo.ext(opcional)) : para ver el historial de cambios con sus commit y su cantidad de cambios binarios, es más completo 
 git log --all --graph : para ver las ramas del proyecto de manera grafica
 git log --all --graph --decorate --oneline : para ver todo comprimido
+git log --oneline : para ver todos los commit, cada uno en una linea
 git config --global user.email "sebastian.sanhueza.t@usach.cl" : para agregar el mail de usuario
 git config --global user.name "Seba Sanhueza" : para agregar el nombre de usuario
 git config --list --show-origin : te muestra donde estan los archivos de configuraciones de git
@@ -37,6 +38,15 @@ git branch nombre-de-la-rama : con esto creo la rama, con "git show" puedo ver q
 git merge nombre-de-la-rama : con el checkout nos movimos a mastes "git checkout master" y desde ahí ejecutamos este comando y traemos la rama y hacemos la fusion
 git branch : Vemos las ramas y la que esta en verde, es en la que estoy
 git branch -M main : Trae la rama master (o la rama en la que estes) a main (a la rama objetivo) y esa pasa a ser la principal, trae a ella todo le historial
+git branch -D rama-a-borrar : para borrar una rama 
+git stash : guarda los cambios realizados en un stash, no como commit, al ser guardado, vuelve al estado del ultimo commit
+gis stash list : para ver los stash guardados en stash
+git stash pop : para abrir los cambios guardados en stash
+git stash branch nueva-rama : me llevo los cambios en el stash a la rama que voy, nueva o existente
+git stash drop : para soltar el stash sin que se coloque en ninguna parte, lo desecha
+git clean --dry-run : Es para ver que archivos puede borrar, son los que no estan siendo trackeados
+git clean -f : borrar los archivos que mostro que iba a borrar en el comando "git clean --dry-run"
+git cherry-pick 6a05208 : Para traer un commit de una rama, y coloco el hash del commit, ese se optiene con "git log --oneline"
 
 ::::::::Comandos para usar con GitHub:::::::::::::::::
 
@@ -59,6 +69,7 @@ git show-branch : Nos muestras las ramas que existen y cual ha sido su historia
 git show-branch --all : Nos muestra lo mismo que lo de arriba con más detalle
 gitk : te abre las ramas en un software visual
 git clone url-del-repositorio-en-github : para clonar un proyecto publico
+git rebase master : Estando en la rama "experimiento" o en la rama a hacer rebase, se ejecuta este comando, trayendo toda la info de master a acá y despues de eso, te cambias de rama, a la principal y se hace el rebase (estando en master) a la rama experimento o a la rama que se va a unir
 
 ::::::::Comando generales para usar la consola de linux:::::::::::::::::
 
