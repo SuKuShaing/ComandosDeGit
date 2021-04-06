@@ -47,7 +47,7 @@ git stash branch nueva-rama : me llevo los cambios en el stash a la rama que voy
 git stash drop : para soltar el stash sin que se coloque en ninguna parte, lo desecha
 git clean --dry-run : Es para ver que archivos puede borrar, son los que no estan siendo trackeados
 git clean -f : borrar los archivos que mostro que iba a borrar en el comando "git clean --dry-run"
-git cherry-pick 6a05208 : Para traer un commit de una rama, y coloco el hash del commit, ese se optiene con "git log --oneline"
+git cherry-pick hash-de-la-rama-a-traer : Para traer un commit de una rama, y coloco el hash del commit, ese se optiene con "git log --oneline"
 git reflog : para ver toda la historia de movimientos y comandos, no solo los commit como con git log, todo, cuando cambiaste de rama, cuando borraste, cuando hiciste un amend, etc.
 git reset HEAD@{4} : Hace un reset suave, vuelve pero te mantiene el staging, se selecciona el HEAD@{4} que quieras del comando git reflog
 git reset --hard hash : se coloca el hash al que se quiere volver, con este comando se vuelve a donde las cosas funcionaban
