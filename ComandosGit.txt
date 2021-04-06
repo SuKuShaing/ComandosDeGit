@@ -15,6 +15,7 @@ git log --stat (archivo.ext(opcional)) : para ver el historial de cambios con su
 git log --all --graph : para ver las ramas del proyecto de manera grafica
 git log --all --graph --decorate --oneline : para ver todo comprimido
 git log --oneline : para ver todos los commit, cada uno en una linea
+git log -S palabra-a-buscar : este comando busca la palabra en los commits
 git config --global user.email "sebastian.sanhueza.t@usach.cl" : para agregar el mail de usuario
 git config --global user.name "Seba Sanhueza" : para agregar el nombre de usuario
 git config --list --show-origin : te muestra donde estan los archivos de configuraciones de git
@@ -40,6 +41,8 @@ git merge nombre-de-la-rama : con el checkout nos movimos a mastes "git checkout
 git branch : Vemos las ramas y la que esta en verde, es en la que estoy
 git branch -M main : Trae la rama master (o la rama en la que estes) a main (a la rama objetivo) y esa pasa a ser la principal, trae a ella todo le historial
 git branch -D rama-a-borrar : para borrar una rama 
+git branch -r : para ver las ramas remotas
+git branch -a : para ver todas las ramas, locales y remotas
 git stash : guarda los cambios realizados en un stash, no como commit, al ser guardado, vuelve al estado del ultimo commit
 gis stash list : para ver los stash guardados en stash
 git stash pop : para abrir los cambios guardados en stash
@@ -51,6 +54,21 @@ git cherry-pick hash-de-la-rama-a-traer : Para traer un commit de una rama, y co
 git reflog : para ver toda la historia de movimientos y comandos, no solo los commit como con git log, todo, cuando cambiaste de rama, cuando borraste, cuando hiciste un amend, etc.
 git reset HEAD@{4} : Hace un reset suave, vuelve pero te mantiene el staging, se selecciona el HEAD@{4} que quieras del comando git reflog
 git reset --hard hash : se coloca el hash al que se quiere volver, con este comando se vuelve a donde las cosas funcionaban
+git grep palabra-a-buscar : busca la palabra indicada en todos los archivos que git trackeados
+git grep -n palabra-a-buscar : te dice en que número de linea esta la palabra color
+git grep -c palabra-a-buscar : te dice cuantas veces ocupaste esa palabra en cada archivo 
+git grep -c "<p>" : Cuando tienes espacios o simbolos debes usar comillas para buscar lo deseado
+git shortlog : muestra un log por persona y que ha hecho cada miembro del equipo
+git shortlog -sn : Muestra las personas y sus cantidades de commit, solo las cantidades, no sus codigos
+git shortlog -sn --all : te incluye todo los commit, incluso los borrados
+git shortlog -sn --all --no-merges : te muestra la cantidad de commit que no fueron merges
+git config --global alias.stats "shortlog -sn --all --no-merges" : creo un atajo, un alias para todo ese codigo y el atajo se llama "stats", para ese comando
+git stats : es como se usa el alias creado con la linea de arriba de esta
+git blame nombre-del-archivo : te muestra quien creo cada linea del archivo
+git blame -c nombre-del-archivo : te muestra lo mismo de arriba pero con más regitros
+git blame --help : --help te muestra el manual de como usar un comando
+git blame css/style.css -L35,56 : te muestra quien hizo los cambios en ese archivo desde la linea 35 a la 56
+git blame css/style.css -L35,56 -c : te muestra lo mismo de arriba con más formato en el historial
 
 ::::::::Comandos para usar con GitHub:::::::::::::::::
 
