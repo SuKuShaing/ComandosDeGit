@@ -1,5 +1,5 @@
 ::::::::Comandos para usar Git local:::::::::::::::::
-preuba
+
 git init : para iniciar git y va a empezar a guardar los cambios
 git add archivo | git add . (para agregar todo lo que hay en la carpeta) : para agregar el archivo o para agregar todos los archivos
 git commit -m "Aquí va un comentarios de los cambios realizados" : para enviar los comentarios al historia, sino colocas el -m, te lo va a pedir con VIM y lo agregas, para salir es Esc + Shift + Z + Z
