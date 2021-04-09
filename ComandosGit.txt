@@ -1,114 +1,123 @@
+:::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::::::::Comandos para usar Git local:::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-git init : para iniciar git y va a empezar a guardar los cambios
 git add archivo | git add . (para agregar todo lo que hay en la carpeta) : para agregar el archivo o para agregar todos los archivos
-git commit -m "Aquí va un comentarios de los cambios realizados" : para enviar los comentarios al historia, sino colocas el -m, te lo va a pedir con VIM y lo agregas, para salir es Esc + Shift + Z + Z
+git blame -c nombre-del-archivo : te muestra lo mismo de arriba pero con más regitros
+git blame css/style.css -L35,56 : te muestra quien hizo los cambios en ese archivo desde la linea 35 a la 56
+git blame css/style.css -L35,56 -c : te muestra lo mismo de arriba con más formato en el historial
+git blame --help : --help te muestra el manual de como usar un comando
+git blame nombre-del-archivo : te muestra quien creo cada linea del archivo
+git branch : Vemos las ramas y la que esta en verde, es en la que estoy
+git branch -a : para ver todas las ramas, locales y remotas
+git branch -D rama-a-borrar : para borrar una rama 
+git branch -M main : Trae la rama master (o la rama en la que estes) a main (a la rama objetivo) y esa pasa a ser la principal, trae a ella todo le historial
+git branch nombre-de-la-rama : con esto creo la rama, con "git show" puedo ver que HEAD esta apuntando a master y a la rama
+git branch -r : para ver las ramas remotas
+git checkout aqui-va-el-número-de-la-version archivo.ext : para ver como era ese archivo (siempre colocar el archivo.ext porque o si no vuelve todos los archivos atras (puede borrar los que no existian)
+git checkout aqui-va-el-número-de-la-version archivo.ext : trae un archivo como rama, uno lo puede editar y despues enviar a la linea master
+git checkout master archivo.ext : para enviar el archivo editado como rama a la linea master
+git checkout master archivo.ext : para volver a la ultima version que estaba en stagin (cuando se envia con add)
+git checkout nombre-de-la-rama : nos movimos de MASTER a la BRACNH (a la rama)
+git cherry-pick hash-de-la-rama-a-traer : Para traer un commit de una rama, y coloco el hash del commit, ese se optiene con "git log --oneline"
+git clean --dry-run : Es para ver que archivos puede borrar, son los que no estan siendo trackeados
+git clean -f : borrar los archivos que mostro que iba a borrar en el comando "git clean --dry-run"
 git commit -am "mensaje del commit" : "-a" reemplaza al paso de "git add archivo.ext" entonces te ahorras un paso, el detalle esta que solo sirve si ya hiciste una vez un "git add" antes a ese archivo, es decir ya estaba siendo rastreado
 git commit --amend : para añadir cambios al commit anterior, antes de eso se debe añadir con "git add ruta-del-archivo" a añadir su modificación (este comando es importante hacerlo, previo al amend)
-git diff : Para ver los cambios entre un commit y otro en los archivos que estes trabajando
-git diff aqui-va-el-número-de-la-version aqui-va-el-otro-número-de-la-otra-version-a-comparar : para ver los cambios entre versiones
-git log archivo : para ver el historial del archivo
-git show archivo.ext : muestra los cambios realizados de la ultima version con la anterior
-git status : para ver el estado de un archivo o carpeta en seguimiento, sí se envio o no al repositorio de cambios git
-git status --all : para ver todo el historial, incluyendo las ramas
-git log archivo.ext : Para ver el historia de cambios y sus comentarios, junto con el número
-git log --stat (archivo.ext(opcional)) : para ver el historial de cambios con sus commit y su cantidad de cambios binarios, es más completo 
-git log --all --graph : para ver las ramas del proyecto de manera grafica
-git log --all --graph --decorate --oneline : para ver todo comprimido
-git log --oneline : para ver todos los commit, cada uno en una linea
-git log -S palabra-a-buscar : este comando busca la palabra en los commits
+git commit -m "Aquí va un comentarios de los cambios realizados" : para enviar los comentarios al historia, sino colocas el -m, te lo va a pedir con VIM y lo agregas, para salir es Esc + Shift + Z + Z
+git config : algo hace realcionado con las 2 de arribas
+git config : Para ver todas las opciones disponibles a usar en git config
+git config --global alias.stats "shortlog -sn --all --no-merges" : creo un atajo, un alias para todo ese codigo y el atajo se llama "stats", para ese comando
 git config --global user.email "sebastian.sanhueza.t@usach.cl" : para agregar el mail de usuario
 git config --global user.name "Seba Sanhueza" : para agregar el nombre de usuario
-git config --list --show-origin : te muestra donde estan los archivos de configuraciones de git
-git config --list : te muestra la lista de configuraciones que se pueden hacer a git
-git config : algo hace realcionado con las 2 de arribas
 git config -l : para ver todas las configuraciones incluido el usuario
-git config : Para ver todas las opciones disponibles a usar en git config
+git config --list : te muestra la lista de configuraciones que se pueden hacer a git
+git config --list --show-origin : te muestra donde estan los archivos de configuraciones de git
+git diff : Para ver los cambios entre un commit y otro en los archivos que estes trabajando
+git diff aqui-va-el-número-de-la-version aqui-va-el-otro-número-de-la-otra-version-a-comparar : para ver los cambios entre versiones
+git grep -c "<p>" : Cuando tienes espacios o simbolos debes usar comillas para buscar lo deseado
+git grep -c palabra-a-buscar : te dice cuantas veces ocupaste esa palabra en cada archivo 
+git grep -n palabra-a-buscar : te dice en que número de linea esta la palabra color
+git grep palabra-a-buscar : busca la palabra indicada en todos los archivos que git trackeados
+git init : para iniciar git y va a empezar a guardar los cambios
+git log --all --graph : para ver las ramas del proyecto de manera grafica
+git log --all --graph --decorate --oneline : para ver todo comprimido
+git log archivo : para ver el historial del archivo
+git log archivo.ext : Para ver el historia de cambios y sus comentarios, junto con el número
+git log --oneline : para ver todos los commit, cada uno en una linea
+git log -S palabra-a-buscar : este comando busca la palabra en los commits
+git log --stat (archivo.ext(opcional)) : para ver el historial de cambios con sus commit y su cantidad de cambios binarios, es más completo 
+git merge nombre-de-la-rama : con el checkout nos movimos a mastes "git checkout master" y desde ahí ejecutamos este comando y traemos la rama y hacemos la fusion
+git reflog : para ver toda la historia de movimientos y comandos, no solo los commit como con git log, todo, cuando cambiaste de rama, cuando borraste, cuando hiciste un amend, etc.
+git reset aqui-va-el-número-de-la-version-a-la-que-se-desea-volver --hard : para volver a una version anterior | --hard (vuelve a la version anterior y se pierde todo lo avanzado) --soft (lo que esta en stagin (en git add .) sigue ahí)
+git reset --hard hash : se coloca el hash al que se quiere volver, con este comando se vuelve a donde las cosas funcionaban
+git reset --hard: Borra todo. Todo todito, absolutamente todo. Toda la información de los commits y del área de staging se borra del historial.
+git reset HEAD: Este es el comando para sacar archivos del área de Staging. No para borrarlos ni nada de eso, solo para que los últimos cambios de estos archivos no se envíen al último commit, a menos que cambiemos de opinión y los incluyamos de nuevo en staging con git add, por supuesto.
+git reset HEAD@{4} : Hace un reset suave, vuelve pero te mantiene el staging, se selecciona el HEAD@{4} que quieras del comando git reflog
+git reset --soft: Borramos todo el historial y los registros de Git pero guardamos los cambios que tengamos en Staging, así podemos aplicar las últimas actualizaciones a un nuevo commit.
 git rm : saca al archivo del cache y no va a detectar si hubo cambios en el archivo, aún no lo remueve de estar guardando cambios en git
 git rm --cached historia.txt : Saca el archivo de git y guardará mas cambios en el arbol de git
 git rm --cached: Elimina los archivos del área de Staging y del próximo commit pero los mantiene en nuestro disco duro.
 git rm --force: Elimina los archivos de Git y del disco duro. Git siempre guarda todo, por lo que podemos acceder al registro de la existencia de los archivos, de modo que podremos recuperarlos si es necesario (pero debemos usar comandos más avanzados).
-git reset aqui-va-el-número-de-la-version-a-la-que-se-desea-volver --hard : para volver a una version anterior | --hard (vuelve a la version anterior y se pierde todo lo avanzado) --soft (lo que esta en stagin (en git add .) sigue ahí)
-git reset --soft: Borramos todo el historial y los registros de Git pero guardamos los cambios que tengamos en Staging, así podemos aplicar las últimas actualizaciones a un nuevo commit.
-git reset --hard: Borra todo. Todo todito, absolutamente todo. Toda la información de los commits y del área de staging se borra del historial.
-git reset HEAD: Este es el comando para sacar archivos del área de Staging. No para borrarlos ni nada de eso, solo para que los últimos cambios de estos archivos no se envíen al último commit, a menos que cambiemos de opinión y los incluyamos de nuevo en staging con git add, por supuesto.
-git checkout aqui-va-el-número-de-la-version archivo.ext : para ver como era ese archivo (siempre colocar el archivo.ext porque o si no vuelve todos los archivos atras (puede borrar los que no existian)
-git checkout master archivo.ext : para volver a la ultima version que estaba en stagin (cuando se envia con add)
-git checkout aqui-va-el-número-de-la-version archivo.ext : trae un archivo como rama, uno lo puede editar y despues enviar a la linea master
-git checkout master archivo.ext : para enviar el archivo editado como rama a la linea master
-git checkout nombre-de-la-rama : nos movimos de MASTER a la BRACNH (a la rama)
-git branch nombre-de-la-rama : con esto creo la rama, con "git show" puedo ver que HEAD esta apuntando a master y a la rama
-git merge nombre-de-la-rama : con el checkout nos movimos a mastes "git checkout master" y desde ahí ejecutamos este comando y traemos la rama y hacemos la fusion
-git branch : Vemos las ramas y la que esta en verde, es en la que estoy
-git branch -M main : Trae la rama master (o la rama en la que estes) a main (a la rama objetivo) y esa pasa a ser la principal, trae a ella todo le historial
-git branch -D rama-a-borrar : para borrar una rama 
-git branch -r : para ver las ramas remotas
-git branch -a : para ver todas las ramas, locales y remotas
-git stash : guarda los cambios realizados en un stash, no como commit, al ser guardado, vuelve al estado del ultimo commit
-gis stash list : para ver los stash guardados en stash
-git stash pop : para abrir los cambios guardados en stash
-git stash branch nueva-rama : me llevo los cambios en el stash a la rama que voy, nueva o existente
-git stash drop : para soltar el stash sin que se coloque en ninguna parte, lo desecha
-git clean --dry-run : Es para ver que archivos puede borrar, son los que no estan siendo trackeados
-git clean -f : borrar los archivos que mostro que iba a borrar en el comando "git clean --dry-run"
-git cherry-pick hash-de-la-rama-a-traer : Para traer un commit de una rama, y coloco el hash del commit, ese se optiene con "git log --oneline"
-git reflog : para ver toda la historia de movimientos y comandos, no solo los commit como con git log, todo, cuando cambiaste de rama, cuando borraste, cuando hiciste un amend, etc.
-git reset HEAD@{4} : Hace un reset suave, vuelve pero te mantiene el staging, se selecciona el HEAD@{4} que quieras del comando git reflog
-git reset --hard hash : se coloca el hash al que se quiere volver, con este comando se vuelve a donde las cosas funcionaban
-git grep palabra-a-buscar : busca la palabra indicada en todos los archivos que git trackeados
-git grep -n palabra-a-buscar : te dice en que número de linea esta la palabra color
-git grep -c palabra-a-buscar : te dice cuantas veces ocupaste esa palabra en cada archivo 
-git grep -c "<p>" : Cuando tienes espacios o simbolos debes usar comillas para buscar lo deseado
 git shortlog : muestra un log por persona y que ha hecho cada miembro del equipo
 git shortlog -sn : Muestra las personas y sus cantidades de commit, solo las cantidades, no sus codigos
 git shortlog -sn --all : te incluye todo los commit, incluso los borrados
 git shortlog -sn --all --no-merges : te muestra la cantidad de commit que no fueron merges
-git config --global alias.stats "shortlog -sn --all --no-merges" : creo un atajo, un alias para todo ese codigo y el atajo se llama "stats", para ese comando
+git show archivo.ext : muestra los cambios realizados de la ultima version con la anterior
+git stash : guarda los cambios realizados en un stash, no como commit, al ser guardado, vuelve al estado del ultimo commit
+git stash branch nueva-rama : me llevo los cambios en el stash a la rama que voy, nueva o existente
+git stash drop : para soltar el stash sin que se coloque en ninguna parte, lo desecha
+git stash list : para ver los stash guardados en stash
+git stash pop : para abrir los cambios guardados en stash
 git stats : es como se usa el alias creado con la linea de arriba de esta
-git blame nombre-del-archivo : te muestra quien creo cada linea del archivo
-git blame -c nombre-del-archivo : te muestra lo mismo de arriba pero con más regitros
-git blame --help : --help te muestra el manual de como usar un comando
-git blame css/style.css -L35,56 : te muestra quien hizo los cambios en ese archivo desde la linea 35 a la 56
-git blame css/style.css -L35,56 -c : te muestra lo mismo de arriba con más formato en el historial
+git status : para ver el estado de un archivo o carpeta en seguimiento, sí se envio o no al repositorio de cambios git
+git status --all : para ver todo el historial, incluyendo las ramas
 
+::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::::::::Comandos para usar con GitHub:::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-git remote add origin https://github.com/SuKuShaing/Hyperblog.git : para enviar mi git a github, a un origin y ese link lo da github en su esquina https
-git remote : para ver a donde lo estoy enviando, va a responder "origin"
-git remote -v : responde origin https://github.com/SuKuShaing/Hyperblog.git (fetch) {fetch es como "traer"} <br> origin https://github.com/SuKuShaing/Hyperblog.git (push) {empujar}
-git remote add upstream url-del-repositorio-en-github : para agregar una nueva fuente de dato y sale 2 veces lo de arriba pero con distintas fuetes, una mia y otra de otra persona con el mismo proyecto
-git remote set-url origin url-de-la-ssh-de-git-hub : esto es para cambiar la URL de conexión con el repositorio
-git push origin main : para enviar mi repositorio main a origin | aquí pide tu mail usuario y tu contraseña, despues pide la llava ssh y ahí colocas el usuario "SuKuShaing" y nuevamente la clave
-git push origin --tags : para enviar los tags, siempre hacer antes el git git pull origin master
-git push origin :refs/tags/nombre-del-tag-a-borrar : con esto borra el tag en github
+git clone url-del-repositorio-en-github : para clonar un proyecto publico
 git pull origin main : para traer lo que esta el servidor, uncluyendo las actualizaciones, de la rama origin (la principal en github) a master (la principal acá)
 git pull origin main --allow-unrelated-histories : para fusionar la historia de mi git a la historia de github
 git pull origin master --allow-unrelated-histories : para fusionar la historia de mi github a la de mi git, para cuando no se quieren fusionar, hay que forzarlo
-git tag -a v0.1 -m "resultado de las primeras clases del curso" 902bc21 : añade un tag a una versión de todo tu historial de versiones, "-a" añadir, despues va el nombre "v0.1", -m para colocar el mensaje de acontinuacion, el mensaje, y el hash de la versión (¿de dónde saco el hash? ese número, del git log, cada commit tiene su número hash, se copia y se pega)
-git tag : te muestra las etiqueta que hay
-git tag -d nombre-del-tag : borra ese tag (borra esa etiqueta) de manera local
-git show-ref --tags : te muestra el tag y el hash del commit
+git push origin :refs/tags/nombre-del-tag-a-borrar : con esto borra el tag en github
+git push origin main : para enviar mi repositorio main a origin | aquí pide tu mail usuario y tu contraseña, despues pide la llava ssh y ahí colocas el usuario "SuKuShaing" y nuevamente la clave
+git push origin --tags : para enviar los tags, siempre hacer antes el git git pull origin master
+git rebase master : Estando en la rama "experimiento" o en la rama a hacer rebase, se ejecuta este comando, trayendo toda la info de master a acá y despues de eso, te cambias de rama, a la principal y se hace el rebase (estando en master) a la rama experimento o a la rama que se va a unir
+git remote : para ver a donde lo estoy enviando, va a responder "origin"
+git remote add origin https://github.com/SuKuShaing/Hyperblog.git : para enviar mi git a github, a un origin y ese link lo da github en su esquina https
+git remote add upstream url-del-repositorio-en-github : para agregar una nueva fuente de dato y sale 2 veces lo de arriba pero con distintas fuetes, una mia y otra de otra persona con el mismo proyecto
+git remote set-url origin url-de-la-ssh-de-git-hub : esto es para cambiar la URL de conexión con el repositorio
+git remote -v : responde origin https://github.com/SuKuShaing/Hyperblog.git (fetch) {fetch es como "traer"} <br> origin https://github.com/SuKuShaing/Hyperblog.git (push) {empujar}
 git show-branch : Nos muestras las ramas que existen y cual ha sido su historia
 git show-branch --all : Nos muestra lo mismo que lo de arriba con más detalle
+git show-ref --tags : te muestra el tag y el hash del commit
+git tag : te muestra las etiqueta que hay
+git tag -a v0.1 -m "resultado de las primeras clases del curso" 902bc21 : añade un tag a una versión de todo tu historial de versiones, "-a" añadir, despues va el nombre "v0.1", -m para colocar el mensaje de acontinuacion, el mensaje, y el hash de la versión (¿de dónde saco el hash? ese número, del git log, cada commit tiene su número hash, se copia y se pega)
+git tag -d nombre-del-tag : borra ese tag (borra esa etiqueta) de manera local
 gitk : te abre las ramas en un software visual
-git clone url-del-repositorio-en-github : para clonar un proyecto publico
-git rebase master : Estando en la rama "experimiento" o en la rama a hacer rebase, se ejecuta este comando, trayendo toda la info de master a acá y despues de eso, te cambias de rama, a la principal y se hace el rebase (estando en master) a la rama experimento o a la rama que se va a unir
 
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::::::::Comando generales para usar la consola de linux:::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+alias arbolito="git log --all --graph --decorate --oneline" : creo un atajo de ese comando largo, ahora se almacena en arbolito
+cat archivo.ext : para ver el archivo en el mismo visor de linux
+cd .. : para volver a la carpeta de arriba
+cd nombre-de-la-carpeta : para entrar a la carpeta 
+clear : para limpiar la pantalla
 code archivo.ext : para abrir el archivo en VSC
 ls : para listar los archivos en la carpeta en la que estas
-pwd : para ver en la carpeta en la que estas
-cd nombre-de-la-carpeta : para entrar a la carpeta 
-cd .. : para volver a la carpeta de arriba
-cat archivo.ext : para ver el archivo en el mismo visor de linux
 mkdir nombre-del-directorio : crear un directorio
+pwd : para ver en la carpeta en la que estas
 rm --help : para ver todas las opciones que tiene el comando
 touce archivo.ext : Si el archivo no existe lo crea vacío y si existe se modifica la fecha con actual del sistema
-clear : para limpiar la pantalla
-alias arbolito="git log --all --graph --decorate --oneline" : creo un atajo de ese comando largo, ahora se almacena en arbolito
 
+:::::::::::::::::::::::::::::::::::::::::
 ::::::::Crear llaves ssh:::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::
+//Ordenados segun el orden en que deben ser usados ↓
 
 ssh-keygen -t rsa -b 4096 -C "mail-usado-en-github" : para generar una llave publica-privada, "-t" es para elegir el algoritmo, "rsa" es el algoritmo de generación, "-b" para elegir la complejidad, "4096" es la cantidad de digitos de nuestra llave numerica, "-C" tiene que ser en mayuscula, y nuestro email de github (si es que nos vamos a conectar con ese servicio)
 eval $(ssh-agent -s) : comando para hacer correr un verificador de llaves publicas y privadas, "pid" process id, para que el pc identifique el proceso
