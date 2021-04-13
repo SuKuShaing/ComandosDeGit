@@ -25,7 +25,6 @@ git clean -f : borrar los archivos que mostro que iba a borrar en el comando "gi
 git commit -am "mensaje del commit" : "-a" reemplaza al paso de "git add archivo.ext" entonces te ahorras un paso, el detalle esta que solo sirve si ya hiciste una vez un "git add" antes a ese archivo, es decir ya estaba siendo rastreado
 git commit --amend : para añadir cambios al commit anterior, antes de eso se debe añadir con "git add ruta-del-archivo" a añadir su modificación (este comando es importante hacerlo, previo al amend)
 git commit -m "Aquí va un comentarios de los cambios realizados" : para enviar los comentarios al historia, sino colocas el -m, te lo va a pedir con VIM y lo agregas, para salir es Esc + Shift + Z + Z
-git config : algo hace realcionado con las 2 de arribas
 git config : Para ver todas las opciones disponibles a usar en git config
 git config --global alias.stats "shortlog -sn --all --no-merges" : creo un atajo, un alias para todo ese codigo y el atajo se llama "stats", para ese comando
 git config --global user.email "sebastian.sanhueza.t@usach.cl" : para agregar el mail de usuario
@@ -110,9 +109,18 @@ clear : para limpiar la pantalla
 code archivo.ext : para abrir el archivo en VSC
 ls : para listar los archivos en la carpeta en la que estas
 mkdir nombre-del-directorio : crear un directorio
+nano nombre-del-archivo : para crear un archivo
 pwd : para ver en la carpeta en la que estas
 rm --help : para ver todas las opciones que tiene el comando
 touce archivo.ext : Si el archivo no existe lo crea vacío y si existe se modifica la fecha con actual del sistema
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::para crear el gitignore:::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+nano .gitignore : al entrar al editor nano escribes los archivos o carpetas a ignorar, como se muestra en las siguientes 2 lineas y se sale así -> (se sale de aquí precionando ctrl + x)
+*.dat
+results/
 
 :::::::::::::::::::::::::::::::::::::::::
 ::::::::Crear llaves ssh:::::::::::::::::
