@@ -72,6 +72,7 @@ git stash pop : para abrir los cambios guardados en stash
 git stats : es como se usa el alias creado con la linea de arriba de esta
 git status : para ver el estado de un archivo o carpeta en seguimiento, sí se envio o no al repositorio de cambios git
 git status --all : para ver todo el historial, incluyendo las ramas
+gitk : te abre las ramas en un software visual
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::::::::Comandos para usar con GitHub:::::::::::::::::
@@ -96,7 +97,6 @@ git show-ref --tags : te muestra el tag y el hash del commit
 git tag : te muestra las etiqueta que hay
 git tag -a v0.1 -m "resultado de las primeras clases del curso" 902bc21 : añade un tag a una versión de todo tu historial de versiones, "-a" añadir, despues va el nombre "v0.1", -m para colocar el mensaje de acontinuacion, el mensaje, y el hash de la versión (¿de dónde saco el hash? ese número, del git log, cada commit tiene su número hash, se copia y se pega)
 git tag -d nombre-del-tag : borra ese tag (borra esa etiqueta) de manera local
-gitk : te abre las ramas en un software visual
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::::::::Comando generales para usar la consola de linux:::::::::::::::::
