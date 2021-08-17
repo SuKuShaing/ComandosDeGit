@@ -77,7 +77,7 @@ gitk : te abre las ramas en un software visual
 ::::::::Comandos para usar con GitHub:::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-git clone url-del-repositorio-en-github : para clonar un proyecto publico
+git clone url-del-repositorio-en-github : para clonar un proyecto publico, SI YA CREASTE EL REPOSITORIO TUYO USA ESTO PARA LLEVARLO A TU ENTORNO LOCAL Y QUEDAN CONECTADOS PARA ENVIAR Y RECIBIR
 git pull origin main : para traer lo que esta el servidor, uncluyendo las actualizaciones, de la rama origin (la principal en github) a master (la principal acá)
 git pull origin main --allow-unrelated-histories : para fusionar la historia de mi git a la historia de github ¡¡¡ESTE ES EL COMANDO PARA FUSIONAR LA HISTORIA CUANDO NO CONECTA TU REPOSITORIO LOCAL CON EL DE GITHUB!!!
 git pull origin master --allow-unrelated-histories : para fusionar la historia de mi github a la de mi git, para cuando no se quieren fusionar, hay que forzarlo
