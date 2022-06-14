@@ -1,0 +1,70 @@
+atajos de teclado: 
+- con las fechas de subir y bajar puedes ver los comandos utilizados previamente, 
+- con la tecla Tab puedes completar el nombres de la carpeta en la que estás escribiendo
+- ctrl + C, terminas un proceso que esté ejecutando la terminal
+
+ls: lista archivos dentro de la carpeta en la que estes
+ls -l: listar archivos con detalles, fecha, hora, peso, etc
+ls -lh: listar archivos con detalles de manera más lejible más humana
+ls -la: listar archivos con detalles incluyendo los ocultos
+ls -lS: listar archivos con detalles mostrando los pesos (sizes)(" S " en mayuscula )
+ls -lSh: listar archivos con detalles mostrando los pesos de manera más lejible
+ls -lr: listar archivos ordenados al revez 
+ls -lSarh: se pueden convinar
+ls *.[extensión de archivo] : filtra la lista segun la extensión (ejemplo: ls *.txt => muestra solo los archivos txt)
+
+cd : te mueves la carpeta raiz " ~ "
+cd [nombre carpeta] : abre o te metes dentro de esa carpeta o directorio
+cd .. : subes en el directorio, es decir, vuelves a la carpeta que contiene a la que estas actualmente
+cd ../.. : subes 2 directorios, es decir, vuelves a la carpeta que contiene a la contiene en la que estas actualmente, se pueden usar " ../../../../ " cuantas veces quieras
+
+clear : para limpiar la pantalla de la terminal o "ctrl + l(ele)"
+
+pwd : te dice la ruta de donde estas
+
+file [nombre del archivo] : te dice como está hecho ese archivo
+
+tree : se supone que te muestra las carpetas en arbol (en mi pc windows no lo hizo, trabajo con la git bash)
+tree -L 2 : te muestra 2 nivels de carpetas y no todas las subcarpetas que tengas en la carpeta en que estes
+
+mkdir [nombre de la carpeta a crear] : crea una carpeta o directorio, intentar no cupar espacio " ", sí lo ocupas, tienes que "poner el nombre de la carpeta entre comillas"
+mkdir [NewCarp1] [NewCarp2] [NewCarp3] : puedes crear varias carpetas a la vez
+
+touch [nombre del archivo a crear] : crea un archivo, puedes colocarle extensión al archivo
+touch [NewFile1] [NewFile2] [NewFile3] : puedes crear varios archivos a la vez
+
+cp [Nombre del archivo a copiar] [nombre del archivo copiado] : copia archivos
+
+mv [nombre del archivo] [Ruta a quedar (puede ser " .. ")] : mueve el archivo al directorio deseado
+mv [nombre a cambiar el nombre] [nombre nuevo del archivo] : Cambia el nombre del archivo, sino se le especifica directorio y se le coloca otro nombre
+
+rm [nombre del archivo] : ¡Cuidado! este comando borra permanentemente el archivo
+rm -i [nombre del archivo] : te pregunta si quieres borrar permanentemente el archivo, debes responder con " y ", para responder afirmativamente, cualquier otra tecla que presiones, no borra el archivo
+rm -r [nombre del directorio] : -r de recursivo, para borrar directorios y todo su contenido
+rm -r [NameDir1] [NameDir12 [NameDir3] : puedes borrar varios a la vez
+rm -f [nombre del archivo] : para forzar el borrado del archivo aunque se esté ejecutando
+rm -rif [nombre del directorio] : se pueden convinar las flag
+
+head [nombre del archivo] : para ver las primeras 10 lineas de texto del archivo seleccionado
+head [nombre del archivo] -n [numero natural] : para ver N primeras lineas de texto del archivo seleccionado
+
+tail [nombre del archivo] : para ver las ultimas 10 lineas de texto del archivo seleccionado
+tail [nombre del archivo] -n [numero natural] : para ver N ultimas lineas de texto del archivo seleccionado
+
+less [nombre del archivo] : para ver el archivo de texto, se despliega una interfaz que te muestra el archivo en cuestion, con " / " puedes buscar palabras dentro del archivo de texto, con " q " sales de esa interfaz y vuelves a la terminal
+
+open [nombre del archivo] : (en mac) para abrir el archivo 
+xdg-open [nombre del archivo] : (en linux) para abrir el archivo, se crea un proceso y no se puede escribir hasta que lo mates, con Ctrl + C | Pd: no me funciono en windows con mi GIT bash
+
+nautilus : para abrir la carpeta como interfaz grafica
+nautilus [ruta de la carpeta] : para abrir la carpeta como interfaz grafica
+
+type [comando shell: ejemplo: cd] : te dirá el tipo de comando que es, en este caso, "type cd" te dirá que es "cd is a shell builtin"
+
+alias [[nombre del alias]="[la instrucción shell]" : ejemplo : l="ls -lh" ]: crea un alias de una función shell más larga, que se puede ejecutar con el alias, al cerrar la terminal se borra el alias
+
+help [comando shell: ejemplo: cd] : te dirá todo lo que puedes hacer con cd
+[comando shell: ejemplo: cd] --help : te dirá todo lo que puedes hacer con cd
+man [comando shell: ejemplo: cd] : te da el manual de uso de cd
+info [comando shell: ejemplo: cd] : te da el información de uso de cd
+whatis [comando shell: ejemplo: cd] : te da el información de uso de cd
