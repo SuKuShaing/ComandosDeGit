@@ -5,6 +5,7 @@
 - con las fechas de subir y bajar puedes ver los comandos utilizados previamente, 
 - con la tecla Tab puedes completar el nombres de la carpeta en la que estás escribiendo
 - ctrl + C, terminas un proceso que esté ejecutando la terminal
+- con la tecla " q " sales de archivos de texto que estes viendo
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::::::::::::::::: Lista de comandos de la terminal :::::::::::::::::::::
@@ -18,7 +19,13 @@ ls -lS: listar archivos con detalles mostrando los pesos (sizes)(" S " en mayusc
 ls -lSh: listar archivos con detalles mostrando los pesos de manera más lejible
 ls -lr: listar archivos ordenados al revez 
 ls -lSarh: se pueden convinar
-ls *.[extensión de archivo] : filtra la lista segun la extensión (ejemplo: ls *.txt => muestra solo los archivos txt)
+ls *.[extensión de archivo] : filtra la lista segun la extensión (ejemplo: ls *.txt => muestra solo los archivos txt) {Estas son las wildcards, puedes bucar más en internet bajo ese nombre, son para filtrar}
+ls [nombre o parte del nombre del archivo]* : filtra la lista segun los nombres que tengan esas letras en su nombre, independiente de la extensión (ejemplo: ls datos* => muestra los archivos que tengan la letras "datos" en su nombre (datos1.txt datos123.xlsm)) {Estas son las wildcards, puedes bucar más en internet bajo ese nombre, son para filtrar}
+ls [nombre o parte del nombre del archivo]? : al igual que arriba aunque solo traerá los que tengan un solo caracter, que reemplace al signo " ? " (en este caso " datos1 ") {Estas son las wildcards, puedes bucar más en internet bajo ese nombre, son para filtrar}
+ls [[:upper:]]* : para buscar los archivos que empiecen solo por mayuscula, buscará hasta 2 niveles de carpetas {Estas son las wildcards, puedes bucar más en internet bajo ese nombre, son para filtrar}
+ls -d [[:upper:]]* : solo mostrará los directorios que empiecen por mayucula {Estas son las wildcards, puedes bucar más en internet bajo ese nombre, son para filtrar}
+ls [[:lower:]]* : para buscar los archivos que empiecen solo por minuscula, buscará hasta 2 niveles de carpetas {Estas son las wildcards, puedes bucar más en internet bajo ese nombre, son para filtrar}
+ls [ad] : buscará todos los archivos y carpeta que inicien con "a" y con "d"{Estas son las wildcards, puedes bucar más en internet bajo ese nombre, son para filtrar}
 
 cd : te mueves la carpeta raiz " ~ "
 cd [nombre carpeta] : abre o te metes dentro de esa carpeta o directorio
