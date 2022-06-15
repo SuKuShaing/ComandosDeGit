@@ -1,7 +1,14 @@
-atajos de teclado: 
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::: Atajos de Teclado :::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+ 
 - con las fechas de subir y bajar puedes ver los comandos utilizados previamente, 
 - con la tecla Tab puedes completar el nombres de la carpeta en la que estás escribiendo
 - ctrl + C, terminas un proceso que esté ejecutando la terminal
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::: Lista de comandos de la terminal :::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ls: lista archivos dentro de la carpeta en la que estes
 ls -l: listar archivos con detalles, fecha, hora, peso, etc
@@ -68,3 +75,24 @@ help [comando shell: ejemplo: cd] : te dirá todo lo que puedes hacer con cd
 man [comando shell: ejemplo: cd] : te da el manual de uso de cd
 info [comando shell: ejemplo: cd] : te da el información de uso de cd
 whatis [comando shell: ejemplo: cd] : te da el información de uso de cd
+
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::Comando generales para usar la consola de linux:::::::::::::::::
+evaluar de aquí cuales son validas
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+alias arbolito="git log --all --graph --decorate --oneline" : creo un atajo de ese comando largo, ahora se almacena en arbolito
+cat archivo.ext : para ver el archivo en el mismo visor de linux
+cd .. : para volver a la carpeta de arriba
+cd nombre-de-la-carpeta : para entrar a la carpeta 
+clear : para limpiar la pantalla
+code archivo.ext : para abrir el archivo en VSC
+ls : para listar los archivos en la carpeta en la que estas
+mkdir nombre-del-directorio : crear un directorio
+nano nombre-del-archivo : para crear un archivo
+pwd : para ver en la carpeta en la que estas
+rm nombre-del-archivo : para eliminar ese archivo
+rm --help : para ver todas las opciones que tiene el comando
+touce archivo.ext : Si el archivo no existe lo crea vacío y si existe se modifica la fecha con actual del sistema

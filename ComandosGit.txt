@@ -97,24 +97,6 @@ git tag : te muestra las etiqueta que hay
 git tag -a v0.1 -m "resultado de las primeras clases del curso" 902bc21 : añade un tag a una versión de todo tu historial de versiones, "-a" añadir, despues va el nombre "v0.1", -m para colocar el mensaje de acontinuacion, el mensaje, y el hash de la versión (¿de dónde saco el hash? ese número, del git log, cada commit tiene su número hash, se copia y se pega)
 git tag -d nombre-del-tag : borra ese tag (borra esa etiqueta) de manera local
 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-::::::::Comando generales para usar la consola de linux:::::::::::::::::
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-alias arbolito="git log --all --graph --decorate --oneline" : creo un atajo de ese comando largo, ahora se almacena en arbolito
-cat archivo.ext : para ver el archivo en el mismo visor de linux
-cd .. : para volver a la carpeta de arriba
-cd nombre-de-la-carpeta : para entrar a la carpeta 
-clear : para limpiar la pantalla
-code archivo.ext : para abrir el archivo en VSC
-ls : para listar los archivos en la carpeta en la que estas
-mkdir nombre-del-directorio : crear un directorio
-nano nombre-del-archivo : para crear un archivo
-pwd : para ver en la carpeta en la que estas
-rm nombre-del-archivo : para eliminar ese archivo
-rm --help : para ver todas las opciones que tiene el comando
-touce archivo.ext : Si el archivo no existe lo crea vacío y si existe se modifica la fecha con actual del sistema
-
 ::::::::::::::::::::::::::::::::::::::::::::::::
 ::::::::para crear el gitignore:::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
