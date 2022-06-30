@@ -12,7 +12,7 @@
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ls: lista archivos dentro de la carpeta en la que estes
-ls -l: listar archivos con detalles, fecha, hora, peso, etc
+ls -l: listar archivos con detalles, fecha, hora, peso, permisos, etc
 ls -lh: listar archivos con detalles de manera más lejible más humana
 ls -la: listar archivos con detalles incluyendo los ocultos
 ls -lS: listar archivos con detalles mostrando los pesos (sizes)(" S " en mayuscula )
@@ -50,7 +50,8 @@ mkdir [NewCarp1] [NewCarp2] [NewCarp3] : puedes crear varias carpetas a la vez
 
 touch [nombre del archivo a crear] : crea un archivo, puedes colocarle extensión al archivo, si existe se modifica la fecha con actual del sistema
 touch [NewFile1] [NewFile2] [NewFile3] : puedes crear varios archivos a la vez
-
+> [nombre del archivo a crear] : crea un archivo, puedes colocarle extensión al archivo
+ 
 cp [Nombre del archivo a copiar] [nombre del archivo copiado] : copia archivos
 
 mv [nombre del archivo] [Ruta a quedar (puede ser " .. ")] : mueve el archivo al directorio deseado
@@ -91,6 +92,8 @@ echo "[texto a colocar]" : te responde con el texto colocado entre comillas
 
 cat [archivo.ext] : para ver el archivo en el mismo visor de linux
 cat < [archivo.ext] : para ver el archivo en el mismo visor de linux, el menor que es un "standar output" es para que te muestre ese algo la terminal 
+cat > [archivo.ext] : para modificar un archivo existente, con " ctrl + D " sales del editor y vuelves a la terminal
+
 
  | : (el simbolo de la barra vertical) redirige el standar output a un standar input de otro comando, entonces, lo que arroja como resultado un comando, se lo pasamos a otro, por ejemplo: $ "ls -lh | less" arroja como resulta la lista larga de manera humana, pero la estoy viendo como texto y usar / para buscar, como un archivo abierto con less 
  ; : (el simbolo de punto y coma) ejecuta una instrucción primero, despues la otra y la que sigue (ejemplo: $ ls; mkdir holi; cal => hace el listado de carpetas, despues crea la carpeta, despues muestra un calendario)
@@ -103,3 +106,7 @@ code archivo.ext : para abrir el archivo en VSC (visual estudio code)
 
 nano : editor de archivos de texto en la consola
 nano nombre-del-archivo : para editar un archivo, sí no existe lo crea
+
+chmod [permisos en formato octal] [nombre del archivo] : cambia los permisos de un archivo, los permisos deben estar escritos en cualquier modo
+
+whoami : te dice el usuario que estas usando
