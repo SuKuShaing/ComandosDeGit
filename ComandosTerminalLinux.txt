@@ -94,13 +94,6 @@ cat [archivo.ext] : para ver el archivo en el mismo visor de linux
 cat < [archivo.ext] : para ver el archivo en el mismo visor de linux, el menor que es un "standar output" es para que te muestre ese algo la terminal 
 cat > [archivo.ext] : para modificar un archivo existente, con " ctrl + D " sales del editor y vuelves a la terminal
 
-
- | : (el simbolo de la barra vertical) redirige el standar output a un standar input de otro comando, entonces, lo que arroja como resultado un comando, se lo pasamos a otro, por ejemplo: $ "ls -lh | less" arroja como resulta la lista larga de manera humana, pero la estoy viendo como texto y usar / para buscar, como un archivo abierto con less 
- ; : (el simbolo de punto y coma) ejecuta una instrucción primero, despues la otra y la que sigue (ejemplo: $ ls; mkdir holi; cal => hace el listado de carpetas, despues crea la carpeta, despues muestra un calendario)
- & : (el simbolo de aspersand) ejecuta los comandos de manera paralela, en diferentes hilos del procesador (ejemplo: $ ls & date & echo "hihi" => arroja los números de los procesos donde se va a ejecutar, se ejecutan, y se entregan en orden de cual termina primero, cierra los hilos de trabajo)
- && : (el simbolo de doble aspersand) es un condicional, solo si se ejecutó de manera adecuada el primer comando se ejecutará el segundo y/o tercero sí lo hay
- || : (el simbolo de doble barra vertical) es un " or " es decir ejecuta los comandos, hasta que uno sea exitoso, se ejecuta ese exitoso y los demas no se ejecutan, (ejemplo: $ cd NoExitDir || touch archivo.txt || echo "Archivo creado" => dado que la carpeta NoExitDir no existe, no se mueve a ese directorio, es decir, falla, por ende se ejecuta el segundo comando y se crea el archivo, dado que ese fue exitoso el 3er comando no se ejecuto)
-
 cal: devuelve un calendario en la terminal (en mi pc windows no lo hizo, trabajo con la git bash, en la del profe si funcionó)
 code archivo.ext : para abrir el archivo en VSC (visual estudio code)
 
@@ -110,3 +103,32 @@ nano nombre-del-archivo : para editar un archivo, sí no existe lo crea
 chmod [permisos en formato octal] [nombre del archivo] : cambia los permisos de un archivo, los permisos deben estar escritos en cualquier modo
 
 whoami : te dice el usuario que estas usando
+
+su root : para acceder a super usuario, te pedirá la clave
+
+sudo [comando que necesite permisos de root] : para ser root temporalmente, sin permanecer en el estado root
+
+passwd : para cambiar la contraseña del usuario actual
+
+which [comando binario] : [ejemplo: which code  =>  arroja la dirección de donde está el arhivo binario que se ejecutará] busca las rutas de los comandos binarios (programas que se ejecutan en la terminal)
+
+find [directorio] [que parametro busco] [parametro] : (Ejemplo: $ find ./ -name file => busca todos los archivos llamados file en el pc) va a buscar un archivo segun elparametro dado
+($ find ./ -name *.txt | less) para obtener el resultrado como en texto en el que se puede buscar
+($ find ./ -type d -name Documents) : para buscar por tipo y puede ser " d " (de directorio) y " f " (de file)
+($ find ./ -type f -name *.log) :
+(find ./ -size 20M) : busca todo los archivos mayores a 20 Mb en el pc
+
+
+
+
+
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::: Lista de pipe operartor :::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+ | : (el simbolo de la barra vertical) redirige el standar output a un standar input de otro comando, entonces, lo que arroja como resultado un comando, se lo pasamos a otro, por ejemplo: $ "ls -lh | less" arroja como resulta la lista larga de manera humana, pero la estoy viendo como texto y usar / para buscar, como un archivo abierto con less 
+ ; : (el simbolo de punto y coma) ejecuta una instrucción primero, despues la otra y la que sigue (ejemplo: $ ls; mkdir holi; cal => hace el listado de carpetas, despues crea la carpeta, despues muestra un calendario)
+ & : (el simbolo de aspersand) ejecuta los comandos de manera paralela, en diferentes hilos del procesador (ejemplo: $ ls & date & echo "hihi" => arroja los números de los procesos donde se va a ejecutar, se ejecutan, y se entregan en orden de cual termina primero, cierra los hilos de trabajo)
+ && : (el simbolo de doble aspersand) es un condicional, solo si se ejecutó de manera adecuada el primer comando se ejecutará el segundo y/o tercero sí lo hay
+ || : (el simbolo de doble barra vertical) es un " or " es decir ejecuta los comandos, hasta que uno sea exitoso, se ejecuta ese exitoso y los demas no se ejecutan, (ejemplo: $ cd NoExitDir || touch archivo.txt || echo "Archivo creado" => dado que la carpeta NoExitDir no existe, no se mueve a ese directorio, es decir, falla, por ende se ejecuta el segundo comando y se crea el archivo, dado que ese fue exitoso el 3er comando no se ejecuto)
