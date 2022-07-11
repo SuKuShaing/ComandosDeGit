@@ -13,6 +13,8 @@
 
 ls: lista archivos dentro de la carpeta en la que estes
 ls -l: listar archivos con detalles, fecha, hora, peso, permisos, etc
+ls -a: Lista los archivos incluyendo los ocultos
+ls -S: Lista los archivos por tamaño, de mayor a menor
 ls -lh: listar archivos con detalles de manera más lejible más humana
 ls -la: listar archivos con detalles incluyendo los ocultos
 ls -lS: listar archivos con detalles mostrando los pesos (sizes)(" S " en mayuscula )
@@ -50,9 +52,9 @@ mkdir [NewCarp1] [NewCarp2] [NewCarp3] : puedes crear varias carpetas a la vez
 
 touch [nombre del archivo a crear] : crea un archivo, puedes colocarle extensión al archivo, si existe se modifica la fecha con actual del sistema
 touch [NewFile1] [NewFile2] [NewFile3] : puedes crear varios archivos a la vez
-> [nombre del archivo a crear] : crea un archivo, puedes colocarle extensión al archivo
  
 cp [Nombre del archivo a copiar] [nombre del archivo copiado] : copia archivos
+cp -r [Nombre de la carpeta a copiar] [nombre de la carpeta copiada] : Copia una carpeta 
 
 mv [nombre del archivo] [Ruta a quedar (puede ser " .. ")] : mueve el archivo al directorio deseado
 mv [nombre a cambiar el nombre] [nombre nuevo del archivo] : Cambia el nombre del archivo, sino se le especifica directorio y se le coloca otro nombre
@@ -71,6 +73,11 @@ tail [nombre del archivo] : para ver las ultimas 10 lineas de texto del archivo 
 tail [nombre del archivo] -n [numero natural] : para ver N ultimas lineas de texto del archivo seleccionado
 
 less [nombre del archivo] : para ver el archivo de texto, se despliega una interfaz que te muestra el archivo en cuestion, con " / " puedes buscar palabras dentro del archivo de texto, con " q " sales de esa interfaz y vuelves a la terminal
+
+wc [nombre del archivo] : Te muestra en el siguiente orden, cantidad de líneas tiene el archivo, cuantas palabras y el número de bits tiene un archivo
+wc -l [nombre del archivo] : solo te muestra el número de lineas 
+wc -w [nombre del archivo] : solo te muestra el número de palabras
+wc -c [nombre del archivo] : solo te muestra el número de bit
 
 open [nombre del archivo] : (en mac) para abrir el archivo 
 xdg-open [nombre del archivo] : (en linux) para abrir el archivo, se crea un proceso y no se puede escribir hasta que lo mates, con Ctrl + C | Pd: no me funciono en windows con mi GIT bash
@@ -95,7 +102,7 @@ cat < [archivo.ext] : para ver el archivo en el mismo visor de linux, el menor q
 cat > [archivo.ext] : para modificar un archivo existente, con " ctrl + D " sales del editor y vuelves a la terminal
 
 cal: devuelve un calendario en la terminal (en mi pc windows no lo hizo, trabajo con la git bash, en la del profe si funcionó)
-code archivo.ext : para abrir el archivo en VSC (visual estudio code)
+code [archivo.ext] : para abrir el archivo en VSC (visual estudio code)
 
 nano : editor de archivos de texto en la consola
 nano nombre-del-archivo : para editar un archivo, sí no existe lo crea
@@ -115,14 +122,31 @@ which [comando binario] : [ejemplo: which code  =>  arroja la dirección de dond
 find [directorio] [que parametro busco] [parametro] : (Ejemplo: $ find ./ -name file => busca todos los archivos llamados file en el pc) va a buscar un archivo segun elparametro dado
 ($ find ./ -name *.txt | less) para obtener el resultrado como en texto en el que se puede buscar
 ($ find ./ -type d -name Documents) : para buscar por tipo y puede ser " d " (de directorio) y " f " (de file)
-($ find ./ -type f -name *.log) :
+($ find ./ -type f -name *.log) : (" ./ " con este punto y slash buscas en el directorio donde estás)
 (find ./ -size 20M) : busca todo los archivos mayores a 20 Mb en el pc
 
+tar -czvf [nombre del archivo].tar.gz [nombre del archivo comprimido] : Comprime una carpeta
+tar -xzvf [nombre del archivo].tar.gz : Descomprime la carpeta
 
+grep [palabra buscada] [nombre del archivo] : Busca en ese archivo la palabra que le especifiques y devuelve la frase en la que está
+grep -i [palabra buscada] [nombre del archivo] : sin la "-i" discrimina si es mayuscula o minuscula, ahora al agregar "-i" no hace diferencia y muestra ambas, busca en ese archivo la palabra que le especifiques, devuleve la linea
+grep -c [palabra buscada] [nombre del archivo] : cuenta cuantas veces aparece el termino buscado
+grep -v [palabra buscada] [nombre del archivo] : busca todos las lineas que no contengan la palabra buscada
 
+:::::::::::::::::::::::: comandos para red :::::::::::::::::::::::
 
+ipconfig : te muestra los detalles de tu red
 
+ping [sitio web] : (ping www.google.com) te muestra los ping a la pagina y el tiempo de respuesta, sí no se detiene solo, puedes pararlo con ctrl + C
 
+curl [sitio web] : (curl www.google.com) te responde con el html de la web
+
+wget [sitio web] : (wget www.google.com) descargas el sitio web o la dirección al pc
+
+traceroute [sitio web] : (traceroute www.google.com) te muestra todas las computadoras por donde pasa tu petición
+
+netstat : te muestra las conexiónes activas 
+netstat -i : te muestra los dispositivos de red
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :::::::::::::::::::::::: Lista de pipe operartor :::::::::::::::::::::::
@@ -132,3 +156,4 @@ find [directorio] [que parametro busco] [parametro] : (Ejemplo: $ find ./ -name 
  & : (el simbolo de aspersand) ejecuta los comandos de manera paralela, en diferentes hilos del procesador (ejemplo: $ ls & date & echo "hihi" => arroja los números de los procesos donde se va a ejecutar, se ejecutan, y se entregan en orden de cual termina primero, cierra los hilos de trabajo)
  && : (el simbolo de doble aspersand) es un condicional, solo si se ejecutó de manera adecuada el primer comando se ejecutará el segundo y/o tercero sí lo hay
  || : (el simbolo de doble barra vertical) es un " or " es decir ejecuta los comandos, hasta que uno sea exitoso, se ejecuta ese exitoso y los demas no se ejecutan, (ejemplo: $ cd NoExitDir || touch archivo.txt || echo "Archivo creado" => dado que la carpeta NoExitDir no existe, no se mueve a ese directorio, es decir, falla, por ende se ejecuta el segundo comando y se crea el archivo, dado que ese fue exitoso el 3er comando no se ejecuto)
+ > [nombre del archivo a crear] : (el simbolo de mayor que) crea un archivo, puedes colocarle extensión al archivo
