@@ -119,19 +119,31 @@ passwd : para cambiar la contraseña del usuario actual
 
 which [comando binario] : [ejemplo: which code  =>  arroja la dirección de donde está el arhivo binario que se ejecutará] busca las rutas de los comandos binarios (programas que se ejecutan en la terminal)
 
+ln [ruta del directorio] : es una forma de crear un link a un objetivo
+ln -s [ruta del directorio] [nombre del acceso direto]: para crear un acceso directo (yo que estoy en bach, me copio la carpeta origina a la posición en la que estaba)
+
+:::::::::::::::::::::::: comandos para buscar :::::::::::::::::::::::
+
 find [directorio] [que parametro busco] [parametro] : (Ejemplo: $ find ./ -name file => busca todos los archivos llamados file en el pc) va a buscar un archivo segun elparametro dado
 ($ find ./ -name *.txt | less) para obtener el resultrado como en texto en el que se puede buscar
 ($ find ./ -type d -name Documents) : para buscar por tipo y puede ser " d " (de directorio) y " f " (de file)
 ($ find ./ -type f -name *.log) : (" ./ " con este punto y slash buscas en el directorio donde estás)
 (find ./ -size 20M) : busca todo los archivos mayores a 20 Mb en el pc
 
-tar -czvf [nombre del archivo].tar.gz [nombre del archivo comprimido] : Comprime una carpeta
-tar -xzvf [nombre del archivo].tar.gz : Descomprime la carpeta
-
 grep [palabra buscada] [nombre del archivo] : Busca en ese archivo la palabra que le especifiques y devuelve la frase en la que está
 grep -i [palabra buscada] [nombre del archivo] : sin la "-i" discrimina si es mayuscula o minuscula, ahora al agregar "-i" no hace diferencia y muestra ambas, busca en ese archivo la palabra que le especifiques, devuleve la linea
 grep -c [palabra buscada] [nombre del archivo] : cuenta cuantas veces aparece el termino buscado
 grep -v [palabra buscada] [nombre del archivo] : busca todos las lineas que no contengan la palabra buscada
+
+:::::::::::::::::::::::: comandos de compresión :::::::::::::::::::::::
+
+tar -cvf [NombreDelArchivoComprimido.tar] [carpeta o archivo a comprimir]: comprime archivos, flag -c = comprimir, -v = vervorea (muestra en pantalla lo que está comprimiendo) -f = para decirle que es un archivo (ejemplo: tar -cvf test.tar test/)
+tar -czvf [nombre del archivo].tar.gz [nombre del archivo comprimido] : -z = para darle a la compresión un codec de .gz que es ideal para texto plano
+tar -x [nombre del archivo a descomprimir].tar : Descomprime un .tar
+tar -xzvf [nombre del archivo a descomprimir].tar.gz : Descomprime un .tar.gz 
+
+zip -r [NombreDelArchivoComprimido.zip] [carpeta o archivo a comprimir] : comprime en formato .zip, -r = recursivo (comprime a los archivos internos, usar con los directorios)
+unzip [nombre del archivo a descomprimir].zip : descomprime el archivo
 
 :::::::::::::::::::::::: comandos para red :::::::::::::::::::::::
 
