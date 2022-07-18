@@ -6,6 +6,7 @@
 - con la tecla Tab puedes completar el nombres de la carpeta en la que estás escribiendo
 - ctrl + C, terminas un proceso que esté ejecutando la terminal
 - con la tecla " q " sales de archivos de texto que estes viendo
+- ctrol + Z, envias un proceso activo a background (segundo plano)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::::::::::::::::: Lista de comandos de la terminal :::::::::::::::::::::
@@ -39,6 +40,7 @@ cd .. : subes en el directorio, es decir, vuelves a la carpeta que contiene a la
 cd ../.. : subes 2 directorios, es decir, vuelves a la carpeta que contiene a la contiene en la que estas actualmente, se pueden usar " ../../../../ " cuantas veces quieras
 
 clear : para limpiar la pantalla de la terminal o "ctrl + l(ele)"
+exit: para salir de la consola, se cierra la terminal
 
 pwd : te dice la ruta o carpeta de donde estas
 
@@ -99,7 +101,7 @@ echo "[texto a colocar]" : te responde con el texto colocado entre comillas
 
 cat [archivo.ext] : para ver el archivo en el mismo visor de linux
 cat < [archivo.ext] : para ver el archivo en el mismo visor de linux, el menor que es un "standar output" es para que te muestre ese algo la terminal 
-cat > [archivo.ext] : para modificar un archivo existente, con " ctrl + D " sales del editor y vuelves a la terminal
+cat > [archivo.ext] : para modificar un archivo existente, con " ctrl + D " sales del editor y vuelves a la terminal, usar dos veces el comando para salir sí no sales a la primera
 
 cal: devuelve un calendario en la terminal (en mi pc windows no lo hizo, trabajo con la git bash, en la del profe si funcionó)
 code [archivo.ext] : para abrir el archivo en VSC (visual estudio code)
@@ -121,6 +123,14 @@ which [comando binario] : [ejemplo: which code  =>  arroja la dirección de dond
 
 ln [ruta del directorio] : es una forma de crear un link a un objetivo
 ln -s [ruta del directorio] [nombre del acceso direto]: para crear un acceso directo (yo que estoy en bach, me copio la carpeta origina a la posición en la que estaba)
+
+ps : te permite ver los procesos corriendo en el momento en la terminal, te muestra los PID (con es número puedes matar el proceso)
+kill [PID del proceso] : para terminar procesos que están corriendo en primer plano, no sirve para matar procesos en background
+top : te muestra todos los procesos que están corriendo en el pc, al presionar " h " te muestra la ayuda, al presionar " u " se puede filtra por usuario
+jobs : para ver los procesos en segundo plano de la terminal, te muestra a la izquierda el número del proceso
+fg [número del proceso que muestra en jobs] : puedes traer ese proceso que está en segundo plano al primer plano de la terminal
+bg [número del proceso que muestra en jobs] : enviamos un proceso a background
+ctrl + Z : enviamos un proceso actual que se está ejecutando en consola a background
 
 :::::::::::::::::::::::: comandos para buscar :::::::::::::::::::::::
 
@@ -165,7 +175,7 @@ netstat -i : te muestra los dispositivos de red
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
  | : (el simbolo de la barra vertical) redirige el standar output a un standar input de otro comando, entonces, lo que arroja como resultado un comando, se lo pasamos a otro, por ejemplo: $ "ls -lh | less" arroja como resulta la lista larga de manera humana, pero la estoy viendo como texto y usar / para buscar, como un archivo abierto con less 
  ; : (el simbolo de punto y coma) ejecuta una instrucción primero, despues la otra y la que sigue (ejemplo: $ ls; mkdir holi; cal => hace el listado de carpetas, despues crea la carpeta, despues muestra un calendario)
- & : (el simbolo de aspersand) ejecuta los comandos de manera paralela, en diferentes hilos del procesador (ejemplo: $ ls & date & echo "hihi" => arroja los números de los procesos donde se va a ejecutar, se ejecutan, y se entregan en orden de cual termina primero, cierra los hilos de trabajo)
+ & : (el simbolo de aspersand) ejecuta los comandos de manera paralela y en el background (en segundo plano), en diferentes hilos del procesador (ejemplo: $ ls & date & echo "hihi" => arroja los números de los procesos donde se va a ejecutar, se ejecutan, y se entregan en orden de cual termina primero, cierra los hilos de trabajo)
  && : (el simbolo de doble aspersand) es un condicional, solo si se ejecutó de manera adecuada el primer comando se ejecutará el segundo y/o tercero sí lo hay
  || : (el simbolo de doble barra vertical) es un " or " es decir ejecuta los comandos, hasta que uno sea exitoso, se ejecuta ese exitoso y los demas no se ejecutan, (ejemplo: $ cd NoExitDir || touch archivo.txt || echo "Archivo creado" => dado que la carpeta NoExitDir no existe, no se mueve a ese directorio, es decir, falla, por ende se ejecuta el segundo comando y se crea el archivo, dado que ese fue exitoso el 3er comando no se ejecuto)
  > [nombre del archivo a crear] : (el simbolo de mayor que) crea un archivo, puedes colocarle extensión al archivo
