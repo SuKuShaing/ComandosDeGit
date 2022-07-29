@@ -132,6 +132,9 @@ fg [número del proceso que muestra en jobs] : puedes traer ese proceso que est�
 bg [número del proceso que muestra en jobs] : enviamos un proceso a background
 ctrl + Z : enviamos un proceso actual que se está ejecutando en consola a background
 
+vim : es un editor de texto dentro de la consola, para salir de él, hay que presionar " :q + tecla Enter ", para guardar un archivo " :w " y guardas, para guardar y salir " :wq " y listo
+vim [nombre del archivo.ExtensiónDeTexto] : el comando más el nombre del archivo a crear y editar, la extensión puede ser cualquier extensión de texto, txt, html, js, css, py, etc; el archivo se creará en la carpeta en la que estés posicionado, con vim tienes el modo escritura y normal, por defecto entras en escritura, con ese modo puedes escribir, para cambiar de modo puedes presionar " ESC " y pasas al modo normal, ahí puedes buscar con " / " al igual que less
+
 :::::::::::::::::::::::: comandos para buscar :::::::::::::::::::::::
 
 find [directorio] [que parametro busco] [parametro] : (Ejemplo: $ find ./ -name file => busca todos los archivos llamados file en el pc) va a buscar un archivo segun elparametro dado
