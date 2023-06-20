@@ -110,8 +110,8 @@ results/
 :::::::::::::::::::::::::::::::::::::::::
 //Ordenados segun el orden en que deben ser usados ↓
 
-ssh-keygen -t rsa -b 4096 -C "mail-usado-en-github" : para generar una llave publica-privada, "-t" es para elegir el algoritmo, "rsa" es el algoritmo de generación, "-b" para elegir la complejidad, "4096" es la cantidad de digitos de nuestra llave numerica, "-C" tiene que ser en mayuscula, y nuestro email de github (si es que nos vamos a conectar con ese servicio)
-//Debe ser creada esta llave en tu carpeta local personal, verificas que es correcto donde se esta guardando, dando Enter, y despues puedes crear una contraseña para acceder de nuevo (no es obligatoria), yo doy Enter y listo
+ssh-keygen -t rsa -b 4096 -C "mail-usado-en-github" : para generar una llave publica-privada, "-t" es para elegir el algoritmo, "rsa" es el algoritmo de generación, "-b" para elegir la complejidad, "4096" es la cantidad de digitos de nuestra llave numerica, "-C" tiene que ser en mayuscula, y nuestro email (sin comillas) de github (si es que nos vamos a conectar con ese servicio)
+//Debe ser creada esta llave en tu carpeta local personal, verificas que es correcto donde se esta guardando, dando Enter, y despues puedes crear una contraseña para acceder de nuevo (no es obligatoria), yo doy Enter, varios enter despues y listo
 eval $(ssh-agent -s) : comando para hacer correr un verificador de llaves publicas y privadas, "pid" process id, para que el pc identifique el proceso
 //El número que arroja es distinto en cada persona
 //~ es una varible de /c/Users/Seba-PC, ~ es una ruta
