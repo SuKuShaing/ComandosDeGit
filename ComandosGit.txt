@@ -18,6 +18,7 @@ git checkout aqui-va-el-número-de-la-version archivo.ext : para ver como era es
 git checkout aqui-va-el-número-de-la-version archivo.ext : trae un archivo como rama, uno lo puede editar y despues enviar a la linea master
 git checkout master archivo.ext : para enviar el archivo editado como rama a la linea master
 git checkout master archivo.ext : para volver a la ultima version que estaba en stagin (cuando se envia con add)
+git checkout -- . : sí, son dos guiones y un punto, de esa forma volvemos todos los archivos al estado del último commit de la rama en la que nos encontramos 
 git checkout nombre-de-la-rama : nos movimos de MASTER a la BRACNH (a la rama)
 git checkout -b nombre-de-la-rama : este comando agrupa dos comandos de git y los hace en uno solo, el primero git branch nombre-rama-a-crear (para crear la rama) y el segundo git checkout nombre-de-la-rama-creada-recien (para movernos a esa rama), al final quedamos posicionados en la rama nueva
 git cherry-pick hash-de-la-rama-a-traer : Para traer un commit de una rama, y coloco el hash del commit, ese se optiene con "git log --oneline"
