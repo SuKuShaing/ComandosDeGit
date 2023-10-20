@@ -53,7 +53,7 @@ git reflog : para ver toda la historia de movimientos y comandos, no solo los co
 git reset aqui-va-el-número-de-la-version-a-la-que-se-desea-volver --hard : para volver a una version anterior | --hard (vuelve a la version anterior y se pierde todo lo avanzado) --soft (lo que esta en stagin (en git add .) sigue ahí)
 git reset --hard hash : se coloca el hash al que se quiere volver, con este comando se vuelve a donde las cosas funcionaban
 git reset --hard: Borra todo. Todo todito, absolutamente todo. Toda la información de los commits y del área de staging se borra del historial.
-git reset HEAD: Este es el comando para sacar archivos del área de Staging. No para borrarlos ni nada de eso, solo para que los últimos cambios de estos archivos no se envíen al último commit, a menos que cambiemos de opinión y los incluyamos de nuevo en staging con git add, por supuesto.
+git reset HEAD: Este es el comando para sacar archivos del área de Staging. No para borrarlos ni nada de eso, solo para que los últimos cambios de estos archivos no se envíen al último commit, es como para anular un git add, a menos que cambiemos de opinión y los incluyamos de nuevo en staging con git add, por supuesto.
 git reset HEAD@{4} : Hace un reset suave, vuelve pero te mantiene el staging, se selecciona el HEAD@{4} que quieras del comando git reflog
 git reset --soft: Borramos todo el historial y los registros de Git pero guardamos los cambios que tengamos en Staging, así podemos aplicar las últimas actualizaciones a un nuevo commit.
 git rm : saca al archivo del cache y no va a detectar si hubo cambios en el archivo, aún no lo remueve de estar guardando cambios en git
