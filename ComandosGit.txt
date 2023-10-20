@@ -124,5 +124,5 @@ ssh-add ~/.ssh/id_rsa : para decirle al pc que ahí esta la llave y agregarla
 ::::::::Enlarze con github:::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::
 ir a usuario/.ssh/id_rsa.pub y copiar su contenido
-Vas a "settings" en tu cuenta de "github", despues ir a "SSH keys" y pegar el contenido copiado, colocarle un nombre
+Vas a "settings" en tu cuenta de "github", despues ir a "SSH keys", boton "nueva key", colocar el nombre de tu pc (para identificar el equipo, puesto que cada pc que ocupes debe tener su archivo) y pegar el contenido copiado, colocarle un nombre
 Despues de eso estas listo, crea tu repositorio y enlaza tu proyecto
