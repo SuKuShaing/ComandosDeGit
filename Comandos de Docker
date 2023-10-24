@@ -5,6 +5,9 @@
 // IMPORTANTE, no pueden existir dos contenedores con el mismo nombre en el mismo pc 
 
 $ docker run <nombre_del_contenedor> // ejecuta el contenedor con ese nombre
+$ docker run <nombre_del_contenedor_que_no_tienes_en_local> // busca el contenedor en el servidor de repositorios de docker y lo descarga a local y lo ejecuta
+$ docker run -it <nombre_del_contenedor> // ejecuta el contenedor con ese nombre en modo interactivo, en caso de Ubuntu, ingresamos a ese sistema operativo a esa consola -i: interactivo | -t: abre la consola
+// " cat /etc/lsb-release "  en la consola de linux, puestos en el home, con esa dirección vemos la versión de linux que estemos ejecutando
 $ docker ps // muestra los contenedores en ejecución
 $ docker ps -a // muestra todos los contenedores, tanto detenidos como en ejecución
 $ docker inspect <ID del contenedor o nombre del contenedor> // te muestra información del contenedor
@@ -12,3 +15,4 @@ $ docker run --name <nombre personalizado> <ID del contenedor o nombre del conte
 $ docker rename <ID del contenedor o nombre del contenedor> <nuevo nombre personalizado> // cambia el nombre de un contenedor a uno personalizado 
 $ docker rm <ID del contenedor o nombre del contenedor> // elimina ese contenedor
 $ docker container prune // elimina todos los contenedor detenidos en el pc
+$ docker --version // muestra la versión de docker
