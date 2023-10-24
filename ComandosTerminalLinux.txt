@@ -5,34 +5,34 @@
 - con las fechas de subir y bajar puedes ver los comandos utilizados previamente, 
 - con la tecla Tab puedes completar el nombres de la carpeta en la que estás escribiendo
 - ctrl + C, terminas un proceso que esté ejecutando la terminal
-- con la tecla " q " sales de archivos de texto que estes viendo
-- ctrol + Z, envias un proceso activo a background (segundo plano)
+- con la tecla " q " sales de archivos de texto que estés viendo
+- ctrol + Z, envías un proceso activo a background (segundo plano)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::::::::::::::::: Lista de comandos de la terminal :::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-ls // lista archivos dentro de la carpeta en la que estes
+ls // lista archivos dentro de la carpeta en la que estés
 ls -l // listar archivos con detalles, fecha, hora, peso, permisos, etc
 ls -a // Lista los archivos incluyendo los ocultos
 ls -S // Lista los archivos por tamaño, de mayor a menor
-ls -lh // listar archivos con detalles de manera más lejible más humana
+ls -lh // listar archivos con detalles de manera más legible más humana
 ls -la // listar archivos con detalles incluyendo los ocultos
-ls -lS // listar archivos con detalles mostrando los pesos (sizes)(" S " en mayuscula )
-ls -lSh // listar archivos con detalles mostrando los pesos de manera más lejible
-ls -lr // listar archivos ordenados al revez 
-ls -lSarh // se pueden convinar
-ls *.[extensión de archivo] // filtra la lista segun la extensión (ejemplo: ls *.txt => muestra solo los archivos txt) {Estas son las wildcards, puedes bucar más en internet bajo ese nombre, son para filtrar}; el simbolo " * " es una wildcards y se usa para reemplazar un texto u extensión
-ls [nombre o parte del nombre del archivo]* // filtra la lista segun los nombres que tengan esas letras en su nombre, independiente de la extensión (ejemplo: ls datos* => muestra los archivos que tengan la letras "datos" en su nombre (datos1.txt datos123.xlsm)) {Estas son las wildcards, puedes bucar más en internet bajo ese nombre, son para filtrar}
-ls [nombre o parte del nombre del archivo]? // al igual que arriba aunque solo traerá los que tengan un solo caracter, que reemplace al signo " ? " (en este caso " datos1 ") {Estas son las wildcards, puedes bucar más en internet bajo ese nombre, son para filtrar}
-ls [[:upper:]]* // para buscar los archivos que empiecen solo por mayuscula, buscará hasta 2 niveles de carpetas {Estas son las wildcards, puedes bucar más en internet bajo ese nombre, son para filtrar}
-ls -d [[:upper:]]* // solo mostrará los directorios que empiecen por mayucula {Estas son las wildcards, puedes bucar más en internet bajo ese nombre, son para filtrar}
-ls [[:lower:]]* // para buscar los archivos que empiecen solo por minuscula, buscará hasta 2 niveles de carpetas {Estas son las wildcards, puedes bucar más en internet bajo ese nombre, son para filtrar}
-ls [ad] // buscará todos los archivos y carpeta que inicien con "a" y con "d"{Estas son las wildcards, puedes bucar más en internet bajo ese nombre, son para filtrar}
+ls -lS // listar archivos con detalles mostrando los pesos (sizes)(" S " en mayúscula )
+ls -lSh // listar archivos con detalles mostrando los pesos de manera más legible
+ls -lr // listar archivos ordenados al revés 
+ls -lSarh // se pueden combinar
+ls *.[extensión de archivo] // filtra la lista según la extensión (ejemplo: ls *.txt => muestra solo los archivos txt) {Estas son las wildcards, puedes buscar más en internet bajo ese nombre, son para filtrar}; el símbolo " * " es una wildcards y se usa para reemplazar un texto u extensión
+ls [nombre o parte del nombre del archivo]* // filtra la lista según los nombres que tengan esas letras en su nombre, independiente de la extensión (ejemplo: ls datos* => muestra los archivos que tengan la letras "datos" en su nombre (datos1.txt datos123.xlsm)) {Estas son las wildcards, puedes buscar más en internet bajo ese nombre, son para filtrar}
+ls [nombre o parte del nombre del archivo]? // al igual que arriba aunque solo traerá los que tengan un solo carácter, que reemplace al signo " ? " (en este caso " datos1 ") {Estas son las wildcards, puedes buscar más en internet bajo ese nombre, son para filtrar}
+ls [[:upper:]]* // para buscar los archivos que empiecen solo por mayúscula, buscará hasta 2 niveles de carpetas {Estas son las wildcards, puedes buscar más en internet bajo ese nombre, son para filtrar}
+ls -d [[:upper:]]* // solo mostrará los directorios que empiecen por mayúscula {Estas son las wildcards, puedes buscar más en internet bajo ese nombre, son para filtrar}
+ls [[:lower:]]* // para buscar los archivos que empiecen solo por minúscula, buscará hasta 2 niveles de carpetas {Estas son las wildcards, puedes buscar más en internet bajo ese nombre, son para filtrar}
+ls [ad] // buscará todos los archivos y carpeta que inicien con "a" y con "d"{Estas son las wildcards, puedes buscar más en internet bajo ese nombre, son para filtrar}
 ls [Carpeta] > [nombre del archivo a guardar y crear.txt] // guarda la lista de carpetas de ls en un archivo (ejemplo: ls Pictures > misarchivos.txt) {solo me funciono en la raiz}
 ls [Carpeta] >> [nombre del archivo a guardar] // guarda la lista de carpetas de ls en un archivo sin borrar lo que hay dentro del contenido
-ls [algo erroneo] 2> [nombre del archivo a crear y en el que se guardará el error] // el error arroja un texto, ese texto lo guarda en un archivo (ejemplo: ls sdfasdf 2> error.txt)
-ls [carpeta o algo errado] > [nombre del archivo a guardar y crear.txt] 2>&1 // uno coloca la instrucción, sí es correcto se guarda el resultado en el archivo, sí es un error se guarda el error tambien en el mismo archivo, (ls dwhelasdfasd > output.txt 2>&1) los error se tratan distinto a los comandos bien ejecutados por eso el 2 antes antes del mayor que
+ls [algo erróneo] 2> [nombre del archivo a crear y en el que se guardará el error] // el error arroja un texto, ese texto lo guarda en un archivo (ejemplo: ls sdfasdf 2> error.txt)
+ls [carpeta o algo errado] > [nombre del archivo a guardar y crear.txt] 2>&1 // uno coloca la instrucción, sí es correcto se guarda el resultado en el archivo, sí es un error se guarda el error también en el mismo archivo, (ls dwhelasdfasd > output.txt 2>&1) los error se tratan distinto a los comandos bien ejecutados por eso el 2 antes antes del mayor que
 
 cd // te mueves la carpeta raiz " ~ "
 cd [nombre carpeta] // abre o te metes dentro de esa carpeta o directorio
@@ -74,7 +74,7 @@ head [nombre del archivo] -n [numero natural] // para ver N primeras lineas de t
 tail [nombre del archivo] // para ver las ultimas 10 lineas de texto del archivo seleccionado
 tail [nombre del archivo] -n [numero natural] // para ver N ultimas lineas de texto del archivo seleccionado
 
-less [nombre del archivo] // para ver el archivo de texto, se despliega una interfaz que te muestra el archivo en cuestion, con " / " puedes buscar palabras dentro del archivo de texto, con " q " sales de esa interfaz y vuelves a la terminal
+less [nombre del archivo] // para ver el archivo de texto, se despliega una interfaz que te muestra el archivo en cuestión, con " / " puedes buscar palabras dentro del archivo de texto, con " q " sales de esa interfaz y vuelves a la terminal
 
 wc [nombre del archivo] // Te muestra en el siguiente orden, cantidad de líneas tiene el archivo, cuantas palabras y el número de bits tiene un archivo
 wc -l [nombre del archivo] // solo te muestra el número de lineas 
@@ -84,12 +84,12 @@ wc -c [nombre del archivo] // solo te muestra el número de bit
 open [nombre del archivo] // (en mac) para abrir el archivo 
 xdg-open [nombre del archivo] // (en linux) para abrir el archivo, se crea un proceso y no se puede escribir hasta que lo mates, con Ctrl + C | Pd: no me funciono en windows con mi GIT bash
 
-nautilus // para abrir la carpeta como interfaz grafica
-nautilus [ruta de la carpeta] // para abrir la carpeta como interfaz grafica
+nautilus // para abrir la carpeta como interfaz gráfica
+nautilus [ruta de la carpeta] // para abrir la carpeta como interfaz gráfica
 
 type [comando shell: ejemplo: cd] // te dirá el tipo de comando que es, en este caso, "type cd" te dirá que es "cd is a shell builtin"
 
-alias [[nombre del alias]="[la instrucción shell]" // ejemplo ( l="ls -lh" ) crea un alias de una función shell más larga, que se puede ejecutar con el alias, al cerrar la terminal se borra el alias
+alias [nombre del alias]="[la instrucción shell]" // ejemplo ( l="ls -lh" ) crea un alias de una función shell más larga, que se puede ejecutar con el alias, al cerrar la terminal se borra el alias
 
 help [comando shell: ejemplo: cd] // te dirá todo lo que puedes hacer con cd
 [comando shell: ejemplo: cd] --help // te dirá todo lo que puedes hacer con cd
@@ -113,7 +113,7 @@ chmod [permisos en formato octal] [nombre del archivo] // cambia los permisos de
 
 whoami // te dice el usuario que estas usando
 
-su root // para acceder a super usuario, te pedirá la clave
+su root // para acceder a súper usuario, te pedirá la clave
 
 sudo [comando que necesite permisos de root] // para ser root temporalmente, sin permanecer en el estado root
 
@@ -122,7 +122,7 @@ passwd // para cambiar la contraseña del usuario actual
 which [comando binario] // [ejemplo: which code  =>  arroja la dirección de donde está el archivo binario que se ejecutará] busca las rutas de los comandos binarios (programas que se ejecutan en la terminal)
 
 ln [ruta del directorio] // es una forma de crear un link a un objetivo
-ln -s [ruta del directorio] [nombre del acceso direto] // para crear un acceso directo (yo que estoy en bach, me copio la carpeta origina a la posición en la que estaba)
+ln -s [ruta del directorio] [nombre del acceso directo] // para crear un acceso directo (yo que estoy en bach, me copio la carpeta origina a la posición en la que estaba)
 
 ps // te permite ver los procesos corriendo en el momento en la terminal, te muestra los PID (con es número puedes matar el proceso)
 kill [PID del proceso] // para terminar procesos que están corriendo en primer plano, no sirve para matar procesos en background
@@ -140,14 +140,14 @@ env > [archivo de texto] // (env > environment.txt) Para guardar todas nuestras 
 
 :::::::::::::::::::::::: comandos para buscar :::::::::::::::::::::::
 
-find [directorio] [que parametro busco] [parametro] // (Ejemplo: $ find ./ -name file => busca todos los archivos llamados file en el pc) va a buscar un archivo según el parámetro dado
+find [directorio] [que parámetro busco] [parámetro] // (Ejemplo: $ find ./ -name file => busca todos los archivos llamados file en el pc) va a buscar un archivo según el parámetro dado
 ($ find ./ -name *.txt | less) // para obtener el resultado como en texto en el que se puede buscar
 ($ find ./ -type d -name Documents) // para buscar por tipo y puede ser " d " (de directorio) y " f " (de file)
 ($ find ./ -type f -name *.log) // (" ./ " con este punto y slash buscas en el directorio donde estás)
 (find ./ -size 20M) // busca todo los archivos mayores a 20 Mb en el pc
 
 grep [palabra buscada] [nombre del archivo] // Busca en ese archivo la palabra que le especifiques y devuelve la frase en la que está
-grep -i [palabra buscada] [nombre del archivo] // sin la "-i" discrimina si es mayúscula o minúscula, ahora al agregar "-i" no hace diferencia y muestra ambas, busca en ese archivo la palabra que le especifiques, devuleve la linea
+grep -i [palabra buscada] [nombre del archivo] // sin la "-i" discrimina si es mayúscula o minúscula, ahora al agregar "-i" no hace diferencia y muestra ambas, busca en ese archivo la palabra que le especifiques, devuelve la linea
 grep -c [palabra buscada] [nombre del archivo] // cuenta cuantas veces aparece el termino buscado
 grep -v [palabra buscada] [nombre del archivo] // busca todos las lineas que no contengan la palabra buscada
 
@@ -179,9 +179,9 @@ netstat -i // te muestra los dispositivos de red
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :::::::::::::::::::::::: Lista de pipe operartor :::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
- | // (el simbolo de la barra vertical) redirige el standar output a un standar input de otro comando, entonces, lo que arroja como resultado un comando, se lo pasamos a otro, por ejemplo: $ "ls -lh | less" arroja como resulta la lista larga de manera humana, pero la estoy viendo como texto y usar / para buscar, como un archivo abierto con less 
- ; // (el simbolo de punto y coma) ejecuta una instrucción primero, despues la otra y la que sigue (ejemplo: $ ls; mkdir holi; cal => hace el listado de carpetas, despues crea la carpeta, despues muestra un calendario)
- & // (el simbolo de aspersand) ejecuta los comandos de manera paralela y en el background (en segundo plano), en diferentes hilos del procesador (ejemplo: $ ls & date & echo "hihi" => arroja los números de los procesos donde se va a ejecutar, se ejecutan, y se entregan en orden de cual termina primero, cierra los hilos de trabajo)
- && // (el simbolo de doble aspersand) es un condicional, solo si se ejecutó de manera adecuada el primer comando se ejecutará el segundo y/o tercero sí lo hay
- || // (el simbolo de doble barra vertical) es un " or " es decir ejecuta los comandos, hasta que uno sea exitoso, se ejecuta ese exitoso y los demas no se ejecutan, (ejemplo: $ cd NoExitDir || touch archivo.txt || echo "Archivo creado" => dado que la carpeta NoExitDir no existe, no se mueve a ese directorio, es decir, falla, por ende se ejecuta el segundo comando y se crea el archivo, dado que ese fue exitoso el 3er comando no se ejecuto)
- > [nombre del archivo a crear] // (el simbolo de mayor que) crea un archivo, puedes colocarle extensión al archivo, 
+ | // (el símbolo de la barra vertical) redirige el standar output a un standar input de otro comando, entonces, lo que arroja como resultado un comando, se lo pasamos a otro, por ejemplo: $ "ls -lh | less" arroja como resulta la lista larga de manera humana, pero la estoy viendo como texto y usar / para buscar, como un archivo abierto con less 
+ ; // (el símbolo de punto y coma) ejecuta una instrucción primero, después la otra y la que sigue (ejemplo: $ ls; mkdir holi; cal => hace el listado de carpetas, después crea la carpeta, después muestra un calendario)
+ & // (el símbolo de aspersand) ejecuta los comandos de manera paralela y en el background (en segundo plano), en diferentes hilos del procesador (ejemplo: $ ls & date & echo "hihi" => arroja los números de los procesos donde se va a ejecutar, se ejecutan, y se entregan en orden de cual termina primero, cierra los hilos de trabajo)
+ && // (el símbolo de doble aspersand) es un condicional, solo si se ejecutó de manera adecuada el primer comando se ejecutará el segundo y/o tercero sí lo hay
+ || // (el símbolo de doble barra vertical) es un " or " es decir ejecuta los comandos, hasta que uno sea exitoso, se ejecuta ese exitoso y los demás no se ejecutan, (ejemplo: $ cd NoExitDir || touch archivo.txt || echo "Archivo creado" => dado que la carpeta NoExitDir no existe, no se mueve a ese directorio, es decir, falla, por ende se ejecuta el segundo comando y se crea el archivo, dado que ese fue exitoso el 3er comando no se ejecuto)
+ > [nombre del archivo a crear] // (el símbolo de mayor que) crea un archivo, puedes colocarle extensión al archivo, 
