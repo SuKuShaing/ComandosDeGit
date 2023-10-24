@@ -1,0 +1,14 @@
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::: Lista de comandos de Docker :::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+// IMPORTANTE, no pueden existir dos contenedores con el mismo nombre en el mismo pc 
+
+$ docker run <nombre_del_contenedor> // ejecuta el contenedor con ese nombre
+$ docker ps // muestra los contenedores en ejecución
+$ docker ps -a // muestra todos los contenedores, tanto detenidos como en ejecución
+$ docker inspect <ID del contenedor o nombre del contenedor> // te muestra información del contenedor
+$ docker run --name <nombre personalizado> <ID del contenedor o nombre del contenedor> // ejecuta un contenedor con un nombre de identificación personalizado
+$ docker rename <ID del contenedor o nombre del contenedor> <nuevo nombre personalizado> // cambia el nombre de un contenedor a uno personalizado 
+$ docker rm <ID del contenedor o nombre del contenedor> // elimina ese contenedor
+$ docker container prune // elimina todos los contenedor detenidos en el pc
