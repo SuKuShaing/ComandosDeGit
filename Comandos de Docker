@@ -16,3 +16,27 @@ $ docker rename <ID del contenedor o nombre del contenedor> <nuevo nombre person
 $ docker rm <ID del contenedor o nombre del contenedor> // elimina ese contenedor
 $ docker container prune // elimina todos los contenedor detenidos en el pc
 $ docker --version // muestra la versión de docker
+$ docker run --name <nombre_del_contenedor> -d ubuntu tail -f /dev/null  // aquí ejecutamos un contenedor ubuntu corriendo el proceso  " /dev/null " para que no se apague el contenedor, sí estas en windows hay que ejecutarlo desde CMD o PowerShell puesto que si lo haces desde Bash, Bash apaga el proceso y se termina la ejecución del contenedor
+$ docker run --name <nombre_del_contenedor> -d -it ubuntu // para mantener el proceso encendido, por defecto tiene prendido " bash " (el proceso bash, no confundir con la Terminal llamada Bash) | -d ó --detach: es para ejecutar el proceso en el background o segundo plano 
+$ docker exec -it <nombre_del_contenedor> bash // para entrar al contenedor que está en background y entrar en el proceso bash 
+$ docker inspect --format '{{.State.Pid}}' <nombre_del_contenedor> // para saber el proceso en el que se está ejecutando el contenedor, te responderá un número | --format '{{.State.Pid}}' es para filtrar, puesto que sino, te arroja todo la información del contenedor (solo funciona desde terminales Linux)
+$ Kill <número del proceso> // para terminar el proceso principal, al terminar ese proceso el contenedor se cierra, ser termina (solo funciona desde terminales Linux)
+$ docker stop alwaysup2 // es para detener el contenedor en ejecución
+
+
+
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::: Instalar Docker en W10 y W11 :::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Primero debes instalar desde la store de microsoft "Windows Subsistem for Linux" (WSL), luego instala la distribución, puede ser Ubuntu desde la misma tienda.
+Ejecuta Ubuntu, búscalo en tu lista de programas y ábrelo, se abrirá una consola, ejecuta un comando ls y te dará un error con un link, ve a ese link e instala el kernel que está solicitando, ahora está listo para Docker.
+Luego descarga desde la web de Docker la versión para Windows e instala, ahí funcionará.
+Docker necesita que previamente esté instalado WSL
+
+En este video obtendrás una guía más detallada en como instalar WSL
+https://youtu.be/_fntjriRe48?si=kury4d2h5FpFhRLO
+
+Y en este video que es la continuación del anterior obtendrás una guía para instalar docker
+https://youtu.be/5RQbdMn04Oc?si=2EclWIzuDORdU7Fu
