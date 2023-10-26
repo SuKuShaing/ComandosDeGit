@@ -8,20 +8,27 @@ $ docker run <nombre_del_contenedor> // ejecuta el contenedor con ese nombre
 $ docker run <nombre_del_contenedor_que_no_tienes_en_local> // busca el contenedor en el servidor de repositorios de docker y lo descarga a local y lo ejecuta
 $ docker run -it <nombre_del_contenedor> // ejecuta el contenedor con ese nombre en modo interactivo, en caso de Ubuntu, ingresamos a ese sistema operativo a esa consola -i: interactivo | -t: abre la consola
 // " cat /etc/lsb-release "  en la consola de linux, puestos en el home, con esa dirección vemos la versión de linux que estemos ejecutando
+$ docker run --name <nombre personalizado> <ID del contenedor o nombre del contenedor> // ejecuta un contenedor con un nombre de identificación personalizado
+$ docker run --name <nombre_del_contenedor> -d ubuntu tail -f /dev/null  // aquí ejecutamos un contenedor ubuntu corriendo el proceso  " /dev/null " para que no se apague el contenedor, sí estas en windows hay que ejecutarlo desde CMD o PowerShell puesto que si lo haces desde Bash, Bash apaga el proceso y se termina la ejecución del contenedor, ademas de /dev/null hay otros procesos para mantener encendido el contenedor, son estos /dev/full  /dev/zero  /dev/random
+$ docker run --name <nombre_del_contenedor> -d -it ubuntu // para mantener el proceso encendido, por defecto tiene prendido " bash " (el proceso bash, no confundir con la Terminal llamada Bash) | -d ó --detach: es para ejecutar el proceso en el background o segundo plano 
+$ docker run -d --name <nombre_del_contenedor> nginx // para correr un servidor de nginx en el background
+$ docker run --name <nombre_del_contenedor> -p 8080:80 nginx // ejecuta un servidor de nginx y conecta el puerto 8080 de mi pc con el puerto 80 del contenedor de docker, al ejecurtalo la consola queda tomada por los registros que muestra el servidor nginx, al salir del con Ctrl + C  contenedor apagas el proceso principal y se apaga el contenedor
+$ docker run -d --name proxy -p 8080:80 nginx // ejecuta un servidor de nginx y conecta el puerto 8080 de mi pc con el puerto 80 del contenedor de docker, sin embargo al colocar -d se ejecuta en el background y no queda tomada la consola terminal
 $ docker ps // muestra los contenedores en ejecución
 $ docker ps -a // muestra todos los contenedores, tanto detenidos como en ejecución
 $ docker inspect <ID del contenedor o nombre del contenedor> // te muestra información del contenedor
-$ docker run --name <nombre personalizado> <ID del contenedor o nombre del contenedor> // ejecuta un contenedor con un nombre de identificación personalizado
 $ docker rename <ID del contenedor o nombre del contenedor> <nuevo nombre personalizado> // cambia el nombre de un contenedor a uno personalizado 
 $ docker rm <ID del contenedor o nombre del contenedor> // elimina ese contenedor
+$ docker rm -f <ID del contenedor o nombre del contenedor> // detiene ese contenedor (puesto que estaría en ejecución) y lo borra
 $ docker container prune // elimina todos los contenedor detenidos en el pc
 $ docker --version // muestra la versión de docker
-$ docker run --name <nombre_del_contenedor> -d ubuntu tail -f /dev/null  // aquí ejecutamos un contenedor ubuntu corriendo el proceso  " /dev/null " para que no se apague el contenedor, sí estas en windows hay que ejecutarlo desde CMD o PowerShell puesto que si lo haces desde Bash, Bash apaga el proceso y se termina la ejecución del contenedor, ademas de /dev/null hay otros procesos para mantener encendido el contenedor, son estos /dev/full  /dev/zero  /dev/random
-$ docker run --name <nombre_del_contenedor> -d -it ubuntu // para mantener el proceso encendido, por defecto tiene prendido " bash " (el proceso bash, no confundir con la Terminal llamada Bash) | -d ó --detach: es para ejecutar el proceso en el background o segundo plano 
 $ docker exec -it <nombre_del_contenedor> bash // para entrar al contenedor que está en background y entrar en el proceso bash 
 $ docker inspect --format '{{.State.Pid}}' <nombre_del_contenedor> // para saber el proceso en el que se está ejecutando el contenedor, te responderá un número | --format '{{.State.Pid}}' es para filtrar, puesto que sino, te arroja todo la información del contenedor (solo funciona desde terminales Linux)
 $ Kill <número del proceso> // para terminar el proceso principal, al terminar ese proceso el contenedor se cierra, ser termina (solo funciona desde terminales Linux)
-$ docker stop alwaysup2 // es para detener el contenedor en ejecución
+$ docker stop <nombre_del_contenedor> // es para detener el contenedor en ejecución
+$ docker logs proxy // ver los procesos que esta mostrando la consola del proceso, entras en el proceso y puedes ver el asunto, para salir con Ctrl + C no finalizas el proceso, se sigue ejecutando en segundo plano y tu vuelves a tu consola principal
+$ docker logs -f proxy // trae los procesos de la consola del container a tu terminal principal y puedes seguir ocupando la terminal, no se bloquea
+$ docker logs --tail 10 -f proxy // solo trae los últimos 10 procesos
 
 
 
