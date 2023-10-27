@@ -11,9 +11,12 @@ $ docker run -it <nombre_del_contenedor> // ejecuta el contenedor con ese nombre
 $ docker run --name <nombre personalizado> <ID del contenedor o nombre del contenedor> // ejecuta un contenedor con un nombre de identificación personalizado
 $ docker run --name <nombre_del_contenedor> -d ubuntu tail -f /dev/null  // aquí ejecutamos un contenedor ubuntu corriendo el proceso  " /dev/null " para que no se apague el contenedor, sí estas en windows hay que ejecutarlo desde CMD o PowerShell puesto que si lo haces desde Bash, Bash apaga el proceso y se termina la ejecución del contenedor, ademas de /dev/null hay otros procesos para mantener encendido el contenedor, son estos /dev/full  /dev/zero  /dev/random
 $ docker run --name <nombre_del_contenedor> -d -it ubuntu // para mantener el proceso encendido, por defecto tiene prendido " bash " (el proceso bash, no confundir con la Terminal llamada Bash) | -d ó --detach: es para ejecutar el proceso en el background o segundo plano 
-$ docker run -d --name <nombre_del_contenedor> nginx // para correr un servidor de nginx en el background
+$ docker run -d --name <nombre_del_contenedor> <nombre_de_la_imagen, ejemplo: nginx> // para correr un servidor de nginx en el background
 $ docker run --name <nombre_del_contenedor> -p 8080:80 nginx // ejecuta un servidor de nginx y conecta el puerto 8080 de mi pc con el puerto 80 del contenedor de docker, al ejecurtalo la consola queda tomada por los registros que muestra el servidor nginx, al salir del con Ctrl + C  contenedor apagas el proceso principal y se apaga el contenedor
 $ docker run -d --name proxy -p 8080:80 nginx // ejecuta un servidor de nginx y conecta el puerto 8080 de mi pc con el puerto 80 del contenedor de docker, sin embargo al colocar -d se ejecuta en el background y no queda tomada la consola terminal
+$ docker run -d --name <nombre_del_personalizado_del_contenedor, ejemplo: db> <nombre_de_la_imagen, ejemplo: mongo> // crea un contenedor llamado "db" que tiene mongo data base
+$ docker run -d --name db -v "C:\Users\Seba\Progra\Platzi\Curso_de_Docker\dockerdata\mongodata":/data/db <nombre_de_la_imagen, ejemplo: mongo> // "-v" conecta el directorio local (usando el path local) de tu maquina con el de la ruta que está dentro del directorio en el contenedor (usando el path de tu contenedor), es decir los archivos que se creen en una se crearan y/o modificaran en la otra, dentro y fuera del container
+$ docker run -d --name db -v ${pwd}:/data/db <nombre_de_la_imagen, ejemplo: mongo> // ${pwd} debiese funcionar igual que la linea "C:\Users\Seba\Progra\Platzi\Curso_de_Docker\dockerdata\mongodata" (esta linea funciona en la terminal Bash [la de git]) en PowerShell o CMD
 $ docker ps // muestra los contenedores en ejecución
 $ docker ps -a // muestra todos los contenedores, tanto detenidos como en ejecución
 $ docker inspect <ID del contenedor o nombre del contenedor> // te muestra información del contenedor
@@ -33,6 +36,20 @@ $ docker logs --tail 10 -f proxy // solo trae los últimos 10 procesos
 
 
 
+
+
+
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::: Imágenes del repositorio Dockers :::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+-> hello-world
+-> ubuntu
+-> mongo
+-> nginx
+
+
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :::::::::::: Instalar Docker en W10 y W11 :::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -47,3 +64,17 @@ https://youtu.be/_fntjriRe48?si=kury4d2h5FpFhRLO
 
 Y en este video que es la continuación del anterior obtendrás una guía para instalar docker
 https://youtu.be/5RQbdMn04Oc?si=2EclWIzuDORdU7Fu
+
+
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::: Lineas de mongo data base :::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+//una vez ejecutaste el comando para entrar al contenedor que contiene mongo, estas son lineas para usarlo
+
+$ mongosh //para ejecutar la base de datos de mongo
+$ use <nombre_de_la_base_de_datos_a_usar> // puedes crear el nombre y se crea la base de datos
+$ db.users.insertOne({"name":"yourName"}) // para insertar un argumento en la base de datos de mongo
+$ db.users.find() // para encontrar los registros en la base de datos de mongo
+$ exit // para salir
