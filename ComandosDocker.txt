@@ -17,7 +17,7 @@ $ docker run -d --name proxy -p 8080:80 nginx // ejecuta un servidor de nginx y 
 $ docker run -d --name <nombre_del_personalizado_del_contenedor, ejemplo: db> <nombre_de_la_imagen, ejemplo: mongo> // crea un contenedor llamado "db" que tiene mongo data base
 $ docker run -d --name db -v "C:\Users\Seba\Progra\Platzi\Curso_de_Docker\dockerdata\mongodata":/data/db <nombre_de_la_imagen, ejemplo: mongo> // "-v" conecta el directorio local (usando el path local) de tu maquina con el de la ruta que está dentro del directorio en el contenedor (usando el path de tu contenedor), es decir los archivos que se creen en una se crearan y/o modificaran en la otra, dentro y fuera del container | Este método se llama Bind Mounts
 $ docker run -d --name db -v ${pwd}:/data/db <nombre_de_la_imagen, ejemplo: mongo> // ${pwd} debiese funcionar igual que la linea "C:\Users\Seba\Progra\Platzi\Curso_de_Docker\dockerdata\mongodata" (esta linea funciona en la terminal Bash [la de git]) en PowerShell o CMD
-$ docker run -d --name db --mount src=dbdata,dst=//data/db mongo // para iniciar un contenedor asignándole un volumen 
+$ docker run -d --name db --mount src=dbdata,dst=//data/db mongo // para iniciar un contenedor asignándole un volumen, "--mount" para indicarle el método, "src" se le dá el nombre del volumen, "dst" la dirección dentro del contenedor a guardar fuera de él, en linux y mac después del dst solo se coloca un "/"   
 $ docker ps // muestra los contenedores en ejecución
 $ docker ps -a // muestra todos los contenedores, tanto detenidos como en ejecución
 $ docker inspect <ID del contenedor o nombre del contenedor> // te muestra información del contenedor
@@ -36,7 +36,9 @@ $ docker logs --tail 10 -f proxy // solo trae los últimos 10 procesos
 $ docker volume ls // lista todos los volúmenes que tenemos, los volúmenes son espacios de memoria externa a un contenedor (se puede compartir entre contenedores) y es manejado plenamente por Docker
 $ docker volume create dbdata // Crea un espacio de memoria que va a ser ocupado por un contenedor, los volúmenes en teoría son más seguros que el sistema Bind Mounts
 $ docker volume inspect dbdata // para inspeccionar las propiedades de un volumen
-
+$ docker cp prueba.txt copytest:/testing/test.txt // estando parados en la carpeta elegida, "cp" copia el archivo (o directorio) prueba.txt al contenedor copytest y lo pega en la ruta asignada después de los dos puntos y con el nombre que le demos, puede ser el mismo nombre
+$ docker cp copytest:/testing localtesting // se puede extraer un archivo o carpeta del contender (incluso si el contenedor no está siendo ejecutado), toma la carpeta o archivo de la ruta dada en el contenedor al lugar en el que estemos puesto, la ruta del PWD
+$ docker cp copytest:/testing/test.txt extraido.txt // se pueden sacar archivos
 
 
 
