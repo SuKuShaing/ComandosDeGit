@@ -29,12 +29,13 @@ ls [[:upper:]]* // para buscar los archivos que empiecen solo por mayúscula, bu
 ls -d [[:upper:]]* // solo mostrará los directorios que empiecen por mayúscula {Estas son las wildcards, puedes buscar más en internet bajo ese nombre, son para filtrar}
 ls [[:lower:]]* // para buscar los archivos que empiecen solo por minúscula, buscará hasta 2 niveles de carpetas {Estas son las wildcards, puedes buscar más en internet bajo ese nombre, son para filtrar}
 ls [ad] // buscará todos los archivos y carpeta que inicien con "a" y con "d"{Estas son las wildcards, puedes buscar más en internet bajo ese nombre, son para filtrar}
-ls [Carpeta] > [nombre del archivo a guardar y crear.txt] // guarda la lista de carpetas de ls en un archivo (ejemplo: ls Pictures > misarchivos.txt) {solo me funciono en la raiz}
+ls [Carpeta] > [nombre del archivo a guardar y crear.txt] // guarda la lista de carpetas de ls en un archivo (ejemplo: ls Pictures > misarchivos.txt) {solo me funciono en la raíz}
 ls [Carpeta] >> [nombre del archivo a guardar] // guarda la lista de carpetas de ls en un archivo sin borrar lo que hay dentro del contenido
 ls [algo erróneo] 2> [nombre del archivo a crear y en el que se guardará el error] // el error arroja un texto, ese texto lo guarda en un archivo (ejemplo: ls sdfasdf 2> error.txt)
 ls [carpeta o algo errado] > [nombre del archivo a guardar y crear.txt] 2>&1 // uno coloca la instrucción, sí es correcto se guarda el resultado en el archivo, sí es un error se guarda el error también en el mismo archivo, (ls dwhelasdfasd > output.txt 2>&1) los error se tratan distinto a los comandos bien ejecutados por eso el 2 antes antes del mayor que
+ll // es un atajo para hacer lo mismo que " ls -l " 
 
-cd // te mueves la carpeta raiz " ~ "
+cd // te mueves la carpeta raíz " ~ "
 cd [nombre carpeta] // abre o te metes dentro de esa carpeta o directorio
 cd .. // subes en el directorio, es decir, vuelves a la carpeta que contiene a la que estas actualmente
 cd ../.. // subes 2 directorios, es decir, vuelves a la carpeta que contiene a la contiene en la que estas actualmente, se pueden usar " ../../../../ " cuantas veces quieras
@@ -100,7 +101,7 @@ whatis [comando shell: ejemplo: cd] // te da el información de uso de cd
 echo "[texto a colocar]" // te responde con el texto colocado entre comillas
 
 cat [archivo.ext] // para ver el archivo en el mismo visor de linux
-cat < [archivo.ext] // para ver el archivo en el mismo visor de linux, el menor que es un "standar output" es para que te muestre ese algo la terminal 
+cat < [archivo.ext] // para ver el archivo en el mismo visor de linux, el menor que es un "standard output" es para que te muestre ese algo la terminal 
 cat > [archivo.ext] // para modificar un archivo existente, con " ctrl + D " sales del editor y vuelves a la terminal, usar dos veces el comando para salir sí no sales a la primera
 
 cal: devuelve un calendario en la terminal (en mi pc windows no lo hizo, trabajo con la git bash, en la del profe si funcionó)
@@ -138,7 +139,9 @@ vim [nombre del archivo.ExtensiónDeTexto] // el comando más el nombre del arch
 env > [archivo de texto] // (env > environment.txt) Para guardar todas nuestras variables de entorno en un archivo de texto podemos ejecutar el comando
 
 
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :::::::::::::::::::::::: comandos para buscar :::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 find [directorio] [que parámetro busco] [parámetro] // (Ejemplo: $ find ./ -name file => busca todos los archivos llamados file en el pc) va a buscar un archivo según el parámetro dado
 ($ find ./ -name *.txt | less) // para obtener el resultado como en texto en el que se puede buscar
@@ -151,7 +154,9 @@ grep -i [palabra buscada] [nombre del archivo] // sin la "-i" discrimina si es m
 grep -c [palabra buscada] [nombre del archivo] // cuenta cuantas veces aparece el termino buscado
 grep -v [palabra buscada] [nombre del archivo] // busca todos las lineas que no contengan la palabra buscada
 
-:::::::::::::::::::::::: comandos de compresión :::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::: comandos de compresión :::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 tar -cvf [NombreDelArchivoComprimido.tar] [carpeta o archivo a comprimir] // comprime archivos, flag -c = comprimir, -v = verborrea (muestra en pantalla lo que está comprimiendo) -f = para decirle que es un archivo (ejemplo: tar -cvf test.tar test/)
 tar -czvf [nombre del archivo].tar.gz [nombre del archivo comprimido] // -z = para darle a la compresión un codec de .gz que es ideal para texto plano
@@ -161,7 +166,9 @@ tar -xzvf [nombre del archivo a descomprimir].tar.gz // Descomprime un .tar.gz
 zip -r [NombreDelArchivoComprimido.zip] [carpeta o archivo a comprimir] // comprime en formato .zip, -r = recursivo (comprime a los archivos internos, usar con los directorios)
 unzip [nombre del archivo a descomprimir].zip // descomprime el archivo
 
-:::::::::::::::::::::::: comandos para red :::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::: Comandos para Red ::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ipconfig // te muestra los detalles de tu red
 
@@ -173,13 +180,13 @@ wget [sitio web] // (wget www.google.com) descargas el sitio web o la dirección
 
 traceroute [sitio web] // (traceroute www.google.com) te muestra todas las computadoras por donde pasa tu petición
 
-netstat // te muestra las conexiónes activas 
+netstat // te muestra las conexiones activas 
 netstat -i // te muestra los dispositivos de red
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :::::::::::::::::::::::: Lista de pipe operartor :::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
- | // (el símbolo de la barra vertical) redirige el standar output a un standar input de otro comando, entonces, lo que arroja como resultado un comando, se lo pasamos a otro, por ejemplo: $ "ls -lh | less" arroja como resulta la lista larga de manera humana, pero la estoy viendo como texto y usar / para buscar, como un archivo abierto con less 
+ | // (el símbolo de la barra vertical) redirige el standard output a un standard input de otro comando, entonces, lo que arroja como resultado un comando, se lo pasamos a otro, por ejemplo: $ "ls -lh | less" arroja como resulta la lista larga de manera humana, pero la estoy viendo como texto y usar / para buscar, como un archivo abierto con less 
  ; // (el símbolo de punto y coma) ejecuta una instrucción primero, después la otra y la que sigue (ejemplo: $ ls; mkdir holi; cal => hace el listado de carpetas, después crea la carpeta, después muestra un calendario)
  & // (el símbolo de aspersand) ejecuta los comandos de manera paralela y en el background (en segundo plano), en diferentes hilos del procesador (ejemplo: $ ls & date & echo "hihi" => arroja los números de los procesos donde se va a ejecutar, se ejecutan, y se entregan en orden de cual termina primero, cierra los hilos de trabajo)
  && // (el símbolo de doble aspersand) es un condicional, solo si se ejecutó de manera adecuada el primer comando se ejecutará el segundo y/o tercero sí lo hay
