@@ -39,6 +39,9 @@ $ docker volume inspect dbdata // para inspeccionar las propiedades de un volume
 $ docker cp prueba.txt copytest:/testing/test.txt // estando parados en la carpeta elegida, "cp" copia el archivo (o directorio) prueba.txt al contenedor copytest y lo pega en la ruta asignada después de los dos puntos y con el nombre que le demos, puede ser el mismo nombre
 $ docker cp copytest:/testing localtesting // se puede extraer un archivo o carpeta del contender (incluso si el contenedor no está siendo ejecutado), toma la carpeta o archivo de la ruta dada en el contenedor al lugar en el que estemos puesto, la ruta del PWD
 $ docker cp copytest:/testing/test.txt extraido.txt // se pueden sacar archivos
+$ docker image ls // Para listar todas las imagenes que tenemos en la maquina huespec
+$ docker pull alpine // para traer una imagen sin ejecutarla, solo trae la imagen 
+$ docker pull ubuntu:20.04 // las imagenes de contenedores tienen versiones, uno se puede traer desde un repositorio (puede ser publico o privado, el más conocido es docker hub) y las versiones tienen tag, entonces se compone así <nombre imagen>:<tag de la versión>, los tag uno puede verlos en el repositorio
 
 
 
