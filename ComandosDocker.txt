@@ -44,11 +44,12 @@ $ docker pull alpine // para traer una imagen sin ejecutarla, solo trae la image
 $ docker pull ubuntu:20.04 // las imágenes de contenedores tienen versiones, uno se puede traer desde un repositorio (puede ser publico o privado, el más conocido es docker hub) y las versiones tienen tag, entonces se compone así <nombre imagen>:<tag de la versión>, los tag uno puede verlos en el repositorio
 $ docker image rm -f <nombre o id image> // para borrar una imagen
 $ docker image prune -a // borra todas las imágenes alojadas en el huésped
-$ docker build -t ubuntu:platzi . // Previamente hecho una Dockerfile (un archivo de texto que contiene la información que va a contener nuestra imagen), con este comando | -t es --tag | <nombre imagen>:<tag> | " . " es la ruta, con punto le decimos que donde estemos parados en la ruta
+$ docker build -t ubuntu:platzi . // Previamente hecho una Dockerfile (un archivo de texto que contiene la información que va a contener nuestra imagen), con este comando | -t es --tag | <nombre imagen>:<tag> | " . " es la ruta, con punto le decimos que donde estemos parados en la ruta | se puede omitir le ubuntu y simplemente colocar el nombre de la imagen si se va a trabajar en local y no se va a subir a docker hub
 $ docker run -it ubuntu:platzi // ejecutamos el container de esa imagen especificando el tag (o versión de la imagen), en caso de que tengamos varias imágenes con distintas versiones
 $ docker login // para iniciar sesión, sí ya iniciaste sesión en docker local (en la aplicación) y en remoto, se logeará solo y te dejará pasar
 $ docker tag ubuntu:platzi sukushaing/ubuntu:platzi // para cambiar el dueño de la imagen y la puedas subir a tu repositorio remoto <antigua imagen> <dueño/nueva imagenTuya>
 $ docker push sukushaing/ubuntu:platzi // sube tu imagen a tu repositorio
+$ docker run --rm -p 3000:3000 platziapp // "--rm" para que al terminar de estar corriendo se elimine automáticamente, "-p" para especificar primero el puerto de mi pc y después el puerto de docker
 
 
 
