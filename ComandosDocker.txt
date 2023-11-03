@@ -50,6 +50,7 @@ $ docker login // para iniciar sesión, sí ya iniciaste sesión en docker local
 $ docker tag ubuntu:platzi sukushaing/ubuntu:platzi // para cambiar el dueño de la imagen y la puedas subir a tu repositorio remoto <antigua imagen> <dueño/nueva imagenTuya>
 $ docker push sukushaing/ubuntu:platzi // sube tu imagen a tu repositorio
 $ docker run --rm -p 3000:3000 platziapp // "--rm" para que al terminar de estar corriendo se elimine automáticamente, "-p" para especificar primero el puerto de mi pc y después el puerto de docker
+$ docker run --rm -p 3000:3000 -v "C:\Users\Seba\Progra\Platzi\Curso_de_Docker\proyec_node\docker\index.js":/usr/src/index.js platziapp // usamos todo lo aprendido anteriormente
 
 
 
