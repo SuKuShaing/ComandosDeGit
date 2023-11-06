@@ -1,3 +1,4 @@
+# Al proyecto que se hace referencia es este https://github.com/platzi/docker
 # Este es un ejemplo de dockerfile
 
 FROM node:12

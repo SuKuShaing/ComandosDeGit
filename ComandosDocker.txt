@@ -51,6 +51,14 @@ $ docker tag ubuntu:platzi sukushaing/ubuntu:platzi // para cambiar el dueño de
 $ docker push sukushaing/ubuntu:platzi // sube tu imagen a tu repositorio
 $ docker run --rm -p 3000:3000 platziapp // "--rm" para que al terminar de estar corriendo se elimine automáticamente, "-p" para especificar primero el puerto de mi pc y después el puerto de docker
 $ docker run --rm -p 3000:3000 -v "C:\Users\Seba\Progra\Platzi\Curso_de_Docker\proyec_node\docker\index.js":/usr/src/index.js platziapp // usamos todo lo aprendido anteriormente
+$ docker network ls // Lista todas las redes de docker, la "bridge" por retrocompatibilidad, "host" que es la red de mi pc, por si quiero darle acceso a internet, y "none" que es ninguna red
+$ docker network create --attachable platzinet // "--attachable" para que los contenedores se puedan conectar a esa red virtual , "platzinet" es el nombre de la red, se puede colocar otro
+$ docker network inspect platzinet // para inspeccionar la red y ver los contenedores conectados a ella
+$ docker network connect platzinet db // primero iniciamos el container llamado "db", y con este comando conectamos ese container a esa red local virtual de docker
+$ docker run -d --name app -p 3000:3000 --env MONGO_URL=mongodb://db:27017/test platziapp // "--env" para pasarle variables de entorno "mongodb://db:27017/test" el "db" en esa url reemplaza localhost y es el nombre del container | no se puede tener dos servicios en el mismo puerto
+$ docker-compose up // estando en parado en la carpeta con el archivo docker-compose.yml, se puede ejecutar este comando, el archivo tendrá las instrucciones para levantar los servicios, cada servicio puede contener uno o más contenedores
+$ docker-compose up -d // ejecuta los servicios en 2do plano
+$ docker-compose down // Detiene los contenedores creados por docker-compose up
 
 
 

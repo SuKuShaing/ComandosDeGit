@@ -1,0 +1,21 @@
+# Al proyecto que se hace referencia es este https://github.com/platzi/docker
+
+version: "3.8"
+# Siempre tiene que ir la versión composefile de yml
+
+services:
+  # Los services son los servicios que componen a la aplicación, se listan los servicios, cada servicio tendrá su propio container, un servicio puede tener uno o más contenedores de la misma imagen
+  app:
+    image: platziapp #especificamos la imagen que ocupará el servicio
+    environment:
+      #Se listan las variables de entorno, el tabulado es MUY importante, así que respeta los espacios
+      MONGO_URL: "mongodb://db:27017/test"
+    depends_on:
+      #Se listan las depencias de éste contenedor, db se creará primero y si no se puede levantar, éste no se levantará
+      - db
+    ports:
+      #Se listan los puertos expuestos
+      - "3000:3000"
+
+  db:
+    image: mongo
