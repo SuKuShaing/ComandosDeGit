@@ -1,12 +1,11 @@
-# Al proyecto que se hace referencia es este https://github.com/platzi/docker
-
 version: "3.8"
 # Siempre tiene que ir la versión composefile de yml
 
 services:
   # Los services son los servicios que componen a la aplicación, se listan los servicios, cada servicio tendrá su propio container, un servicio puede tener uno o más contenedores de la misma imagen
   app:
-    image: platziapp #especificamos la imagen que ocupará el servicio
+    # image: platziapp #especificamos la imagen que ocupará el servicio
+    build: . # especificamos la ruta de donde estarán los archivos a construir la imagen
     environment:
       #Se listan las variables de entorno, el tabulado es MUY importante, así que respeta los espacios
       MONGO_URL: "mongodb://db:27017/test"
@@ -16,6 +15,10 @@ services:
     ports:
       #Se listan los puertos expuestos
       - "3000:3000"
+    volumes:
+      - .:/usr/src # Bind Mounts (para que mis cambios en el archivo se vean reflejados inmediatamente en el contenedor sin necesidad de hacer rebuild)
+      - /usr/src/node_modules # al no tener previamente " <ruta local>: " entonces ahora significa que esa linea va a ser ignorada, no se va a sobreescribir
+    command: npx nodemon -L index.js # para que ejecutar ese comando | "--legacy-watch" o "-L"
 
   db:
     image: mongo

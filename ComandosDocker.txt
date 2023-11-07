@@ -57,9 +57,14 @@ $ docker network inspect platzinet // para inspeccionar la red y ver los contene
 $ docker network connect platzinet db // primero iniciamos el container llamado "db", y con este comando conectamos ese container a esa red local virtual de docker
 $ docker run -d --name app -p 3000:3000 --env MONGO_URL=mongodb://db:27017/test platziapp // "--env" para pasarle variables de entorno "mongodb://db:27017/test" el "db" en esa url reemplaza localhost y es el nombre del container | no se puede tener dos servicios en el mismo puerto
 $ docker-compose up // estando en parado en la carpeta con el archivo docker-compose.yml, se puede ejecutar este comando, el archivo tendrá las instrucciones para levantar los servicios, cada servicio puede contener uno o más contenedores
-$ docker-compose up -d // ejecuta los servicios en 2do plano
+$ docker-compose up -d // ejecuta los servicios en 2do plano, sí en vez de citar a imágenes cita a un Dockerfile, crea la imagen y después levanta los servicios
 $ docker-compose down // Detiene los contenedores creados por docker-compose up
-
+$ docker-compose ps // para listar todo los contenedores creados con docker compose
+$ docker-compose losg // para ver los logs que mostraron los servicios creados
+$ docker-compose losg <nombre del servicio> <nombre de otro servicio (opcional)> // para ver los logs de los servicios seleccionados, se puede colocar más de uno
+$ docker-compose losg -f <nombre del servicio> <nombre de otro servicio (opcional)> // para ver los logs de los servicios seleccionados, se puede colocar más de uno, y se puede hacer rastreo de los logs con "-f" si aparece un log nuevo, lo mostrará en mi consola
+$ docker-compose exec <nombre del servicio> bash // para entrar en el servicio y ejecutar comandos, eb este caso entramos al bash
+$ docker-compose build // para construir la imagen que está ligada a un Dockerfile
 
 
 
