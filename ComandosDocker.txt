@@ -65,8 +65,13 @@ $ docker-compose losg <nombre del servicio> <nombre de otro servicio (opcional)>
 $ docker-compose losg -f <nombre del servicio> <nombre de otro servicio (opcional)> // para ver los logs de los servicios seleccionados, se puede colocar más de uno, y se puede hacer rastreo de los logs con "-f" si aparece un log nuevo, lo mostrará en mi consola
 $ docker-compose exec <nombre del servicio> bash // para entrar en el servicio y ejecutar comandos, eb este caso entramos al bash
 $ docker-compose build // para construir la imagen que está ligada a un Dockerfile
-
-
+$ docker-compose -d --scale app=2 // para levantar una segunda instancia de app en otro puerto, debes dar el rango de puertos a usar
+$ docker-compose -d --scale app=3 // Para levantar una 3ra, debe haber una manera más fácil de hacerlo sí quiero levantar 100 servicios
+$ docker rm -f $(docker ps -aq) // borra todos los contenedores que estén corriendo o apagados a la vez, el comando funciona en linux y mac
+$ docker system prune // borra todo lo que no se esté usando, redes, tags, containers, etc.
+$ docker run -d --name <nombre_del_contenedor> --memory 1g <nombre_de_la_imagen> //limito el uso de memoria ram a 1 gb para ese contenedor, el mínimo son 6mb
+$ docker stats // veo cuantos recursos consumen los container en ejecución en mi sistema
+$ docker inspect <nombre_del_contenedor> // puedo ver si el proceso muere por falta de recursos, de todo el texto que muestra buscar la parte que diga "State" y ahí OOMKiller: True (Out of Memori killer, muerto por falta de memoria)
 
 
 

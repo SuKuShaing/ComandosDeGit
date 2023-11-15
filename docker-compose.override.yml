@@ -1,0 +1,36 @@
+# Este archivo es para sobreescribir información sobre docker-compose.yml que solo se va a usar esta sobreecritura en local.
+# se puede agregar al gitignore este archivo, puesto que solo servirá en mi pc
+
+#Esto es muy exigente con la indentaicón
+version: "3.8"
+
+services:
+  app:
+    build: .
+    environment:
+      UNA_VARIABLE: "hOLa variante"
+
+
+# pueden tener diferentes overrides por enetorno por ejemplo:
+
+# docker-compose.override.yml para development
+# docker-compose.staging.yml para staging
+# docker-compose.production.yml para production
+# Y debes correrlos de la siguiente forma:
+
+# para development:
+
+# docker-compose up
+# para staging:
+
+# docker-compose \
+# -f docker-compose.ym \
+# -f docker-compose.staging.yml \
+# up
+# para production:
+
+# docker-compose \
+# -f docker-compose.yml \
+# -f docker-compose.production.yml \
+# up
+
