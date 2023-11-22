@@ -47,3 +47,13 @@ CMD ["npx", "nodemon", "-L", "index.js"]
 # CMD ["npx", "nodemon", "index.js"], en linux y mac, debiese funcionar sin la -L, en windows la necesita
 # proceso por defecto que ejecutará al correr este contenedor, a menos que especifiquemos otra cosa
 # CMD node index.js # se puede escribir así tambíen pero se recomienda la primera que está habilitada
+
+
+# ##################### Otro archivo Dockerfile #####################
+
+FROM ubuntu:trusty
+COPY ["loop.sh", "/"]
+CMD /loop.sh
+# Se debe escribir así 
+# CMD ["/loop.sh"]
+# Así quedará en el proceso principal y se podrá cerrar bien

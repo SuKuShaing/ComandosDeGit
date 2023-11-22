@@ -20,6 +20,7 @@ $ docker run -d --name db -v ${pwd}:/data/db <nombre_de_la_imagen, ejemplo: mong
 $ docker run -d --name db --mount src=dbdata,dst=//data/db mongo // para iniciar un contenedor asignándole un volumen, "--mount" para indicarle el método, "src" se le dá el nombre del volumen, "dst" la dirección dentro del contenedor a guardar fuera de él, en linux y mac después del dst solo se coloca un "/"   
 $ docker ps // muestra los contenedores en ejecución
 $ docker ps -a // muestra todos los contenedores, tanto detenidos como en ejecución
+$ docker ps -l // "-l" significa latest, te va a reportar el último repositorio, esté o no en funcionamiento 
 $ docker inspect <ID del contenedor o nombre del contenedor> // te muestra información del contenedor
 $ docker rename <ID del contenedor o nombre del contenedor> <nuevo nombre personalizado> // cambia el nombre de un contenedor a uno personalizado 
 $ docker rm <ID del contenedor o nombre del contenedor> // elimina ese contenedor
@@ -27,9 +28,10 @@ $ docker rm -f <ID del contenedor o nombre del contenedor> // detiene ese conten
 $ docker container prune // elimina todos los contenedor detenidos en el pc
 $ docker --version // muestra la versión de docker
 $ docker exec -it <nombre_del_contenedor> bash // para entrar al contenedor que está en background y entrar en el proceso bash 
+$ docker exec <nombre_del_contenedor> ps -ef // te muestra los procesos del contenedor seleccionado 
 $ docker inspect --format '{{.State.Pid}}' <nombre_del_contenedor> // para saber el proceso en el que se está ejecutando el contenedor, te responderá un número | --format '{{.State.Pid}}' es para filtrar, puesto que sino, te arroja todo la información del contenedor (solo funciona desde terminales Linux)
 $ Kill <número del proceso> // para terminar el proceso principal, al terminar ese proceso el contenedor se cierra, ser termina (solo funciona desde terminales Linux)
-$ docker stop <nombre_del_contenedor> // es para detener el contenedor en ejecución
+$ docker stop <nombre_del_contenedor> // es para detener el contenedor en ejecución, envía primero SIGTERM y dado que no lo mato envía SIGKILL, para matar forzadamente el proceso
 $ docker logs proxy // ver los procesos que esta mostrando la consola del proceso, entras en el proceso y puedes ver el asunto, para salir con Ctrl + C no finalizas el proceso, se sigue ejecutando en segundo plano y tu vuelves a tu consola principal
 $ docker logs -f proxy // trae los procesos de la consola del container a tu terminal principal y puedes seguir ocupando la terminal, no se bloquea
 $ docker logs --tail 10 -f proxy // solo trae los últimos 10 procesos
@@ -72,7 +74,7 @@ $ docker system prune // borra todo lo que no se esté usando, redes, tags, cont
 $ docker run -d --name <nombre_del_contenedor> --memory 1g <nombre_de_la_imagen> //limito el uso de memoria ram a 1 gb para ese contenedor, el mínimo son 6mb
 $ docker stats // veo cuantos recursos consumen los container en ejecución en mi sistema
 $ docker inspect <nombre_del_contenedor> // puedo ver si el proceso muere por falta de recursos, de todo el texto que muestra buscar la parte que diga "State" y ahí OOMKiller: True (Out of Memori killer, muerto por falta de memoria)
-
+$ docker kill <nombre_del_contenedor> // envía un SIGKILL para matar forzadamente el contenedor
 
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::
