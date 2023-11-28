@@ -75,7 +75,8 @@ $ docker run -d --name <nombre_del_contenedor> --memory 1g <nombre_de_la_imagen>
 $ docker stats // veo cuantos recursos consumen los container en ejecución en mi sistema
 $ docker inspect <nombre_del_contenedor> // puedo ver si el proceso muere por falta de recursos, de todo el texto que muestra buscar la parte que diga "State" y ahí OOMKiller: True (Out of Memori killer, muerto por falta de memoria)
 $ docker kill <nombre_del_contenedor> // envía un SIGKILL para matar forzadamente el contenedor
-docker run --rm --name <nombre_del_contenedor> <nombre_de_la_imagen> // corre el contenedor y cuando termina de ejecutarse se borra
+$ docker run --rm --name <nombre_del_contenedor> <nombre_de_la_imagen> // corre el contenedor y cuando termina de ejecutarse se borra
+$ docker build -t <nombre_de_la_imagen> -f <ruta_donde_está_el_dockerfile> . // "-f" es para que busque el dockerfile en una ruta especificada, " . " es para decirle todo lo que está en la carpeta
 
 
 
