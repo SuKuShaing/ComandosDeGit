@@ -92,23 +92,6 @@ El repositorio en la nube se llama Docker Hub
 
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::
-:::::::::::: Instalar Docker en W10 y W11 :::::::::::::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-Primero debes instalar desde la store de microsoft "Windows Subsistem for Linux" (WSL), luego instala la distribución, puede ser Ubuntu desde la misma tienda.
-Ejecuta Ubuntu, búscalo en tu lista de programas y ábrelo, se abrirá una consola, ejecuta un comando ls y te dará un error con un link, ve a ese link e instala el kernel que está solicitando, ahora está listo para Docker.
-Luego descarga desde la web de Docker la versión para Windows e instala, ahí funcionará.
-Docker necesita que previamente esté instalado WSL
-
-En este video obtendrás una guía más detallada en como instalar WSL
-https://youtu.be/_fntjriRe48?si=kury4d2h5FpFhRLO
-
-Y en este video que es la continuación del anterior obtendrás una guía para instalar docker
-https://youtu.be/5RQbdMn04Oc?si=2EclWIzuDORdU7Fu
-
-
-
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::::::::::::: Lineas de mongo data base :::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -119,3 +102,22 @@ $ use <nombre_de_la_base_de_datos_a_usar> // puedes crear el nombre y se crea la
 $ db.users.insertOne({"name":"yourName"}) // para insertar un argumento en la base de datos de mongo
 $ db.users.find() // para encontrar los registros en la base de datos de mongo
 $ exit // para salir
+
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::: Instalar Docker en W10 y W11 :::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Primero debes instalar desde la store de microsoft "Windows Subsistem for Linux" (WSL), luego instala la distribución, puede ser Ubuntu desde la misma tienda.
+Ejecuta Ubuntu, búscalo en tu lista de programas y ábrelo, se abrirá una consola, ejecuta un comando ls y te dará un error con un link, ve a ese link e instala el kernel que está solicitando, ahora está listo para Docker.
+Luego descarga desde la web de Docker la versión para Windows e instala, ahí funcionará.
+Docker necesita que previamente esté instalado WSL
+
+Este tutorial es más fácil y rápido que los otros de abajo
+https://platzi.com/clases/2292-terminal/53893-opcional-instalar-wsl-usa-linux-dentro-de-windows/
+
+En este video obtendrás una guía más detallada en como instalar WSL
+https://youtu.be/_fntjriRe48?si=kury4d2h5FpFhRLO
+
+Y en este video que es la continuación del anterior obtendrás una guía para instalar docker
+https://youtu.be/5RQbdMn04Oc?si=2EclWIzuDORdU7Fu
