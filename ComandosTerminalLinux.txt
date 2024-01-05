@@ -121,6 +121,7 @@ sudo [comando que necesite permisos de root] // para ser root temporalmente, sin
 passwd // para cambiar la contraseña del usuario actual
 
 which [comando binario] // [ejemplo: which code  =>  arroja la dirección de donde está el archivo binario que se ejecutará] busca las rutas de los comandos binarios (programas que se ejecutan en la terminal)
+which python3 // te dirá donde está ubicado el binario desde donde se está ejecutando python
 
 ln [ruta del directorio] // es una forma de crear un link a un objetivo
 ln -s [ruta del directorio] [nombre del acceso directo] // para crear un acceso directo (yo que estoy en bach, me copio la carpeta origina a la posición en la que estaba)
