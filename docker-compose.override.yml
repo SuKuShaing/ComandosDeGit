@@ -11,6 +11,18 @@ services:
       UNA_VARIABLE: "hOLa variante"
 
 
+
+# ##################### Otro archivo ejemplo de Compose ####################
+
+services:
+  app-csv:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app # Con este cambio permite que al editar cualquier archivo fuera de docker, el cambio se implemente en docker
+                # Es decir, todo lo que hagas en VSC se copiará automaticamente y de inmediato al docker, y se puede probar inmediatamente
+
 # pueden tener diferentes overrides por enetorno por ejemplo:
 
 # docker-compose.override.yml para development
