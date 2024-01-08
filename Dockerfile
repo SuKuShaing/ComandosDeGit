@@ -1,5 +1,6 @@
 # Al proyecto que se hace referencia es este https://github.com/platzi/docker
 # Este es un ejemplo de dockerfile
+# Este archivo sirve para crear un contenedor listo para lanzar
 
 FROM node:12
 # Siempre va un From
