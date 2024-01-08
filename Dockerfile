@@ -86,3 +86,24 @@ CMD ["node", "index.js"]
 # CMD ["npx", "nodemon", "index.js"], en linux y mac, debiese funcionar sin la -L, en windows la necesita
 # proceso por defecto que ejecutará al correr este contenedor, a menos que especifiquemos otra cosa
 # CMD node index.js # se puede escribir así tambíen pero se recomienda la primera que está habilitada
+
+
+
+# ##################### Otro archivo Dockerfile ####################
+
+
+FROM python:3.10
+
+WORKDIR /app 
+# Creamos el directorio donde trabajaremos
+COPY requierements.txt /app/requierements.txt
+# copiamos los requerimientos desde la ruta local a la ruta en el docker
+
+RUN pip install --no-cache-dir --upgrade -r /app/requierements.txt
+# instalamos las librerías necesarias para que el programa se ejecute
+
+COPY . /app
+# Copia los archivos
+
+CMD bash -c "while true; do splee 1; done"
+# un comando en bash para que el contenedor no se cierre
