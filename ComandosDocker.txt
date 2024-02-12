@@ -32,7 +32,7 @@ $ docker exec -it <nombre_del_contenedor> bash // para entrar al contenedor que 
 $ docker exec <nombre_del_contenedor> ps -ef // te muestra los procesos del contenedor seleccionado 
 $ docker inspect --format '{{.State.Pid}}' <nombre_del_contenedor> // para saber el proceso en el que se está ejecutando el contenedor, te responderá un número | --format '{{.State.Pid}}' es para filtrar, puesto que sino, te arroja todo la información del contenedor (solo funciona desde terminales Linux)
 $ Kill <número del proceso> // para terminar el proceso principal, al terminar ese proceso el contenedor se cierra, ser termina (solo funciona desde terminales Linux)
-$ docker stop <nombre_del_contenedor> // es para detener el contenedor en ejecución, envía primero SIGTERM y dado que no lo mato envía SIGKILL, para matar forzadamente el proceso
+$ docker stop <nombre_del_contenedor> // es para detener el contenedor en ejecución, se puede envíar los 3 primeros caracteres del ID para detenerlo y no enviar el ID completo / envía primero SIGTERM y dado que no lo mato envía SIGKILL, para matar forzadamente el proceso
 $ docker logs proxy // ver los procesos que esta mostrando la consola del proceso, entras en el proceso y puedes ver el asunto, para salir con Ctrl + C no finalizas el proceso, se sigue ejecutando en segundo plano y tu vuelves a tu consola principal
 $ docker logs -f proxy // trae los procesos de la consola del container a tu terminal principal y puedes seguir ocupando la terminal, no se bloquea
 $ docker logs --tail 10 -f proxy // solo trae los últimos 10 procesos
