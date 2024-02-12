@@ -52,6 +52,7 @@ $ docker run -it ubuntu:platzi // ejecutamos el container de esa imagen especifi
 $ docker login // para iniciar sesión, sí ya iniciaste sesión en docker local (en la aplicación) y en remoto, se logeará solo y te dejará pasar
 $ docker tag ubuntu:platzi sukushaing/ubuntu:platzi // para cambiar el dueño de la imagen y la puedas subir a tu repositorio remoto <antigua imagen> <dueño/nueva imagenTuya>
 $ docker push sukushaing/ubuntu:platzi // sube tu imagen a tu repositorio
+$ docker run --rm --publish <Puerto_en_el_pc>:<Puerto_en_el_contenedor> platziapp // publicar un puerto interno en el externo del pc
 $ docker run --rm -p 3000:3000 platziapp // "--rm" para que al terminar de estar corriendo se elimine automáticamente, "-p" para especificar primero el puerto de mi pc y después el puerto de docker
 $ docker run --rm -p 3000:3000 -v "C:\Users\Seba\Progra\Platzi\Curso_de_Docker\proyec_node\docker\index.js":/usr/src/index.js platziapp // usamos todo lo aprendido anteriormente
 $ docker network ls // Lista todas las redes de docker, la "bridge" por retrocompatibilidad, "host" que es la red de mi pc, por si quiero darle acceso a internet, y "none" que es ninguna red
