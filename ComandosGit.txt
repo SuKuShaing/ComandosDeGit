@@ -90,6 +90,7 @@ git push origin main // para enviar mi repositorio main a origin | aquí pide tu
 git push origin --tags // para enviar los tags, siempre hacer antes el git git pull origin master
 git rebase master // Estando en la rama "experimento" o en la rama a hacer rebase, se ejecuta este comando, trayendo toda la info de master a acá y después de eso, te cambias de rama, a la principal y se hace el rebase (estando en master) a la rama experimento o a la rama que se va a unir
 git remote // para ver a donde lo estoy enviando, va a responder "origin"
+git remote remove origin // para remover el origen anterior, por ejemplo cuando clono desde otro repositorio, una vez removido origen queda libre para poder subirlo a tu propio repo
 git remote add origin https://github.com/SuKuShaing/Hyperblog.git // para enviar mi git a github, a un origin y ese link lo da github en su esquina https
 git remote add upstream url-del-repositorio-en-github // para agregar una nueva fuente de dato y sale 2 veces lo de arriba pero con distintas fuentes, una mia y otra de otra persona con el mismo proyecto
 git remote set-url origin url-de-la-ssh-de-git-hub // esto es para cambiar la URL de conexión con el repositorio
