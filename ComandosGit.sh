@@ -129,6 +129,8 @@ git status                                                          # para ver e
 git status --all                                                    # para ver todo el historial, incluyendo las ramas
 gitk                                                                # te abre las ramas en un software visual
 
+
+
 #::::::::::::::::::::::::::::::::::::::::::::::::::::::
 #::::::::Comandos para usar con GitHub:::::::::::::::::
 #::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -156,30 +158,35 @@ git tag -a <nombre-tag> -m "Mensaje"                                # Crea una e
 git tag -a v0.1 -m "result primeras clases del curso" 902bc21       # añade un tag a una versión de todo tu historial de versiones, "-a" añadir, después va el nombre "v0.1", -m para colocar el mensaje de a continuación, el mensaje, y el hash de la versión (¿de dónde saco el hash? ese número, del git log, cada commit tiene su número hash, se copia y se pega)
 git tag -d nombre-del-tag                                           # borra ese tag (borra esa etiqueta) de manera local
 
-::::::::::::::::::::::::::::::::::::::::::::::::
-::::::::para crear el gitignore:::::::::::::::::
-::::::::::::::::::::::::::::::::::::::::::::::::
 
-nano .gitignore // al entrar al editor nano escribes los archivos o carpetas a ignorar, como se muestra en las siguientes 2 lineas y se sale así -> (se sale de aquí presionando ctrl + x)
+
+#:::::::::::::::::::::::::::::::::::::::::
+#::::::::Crear llaves ssh:::::::::::::::::
+#:::::::::::::::::::::::::::::::::::::::::
+#Ordenados según el orden en que deben ser usados ↓
+
+ssh-keygen -t rsa -b 4096 -C "mail-usado-en-github" # Para generar una llave publica-privada, "-t" es para elegir el algoritmo, "rsa" es el algoritmo de generación, "-b" para elegir la complejidad, "4096" es la cantidad de dígitos de nuestra llave numérica, "-C" tiene que ser en mayúscula, y nuestro email (sin comillas) de github (si es que nos vamos a conectar con ese servicio)
+                        # Debe ser creada esta llave en tu carpeta local personal, verificas que es correcto donde se esta guardando, dando Enter, y después puedes crear una contraseña para acceder de nuevo (no es obligatoria), yo doy Enter, varios enter después y listo
+eval $(ssh-agent -s)    # comando para hacer correr un verificador de llaves publicas y privadas, "pid" process id, para que el pc identifique el proceso
+                        # El número que arroja es distinto en cada persona
+                        # ~ es una varible de /c/Users/Seba-PC, ~ es una ruta
+ssh-add ~/.ssh/id_rsa   # para decirle al pc que ahí esta la llave y agregarla
+                        #Felicidades, ya esta creada la llave
+
+
+
+#:::::::::::::::::::::::::::::::::::::::::
+#::::::::Enlarze con github:::::::::::::::
+#:::::::::::::::::::::::::::::::::::::::::
+# ir a usuario/.ssh/id_rsa.pub y copiar su contenido (sí no está, debes crear la llave ssh)
+# Vas a "settings" en tu cuenta de "github", después ir a "SSH keys", botón "nueva key", colocar el nombre de tu pc (para identificar el equipo, puesto que cada pc que ocupes debe tener su archivo) y pegar el contenido copiado, colocarle un nombre
+# Después de eso estas listo, crea tu repositorio y enlaza tu proyecto
+
+
+
+#::::::::::::::::::::::::::::::::::::::::::::::::
+#::::::::para crear el gitignore:::::::::::::::::
+#::::::::::::::::::::::::::::::::::::::::::::::::
+nano .gitignore # al entrar al editor nano escribes los archivos o carpetas a ignorar, como se muestra en las siguientes 2 lineas y se sale así -> (se sale de aquí presionando ctrl + x)
 *.dat
 results/
-
-:::::::::::::::::::::::::::::::::::::::::
-::::::::Crear llaves ssh:::::::::::::::::
-:::::::::::::::::::::::::::::::::::::::::
-//Ordenados según el orden en que deben ser usados ↓
-
-ssh-keygen -t rsa -b 4096 -C "mail-usado-en-github" // para generar una llave publica-privada, "-t" es para elegir el algoritmo, "rsa" es el algoritmo de generación, "-b" para elegir la complejidad, "4096" es la cantidad de dígitos de nuestra llave numérica, "-C" tiene que ser en mayúscula, y nuestro email (sin comillas) de github (si es que nos vamos a conectar con ese servicio)
-//Debe ser creada esta llave en tu carpeta local personal, verificas que es correcto donde se esta guardando, dando Enter, y después puedes crear una contraseña para acceder de nuevo (no es obligatoria), yo doy Enter, varios enter después y listo
-eval $(ssh-agent -s) // comando para hacer correr un verificador de llaves publicas y privadas, "pid" process id, para que el pc identifique el proceso
-//El número que arroja es distinto en cada persona
-//~ es una varible de /c/Users/Seba-PC, ~ es una ruta
-ssh-add ~/.ssh/id_rsa // para decirle al pc que ahí esta la llave y agregarla
-//Felicidades, ya esta creada la llave
-
-:::::::::::::::::::::::::::::::::::::::::
-::::::::Enlarze con github:::::::::::::::
-:::::::::::::::::::::::::::::::::::::::::
-ir a usuario/.ssh/id_rsa.pub y copiar su contenido
-Vas a "settings" en tu cuenta de "github", después ir a "SSH keys", botón "nueva key", colocar el nombre de tu pc (para identificar el equipo, puesto que cada pc que ocupes debe tener su archivo) y pegar el contenido copiado, colocarle un nombre
-Después de eso estas listo, crea tu repositorio y enlaza tu proyecto
