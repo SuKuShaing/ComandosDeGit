@@ -129,32 +129,32 @@ git status                                                          # para ver e
 git status --all                                                    # para ver todo el historial, incluyendo las ramas
 gitk                                                                # te abre las ramas en un software visual
 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::
-::::::::Comandos para usar con GitHub:::::::::::::::::
-::::::::::::::::::::::::::::::::::::::::::::::::::::::
+#::::::::::::::::::::::::::::::::::::::::::::::::::::::
+#::::::::Comandos para usar con GitHub:::::::::::::::::
+#::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-git clone url-del-repositorio-en-github // para clonar un proyecto publico, SI YA CREASTE EL REPOSITORIO TUYO USA ESTO PARA LLEVARLO A TU ENTORNO LOCAL Y QUEDAN CONECTADOS PARA ENVIAR Y RECIBIR
-git pull // para traer todas las ramas y todas las actualizaciones de todas las ramas a mi entorno local, las ramas remotas serán visibles y estarán actualizadas, pero aparecerán como remotas, con git checkout las puedes visitar y ahí pasarán a estar como rama local
-git pull origin main // para traer lo que esta el servidor, incluyendo las actualizaciones, de la rama origin (la principal en github) a master (la principal acá)
-git pull origin main --allow-unrelated-histories // para fusionar la historia de mi git a la historia de github ¡¡¡ESTE ES EL COMANDO PARA FUSIONAR LA HISTORIA CUANDO NO CONECTA TU REPOSITORIO LOCAL CON EL DE GITHUB!!!
-git pull origin master --allow-unrelated-histories // para fusionar la historia de mi github a la de mi git, para cuando no se quieren fusionar, hay que forzarlo
-git push origin :refs/tags/nombre-del-tag-a-borrar // con esto borra el tag en el repositorio remoto, en el github
-git push origin main // para enviar mi repositorio main a origin | aquí pide tu mail usuario y tu contraseña, después pide la llave ssh y ahí colocas el usuario "SuKuShaing" y nuevamente la clave
-git push origin --tags // para enviar los tags, siempre hacer antes el git git pull origin master
-git rebase master // Estando en la rama "experimento" o en la rama a hacer rebase, se ejecuta este comando, trayendo toda la info de master a acá y después de eso, te cambias de rama, a la principal y se hace el rebase (estando en master) a la rama experimento o a la rama que se va a unir
-git remote // para ver a donde lo estoy enviando, va a responder "origin"
-git remote remove origin // para remover el origen anterior, por ejemplo cuando clono desde otro repositorio, una vez removido origen queda libre para poder subirlo a tu propio repo
-git remote add origin https://github.com/SuKuShaing/Hyperblog.git // para enviar mi git a github, a un origin y ese link lo da github en su esquina https
-git remote add upstream url-del-repositorio-en-github // para agregar una nueva fuente de dato y sale 2 veces lo de arriba pero con distintas fuentes, una mia y otra de otra persona con el mismo proyecto
-git remote set-url origin url-de-la-ssh-de-git-hub // esto es para cambiar la URL de conexión con el repositorio
-git remote -v // responde origin https://github.com/SuKuShaing/Hyperblog.git (fetch) {fetch es como "traer"} <br> origin https://github.com/SuKuShaing/Hyperblog.git (push) {empujar}
-git show-branch // Nos muestras las ramas que existen y cual ha sido su historia
-git show-branch --all // Nos muestra lo mismo que lo de arriba con más detalle
-git show-ref --tags // te muestra el tag y el hash del commit
-git tag // te muestra las etiqueta que hay
-git tag -a <nombre-tag> -m "Mensaje" # Crea una etiqueta (tag) anotada con un mensaje
-git tag -a v0.1 -m "resultado de las primeras clases del curso" 902bc21 // añade un tag a una versión de todo tu historial de versiones, "-a" añadir, después va el nombre "v0.1", -m para colocar el mensaje de a continuación, el mensaje, y el hash de la versión (¿de dónde saco el hash? ese número, del git log, cada commit tiene su número hash, se copia y se pega)
-git tag -d nombre-del-tag // borra ese tag (borra esa etiqueta) de manera local
+git clone url-del-repositorio-en-github                             # para clonar un proyecto publico, SI YA CREASTE EL REPOSITORIO TUYO USA ESTO PARA LLEVARLO A TU ENTORNO LOCAL Y QUEDAN CONECTADOS PARA ENVIAR Y RECIBIR
+git pull                                                            # para traer todas las ramas y todas las actualizaciones de todas las ramas a mi entorno local, las ramas remotas serán visibles y estarán actualizadas, pero aparecerán como remotas, con git checkout las puedes visitar y ahí pasarán a estar como rama local
+git pull origin main                                                # para traer lo que esta el servidor, incluyendo las actualizaciones, de la rama origin (la principal en github) a master (la principal acá)
+git pull origin main --allow-unrelated-histories                    # para fusionar la historia de mi git a la historia de github ¡¡¡ESTE ES EL COMANDO PARA FUSIONAR LA HISTORIA CUANDO NO CONECTA TU REPOSITORIO LOCAL CON EL DE GITHUB!!!
+git pull origin master --allow-unrelated-histories                  # para fusionar la historia de mi github a la de mi git, para cuando no se quieren fusionar, hay que forzarlo
+git push origin :refs/tags/nombre-del-tag-a-borrar                  # con esto borra el tag en el repositorio remoto, en el github
+git push origin main                                                # para enviar mi repositorio main a origin | aquí pide tu mail usuario y tu contraseña, después pide la llave ssh y ahí colocas el usuario "SuKuShaing" y nuevamente la clave
+git push origin --tags                                              # para enviar los tags, siempre hacer antes el git git pull origin master
+git rebase master                                                   # Estando en la rama "experimento" o en la rama a hacer rebase, se ejecuta este comando, trayendo toda la info de master a acá y después de eso, te cambias de rama, a la principal y se hace el rebase (estando en master) a la rama experimento o a la rama que se va a unir
+git remote                                                          # para ver a donde lo estoy enviando, va a responder "origin"
+git remote remove origin                                            # para remover el origen anterior, por ejemplo cuando clono desde otro repositorio, una vez removido origen queda libre para poder subirlo a tu propio repo
+git remote add origin https://github.com/SuKuShaing/Hyperblog.git   # para enviar mi git a github, a un origin y ese link lo da github en su esquina https
+git remote add upstream url-del-repositorio-en-github               # para agregar una nueva fuente de dato y sale 2 veces lo de arriba pero con distintas fuentes, una mia y otra de otra persona con el mismo proyecto
+git remote set-url origin url-de-la-ssh-de-git-hub                  # esto es para cambiar la URL de conexión con el repositorio
+git remote -v                                                       # responde origin https://github.com/SuKuShaing/Hyperblog.git (fetch) {fetch es como "traer"} <br> origin https://github.com/SuKuShaing/Hyperblog.git (push) {empujar}
+git show-branch                                                     # Nos muestras las ramas que existen y cual ha sido su historia
+git show-branch --all                                               # Nos muestra lo mismo que lo de arriba con más detalle
+git show-ref --tags                                                 # te muestra el tag y el hash del commit
+git tag                                                             # te muestra las etiqueta que hay
+git tag -a <nombre-tag> -m "Mensaje"                                # Crea una etiqueta (tag) anotada con un mensaje
+git tag -a v0.1 -m "result primeras clases del curso" 902bc21       # añade un tag a una versión de todo tu historial de versiones, "-a" añadir, después va el nombre "v0.1", -m para colocar el mensaje de a continuación, el mensaje, y el hash de la versión (¿de dónde saco el hash? ese número, del git log, cada commit tiene su número hash, se copia y se pega)
+git tag -d nombre-del-tag                                           # borra ese tag (borra esa etiqueta) de manera local
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 ::::::::para crear el gitignore:::::::::::::::::
