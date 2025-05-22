@@ -23,7 +23,6 @@ git branch <nombre-rama>        # Crea una nueva rama con el nombre especificado
 git branch -d <nombre-rama>     # Elimina la rama especificada
 git checkout <nombre-rama>      # Cambia a la rama especificada (puede recuperar archivos de una rama)
 git checkout -b <nombre-rama>   # Crea y cambia a una nueva rama
-git switch <nombre-rama>        # Cambia a la rama especificada (solo para mover entre ramas)
 git merge <nombre-rama>         # Fusiona la rama especificada en la rama actual
 
 ### Integración y colaboración
@@ -32,6 +31,7 @@ git pull <repo> <rama>          # Trae los cambios del repositorio remoto a la r
 git merge <nombre-rama>         # Fusiona la rama especificada en la rama actual
 git remote -v                   # Muestra los repositorios remotos configurados
 git remote add <repo> <url>     # Agrega un repositorio remoto, <url> es la url del repositorio remoto, <repo> es el nombre que le das al remoto, origin es el tuyo, upstream es el de otra persona a que hiciste un fork
+git remote remove origin        # para remover el origen anterior, por ejemplo cuando clono desde otro repositorio, una vez removido origen queda libre para poder subirlo a tu propio repo
 
 ### Recuperación y limpieza
 git fetch                       # Descarga los cambios del repositorio remoto sin fusionarlos
@@ -74,6 +74,7 @@ git checkout master archivo.ext                                     # para volve
 git checkout -- .                                                   # sí, son dos guiones y un punto, de esa forma volvemos todos los archivos al estado del último commit de la rama en la que nos encontramos 
 git checkout nombre-de-la-rama                                      # nos movimos de MASTER a la BRACNH (a la rama)
 git checkout -b nombre-de-la-rama                                   # este comando agrupa dos comandos de git y los hace en uno solo, el primero git branch nombre-rama-a-crear (para crear la rama) y el segundo git checkout nombre-de-la-rama-creada-recien (para movernos a esa rama), al final quedamos posicionados en la rama nueva
+git switch <nombre-rama>                                            # Cambia a la rama especificada (solo para mover entre ramas)
 git cherry-pick hash-de-la-rama-a-traer                             # Para traer un commit de una rama, y coloco el hash del commit, ese se obtiene con "git log --oneline"
 git clean --dry-run                                                 # Es para ver que archivos puede borrar, son los que no están siendo trackeados
 git clean -f                                                        # borrar los archivos que mostró que iba a borrar en el comando "git clean --dry-run"
