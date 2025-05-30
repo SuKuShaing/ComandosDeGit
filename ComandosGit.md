@@ -1,3 +1,4 @@
+````sh
 #:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 #:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 #:::::::: Comandos más frecuentemente usados para git y github :::::::::::::::::
@@ -191,3 +192,4 @@ ssh-add ~/.ssh/id_rsa   # para decirle al pc que ahí esta la llave y agregarla
 nano .gitignore # al entrar al editor nano escribes los archivos o carpetas a ignorar, como se muestra en las siguientes 2 lineas y se sale así -> (se sale de aquí presionando ctrl + x)
 *.dat
 results/
+```
