@@ -1,4 +1,3 @@
-````sh
 #:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 #:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 #:::::::: Comandos más frecuentemente usados para git y github :::::::::::::::::
@@ -29,7 +28,6 @@ git merge <nombre-rama>         # Fusiona la rama especificada en la rama actual
 ### Integración y colaboración
 git push <repo> <rama>          # Envía los cambios de la rama local al repositorio remoto
 git pull <repo> <rama>          # Trae los cambios del repositorio remoto a la rama local
-git merge <nombre-rama>         # Fusiona la rama especificada en la rama actual
 git remote -v                   # Muestra los repositorios remotos configurados
 git remote add <repo> <url>     # Agrega un repositorio remoto, <url> es la url del repositorio remoto, <repo> es el nombre que le das al remoto, origin es el tuyo, upstream es el de otra persona a que hiciste un fork
 git remote remove origin        # para remover el origen anterior, por ejemplo cuando clono desde otro repositorio, una vez removido origen queda libre para poder subirlo a tu propio repo
@@ -192,4 +190,3 @@ ssh-add ~/.ssh/id_rsa   # para decirle al pc que ahí esta la llave y agregarla
 nano .gitignore # al entrar al editor nano escribes los archivos o carpetas a ignorar, como se muestra en las siguientes 2 lineas y se sale así -> (se sale de aquí presionando ctrl + x)
 *.dat
 results/
-```
