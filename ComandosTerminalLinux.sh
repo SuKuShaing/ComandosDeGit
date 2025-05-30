@@ -144,52 +144,52 @@ env > [archivo de texto] # (env > environment.txt) Para guardar todas nuestras v
 #:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 find [directorio] [que parámetro busco] [parámetro] # (Ejemplo: $ find ./ -name file => busca todos los archivos llamados file en el pc) va a buscar un archivo según el parámetro dado
-($ find ./ -name *.txt | less) # para obtener el resultado como en texto en el que se puede buscar
-($ find ./ -type d -name Documents) # para buscar por tipo y puede ser " d " (de directorio) y " f " (de file)
-($ find ./ -type f -name *.log) # (" ./ " con este punto y slash buscas en el directorio donde estás)
-(find ./ -size 20M) # busca todo los archivos mayores a 20 Mb en el pc
+($ find ./ -name *.txt | less)                      # para obtener el resultado como en texto en el que se puede buscar
+($ find ./ -type d -name Documents)                 # para buscar por tipo y puede ser " d " (de directorio) y " f " (de file)
+($ find ./ -type f -name *.log)                     # (" ./ " con este punto y slash buscas en el directorio donde estás)
+(find ./ -size 20M)                                 # busca todo los archivos mayores a 20 Mb en el pc
 
-grep [palabra buscada] [nombre del archivo] # Busca en ese archivo la palabra que le especifiques y devuelve la frase en la que está
-grep -i [palabra buscada] [nombre del archivo] # sin la "-i" discrimina si es mayúscula o minúscula, ahora al agregar "-i" no hace diferencia y muestra ambas, busca en ese archivo la palabra que le especifiques, devuelve la linea
-grep -c [palabra buscada] [nombre del archivo] # cuenta cuantas veces aparece el termino buscado
-grep -v [palabra buscada] [nombre del archivo] # busca todos las lineas que no contengan la palabra buscada
+grep [palabra buscada] [nombre del archivo]         # Busca en ese archivo la palabra que le especifiques y devuelve la frase en la que está
+grep -i [palabra buscada] [nombre del archivo]      # sin la "-i" discrimina si es mayúscula o minúscula, ahora al agregar "-i" no hace diferencia y muestra ambas, busca en ese archivo la palabra que le especifiques, devuelve la linea
+grep -c [palabra buscada] [nombre del archivo]      # cuenta cuantas veces aparece el termino buscado
+grep -v [palabra buscada] [nombre del archivo]      # busca todos las lineas que no contengan la palabra buscada
 
 #::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 #::::::::::::::::::::::::: comandos de compresión :::::::::::::::::::::::
 #::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-tar -cvf [NombreDelArchivoComprimido.tar] [carpeta o archivo a comprimir] # comprime archivos, flag -c = comprimir, -v = verborrea (muestra en pantalla lo que está comprimiendo) -f = para decirle que es un archivo (ejemplo: tar -cvf test.tar test/)
-tar -czvf [nombre del archivo].tar.gz [nombre del archivo comprimido] # -z = para darle a la compresión un codec de .gz que es ideal para texto plano
-tar -x [nombre del archivo a descomprimir].tar # Descomprime un .tar
-tar -xzvf [nombre del archivo a descomprimir].tar.gz # Descomprime un .tar.gz 
+tar -cvf [NombreDelArchivoComprimido.tar] [carpeta o archivo a comprimir]   # comprime archivos, flag -c = comprimir, -v = verborrea (muestra en pantalla lo que está comprimiendo) -f = para decirle que es un archivo (ejemplo: tar -cvf test.tar test/)
+tar -czvf [nombre del archivo].tar.gz [nombre del archivo comprimido]       # -z = para darle a la compresión un codec de .gz que es ideal para texto plano
+tar -x [nombre del archivo a descomprimir].tar                              # Descomprime un .tar
+tar -xzvf [nombre del archivo a descomprimir].tar.gz                        # Descomprime un .tar.gz 
 
-zip -r [NombreDelArchivoComprimido.zip] [carpeta o archivo a comprimir] # comprime en formato .zip, -r = recursivo (comprime a los archivos internos, usar con los directorios)
-unzip [nombre del archivo a descomprimir].zip # descomprime el archivo
+zip -r [NombreDelArchivoComprimido.zip] [carpeta o archivo a comprimir]     # comprime en formato .zip, -r = recursivo (comprime a los archivos internos, usar con los directorios)
+unzip [nombre del archivo a descomprimir].zip                               # descomprime el archivo
 
 #::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 #::::::::::::::::::::::::::: Comandos para Red ::::::::::::::::::::::::::
 #::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-ipconfig # te muestra los detalles de tu red
+ipconfig                # te muestra los detalles de tu red
 
-ping [sitio web] # (ping www.google.com) sí el sitio está disponible, te muestra los ping a la pagina y el tiempo de respuesta, sí no se detiene solo, puedes pararlo con ctrl + C
+ping [sitio web]        # (ping www.google.com) sí el sitio está disponible, te muestra los ping a la pagina y el tiempo de respuesta, sí no se detiene solo, puedes pararlo con ctrl + C
 
-curl [sitio web] # (curl www.google.com) te responde con el html de la web
+curl [sitio web]        # (curl www.google.com) te responde con el html de la web
 
-wget [sitio web] # (wget www.google.com) descargas el sitio web o la dirección al pc
+wget [sitio web]        # (wget www.google.com) descargas el sitio web o la dirección al pc
 
-traceroute [sitio web] # (traceroute www.google.com) te muestra todas las computadoras por donde pasa tu petición
+traceroute [sitio web]  # (traceroute www.google.com) te muestra todas las computadoras por donde pasa tu petición
 
-netstat # te muestra las conexiones activas 
-netstat -i # te muestra los dispositivos de red
+netstat                 # te muestra las conexiones activas 
+netstat -i              # te muestra los dispositivos de red
 
 #::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 #:::::::::::::::::::::::: Lista de pipe operartor :::::::::::::::::::::::
 #::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-| # (el símbolo de la barra vertical) redirige el standard output a un standard input de otro comando, entonces, lo que arroja como resultado un comando, se lo pasamos a otro, por ejemplo: $ "ls -lh | less" arroja como resulta la lista larga de manera humana, pero la estoy viendo como texto y usar / para buscar, como un archivo abierto con less 
-; # (el símbolo de punto y coma) ejecuta una instrucción primero, después la otra y la que sigue (ejemplo: $ ls; mkdir holi; cal => hace el listado de carpetas, después crea la carpeta, después muestra un calendario)
-& # (el símbolo de aspersand) ejecuta los comandos de manera paralela y en el background (en segundo plano), en diferentes hilos del procesador (ejemplo: $ ls & date & echo "hihi" => arroja los números de los procesos donde se va a ejecutar, se ejecutan, y se entregan en orden de cual termina primero, cierra los hilos de trabajo)
-&& # (el símbolo de doble aspersand) es un condicional, solo si se ejecutó de manera adecuada el primer comando se ejecutará el segundo y/o tercero sí lo hay
-|| # (el símbolo de doble barra vertical) es un " or " es decir ejecuta los comandos, hasta que uno sea exitoso, se ejecuta ese exitoso y los demás no se ejecutan, (ejemplo: $ cd NoExitDir || touch archivo.txt || echo "Archivo creado" => dado que la carpeta NoExitDir no existe, no se mueve a ese directorio, es decir, falla, por ende se ejecuta el segundo comando y se crea el archivo, dado que ese fue exitoso el 3er comando no se ejecuto)
-> [nombre del archivo a crear] # (el símbolo de mayor que) crea un archivo, puedes colocarle extensión al archivo, 
+|                               # (el símbolo de la barra vertical) redirige el standard output a un standard input de otro comando, entonces, lo que arroja como resultado un comando, se lo pasamos a otro, por ejemplo: $ "ls -lh | less" arroja como resulta la lista larga de manera humana, pero la estoy viendo como texto y usar / para buscar, como un archivo abierto con less 
+;                               # (el símbolo de punto y coma) ejecuta una instrucción primero, después la otra y la que sigue (ejemplo: $ ls; mkdir holi; cal => hace el listado de carpetas, después crea la carpeta, después muestra un calendario)
+&                               # (el símbolo de aspersand) ejecuta los comandos de manera paralela y en el background (en segundo plano), en diferentes hilos del procesador (ejemplo: $ ls & date & echo "hihi" => arroja los números de los procesos donde se va a ejecutar, se ejecutan, y se entregan en orden de cual termina primero, cierra los hilos de trabajo)
+&&                              # (el símbolo de doble aspersand) es un condicional, solo si se ejecutó de manera adecuada el primer comando se ejecutará el segundo y/o tercero sí lo hay
+||                              # (el símbolo de doble barra vertical) es un " or " es decir ejecuta los comandos, hasta que uno sea exitoso, se ejecuta ese exitoso y los demás no se ejecutan, (ejemplo: $ cd NoExitDir || touch archivo.txt || echo "Archivo creado" => dado que la carpeta NoExitDir no existe, no se mueve a ese directorio, es decir, falla, por ende se ejecuta el segundo comando y se crea el archivo, dado que ese fue exitoso el 3er comando no se ejecuto)
+> [nombre del archivo a crear]  # (el símbolo de mayor que) crea un archivo, puedes colocarle extensión al archivo, 
