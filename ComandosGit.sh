@@ -39,14 +39,14 @@ git reset --hard HEAD           # Restablece el repositorio al último commit, e
 git revert <hash-commit>        # Crea un nuevo commit que deshace los cambios realizados en el commit especificado
 
 ### Avazados y utilidades
-git diff <a> <b>                # Muestra las diferencias entre dos commits, ramas o archivos, <a> y <b> pueden ser hashes de commit, nombres de ramas o archivos
-git show <hash-commit>          # Muestra información detallada sobre un commit específico
-git blame <archivo>             # Muestra quién hizo cada cambio en un archivo específico
-git stash                       # Guarda los cambios no confirmados en un stash temporal y limpia el working tree
-git stash pop                   # Aplica los cambios guardados en el stash y los elimina del stash
-git cherry-pick <hash-commit>   # Aplica un commit específico a la rama actual
-git rebase <rama>               # Reaplica los commits de la rama actual sobre la rama especificada
-git tag <nombre-tag>            # Crea una etiqueta (tag) en el commit actual, después se podrá ver la etiqueta con git tag
+git diff <a> <b>                                # Muestra las diferencias entre dos commits, ramas o archivos, <a> y <b> pueden ser hashes de commit, nombres de ramas o archivos
+git show <hash-commit>                          # Muestra información detallada sobre un commit específico
+git blame <archivo>                             # Muestra quién hizo cada cambio en un archivo específico
+git stash                                       # Guarda los cambios no confirmados en un stash temporal y limpia el working tree
+git stash pop                                   # Aplica los cambios guardados en el stash y los elimina del stash
+git cherry-pick <hash-commit>                   # Aplica un commit específico a la rama actual
+git rebase <rama>                               # Reaplica los commits de la rama actual sobre la rama especificada
+git tag -a <nombre-tag> -m "Mensaje" 7N°Hash    # Crea una etiqueta (tag) anotada con un mensaje
 
 
 
@@ -154,7 +154,7 @@ git show-branch                                                     # Nos muestr
 git show-branch --all                                               # Nos muestra lo mismo que lo de arriba con más detalle
 git show-ref --tags                                                 # te muestra el tag y el hash del commit
 git tag                                                             # te muestra las etiqueta que hay
-git tag -a <nombre-tag> -m "Mensaje"                                # Crea una etiqueta (tag) anotada con un mensaje
+git tag -a <nombre-tag> -m "Mensaje" 7N°Hash                        # Crea una etiqueta (tag) anotada con un mensaje
 git tag -a v0.1 -m "result primeras clases del curso" 902bc21       # añade un tag a una versión de todo tu historial de versiones, "-a" añadir, después va el nombre "v0.1", -m para colocar el mensaje de a continuación, el mensaje, y el hash de la versión (¿de dónde saco el hash? ese número, del git log, cada commit tiene su número hash, se copia y se pega)
 git tag -d nombre-del-tag                                           # borra ese tag (borra esa etiqueta) de manera local
 
@@ -166,12 +166,12 @@ git tag -d nombre-del-tag                                           # borra ese 
 #Ordenados según el orden en que deben ser usados ↓
 
 ssh-keygen -t rsa -b 4096 -C "mail-usado-en-github" # Para generar una llave publica-privada, "-t" es para elegir el algoritmo, "rsa" es el algoritmo de generación, "-b" para elegir la complejidad, "4096" es la cantidad de dígitos de nuestra llave numérica, "-C" tiene que ser en mayúscula, y nuestro email (sin comillas) de github (si es que nos vamos a conectar con ese servicio)
-                        # Debe ser creada esta llave en tu carpeta local personal, verificas que es correcto donde se esta guardando, dando Enter, y después puedes crear una contraseña para acceder de nuevo (no es obligatoria), yo doy Enter, varios enter después y listo
-eval $(ssh-agent -s)    # comando para hacer correr un verificador de llaves publicas y privadas, "pid" process id, para que el pc identifique el proceso
-                        # El número que arroja es distinto en cada persona
-                        # ~ es una varible de /c/Users/Seba-PC, ~ es una ruta
-ssh-add ~/.ssh/id_rsa   # para decirle al pc que ahí esta la llave y agregarla
-                        #Felicidades, ya esta creada la llave
+                                                    # Debe ser creada esta llave en tu carpeta local personal, verificas que es correcto donde se esta guardando, dando Enter, y después puedes crear una contraseña para acceder de nuevo (no es obligatoria), yo doy Enter, varios enter después y listo
+eval $(ssh-agent -s)                                # comando para hacer correr un verificador de llaves publicas y privadas, "pid" process id, para que el pc identifique el proceso
+                                                    # El número que arroja es distinto en cada persona
+                                                    # ~ es una varible de /c/Users/Seba-PC, ~ es una ruta
+ssh-add ~/.ssh/id_rsa                               # para decirle al pc que ahí esta la llave y agregarla
+                                                    #Felicidades, ya esta creada la llave
 
 
 
