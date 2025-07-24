@@ -12,13 +12,13 @@ CREAR EL AMBIENTE, para crear el entorno virtual en una carpeta especifica,
 posicionare en esa carpeta y luego escribe en consola
 
 ```sh
-$ py -m venv [nombreCarpetaDondeSeDuplicaPython] : se van a crear 
+$ py -m venv [nombreCarpetaDondeSeDuplicaPython] # se van a crear 
 ```
 
 carpetas con el entorno
 
 ```sh
-$ py -m venv venv : se van a crear carpetas con el entorno
+$ py -m venv venv # se van a crear carpetas con el entorno
 ```
 
 -m : modulo
