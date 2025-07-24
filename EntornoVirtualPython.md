@@ -53,13 +53,10 @@ $ deactivate
 
 ```sh
 $ alias avenv=.\venv\Scripts\activate
-$ avenv # se activa el modo de Virtual Environment
+$ avenv                                 # se activa el modo de Virtual Environment
 
-pip freeze # para ver todas las dependencias o módulos instalados en el entorno virtual
-
+pip freeze                              # para ver todas las dependencias o módulos instalados en el entorno virtual
 pip install pandas
-
-pip freeze > requirements.txt # para guardar las dependencias y que otra persona pueda instalarlas y usarlas igual
-
-pip install -r requirements.txt # para instalar todas las dependencias
+pip freeze > requirements.txt           # para guardar las dependencias y que otra persona pueda instalarlas y usarlas igual
+pip install -r requirements.txt         # para instalar todas las dependencias
 ```
