@@ -38,7 +38,7 @@ git reset --hard <commit>       # Restablece el repositorio al commit especifica
 git reset --hard HEAD           # Restablece el repositorio al último commit, eliminando todos los cambios no confirmados en el área de trabajo
 git revert <hash-commit>        # Crea un nuevo commit que deshace los cambios realizados en el commit especificado
 
-### Avazados y utilidades
+### Avanzados y utilidades
 git diff <a> <b>                                # Muestra las diferencias entre dos commits, ramas o archivos, <a> y <b> pueden ser hashes de commit, nombres de ramas o archivos
 git show <hash-commit>                          # Muestra información detallada sobre un commit específico
 git blame <archivo>                             # Muestra quién hizo cada cambio en un archivo específico
@@ -163,13 +163,13 @@ git tag -d nombre-del-tag                                           # borra ese 
 #:::::::::::::::::::::::::::::::::::::::::
 #::::::::Crear llaves ssh:::::::::::::::::
 #:::::::::::::::::::::::::::::::::::::::::
-#Ordenados según el orden en que deben ser usados ↓
+#Ordenados según el orden en que deben ser usados ↓ (eval y ssh-add son de entorno linux, sí estás en windows, usar git-bash)
 
 ssh-keygen -t rsa -b 4096 -C "mail-usado-en-github" # Para generar una llave publica-privada, "-t" es para elegir el algoritmo, "rsa" es el algoritmo de generación, "-b" para elegir la complejidad, "4096" es la cantidad de dígitos de nuestra llave numérica, "-C" tiene que ser en mayúscula, y nuestro email (sin comillas) de github (si es que nos vamos a conectar con ese servicio)
                                                     # Debe ser creada esta llave en tu carpeta local personal, verificas que es correcto donde se esta guardando, dando Enter, y después puedes crear una contraseña para acceder de nuevo (no es obligatoria), yo doy Enter, varios enter después y listo
 eval $(ssh-agent -s)                                # comando para hacer correr un verificador de llaves publicas y privadas, "pid" process id, para que el pc identifique el proceso
                                                     # El número que arroja es distinto en cada persona
-                                                    # ~ es una varible de /c/Users/Seba-PC, ~ es una ruta
+                                                    # ~ es una variable de /c/Users/Seba-PC, ~ es una ruta
 ssh-add ~/.ssh/id_rsa                               # para decirle al pc que ahí esta la llave y agregarla
                                                     #Felicidades, ya esta creada la llave
 
