@@ -8,6 +8,62 @@
 # con la tecla " q " sales de archivos de texto que estés viendo
 # ctrol + Z, envías un proceso activo a background (segundo plano)
 
+
+#:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+#::::::::::::::::::::::::: comandos más usados :::::::::::::::::::::::
+#:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+# Navegación
+ls      # Lista archivos y carpetas 
+cd      # Cambia de directorio
+pwd     # Muestra la ruta del directorio actual
+tree    # Muestra estructura de carpetas en forma de árbol
+
+# Gestión de archivos y carpetas
+touch   # Crea un archivo vacío
+mkdir   # Crea un nuevo directorio
+cp      # Copia archivos o carpetas
+mv      # Mueve o renombra archivos
+rm      # Elimina archivos
+rmdir   # Elimina carpetas
+
+# Lectura de archivos
+cat     # Muestra contenido de un archivo
+less    # Visualiza un archivo página por página
+head    # Muestra las primeras lineas de un archivo
+tail    # Muestra las últimas lineas de un archivo
+
+# Permisos de archivos
+chmod   # Cambia permisos de un archivo
+chown   # Cambia el propietario de un archivo
+sudo    # Ejecuta comandos como administrador
+
+# Búsqueda de ficheros
+find    # Busca archivos en directorios
+grep    # Busca texto dentro de archivos
+
+# Utilidades de red
+ping    # Comprueba conexión con una dirección
+curl    # Realiza peticiones HTTP
+wget    # Descarga archivos desde una URL (instalable en macOS)
+
+# Procesos del sistema
+top     # Muestra procesos en ejecución
+ps      # Lista procesos activos
+kill    # Termina un proceso
+df -h   # Muestra espacio disponible en discos (legible)
+du -sh  # Muestra tamaño de archivos y carpetas (legible)
+uptime  # Muestra tiempo encendido y carga del sistema
+clear   # Limpia la terminal
+
+# Utilidades de sistema
+echo    # Imprime texto en la terminal
+history # Muestra el historial de comandos
+man     # Muestra el manual de un comando
+nano    # Editor de texto básico
+vim     # Editor de texto avanzado
+
+
 #::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 #::::::::::::::::: Lista de comandos de la terminal :::::::::::::::::::::
 #::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -153,6 +209,7 @@ grep -i [palabra buscada] [nombre del archivo]      # sin la "-i" discrimina si 
 grep -c [palabra buscada] [nombre del archivo]      # cuenta cuantas veces aparece el termino buscado
 grep -v [palabra buscada] [nombre del archivo]      # busca todos las lineas que no contengan la palabra buscada
 
+
 #::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 #::::::::::::::::::::::::: comandos de compresión :::::::::::::::::::::::
 #::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -164,6 +221,7 @@ tar -xzvf [nombre del archivo a descomprimir].tar.gz                        # De
 
 zip -r [NombreDelArchivoComprimido.zip] [carpeta o archivo a comprimir]     # comprime en formato .zip, -r = recursivo (comprime a los archivos internos, usar con los directorios)
 unzip [nombre del archivo a descomprimir].zip                               # descomprime el archivo
+
 
 #::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 #::::::::::::::::::::::::::: Comandos para Red ::::::::::::::::::::::::::
@@ -181,6 +239,7 @@ traceroute [sitio web]  # (traceroute www.google.com) te muestra todas las compu
 
 netstat                 # te muestra las conexiones activas 
 netstat -i              # te muestra los dispositivos de red
+
 
 #::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 #:::::::::::::::::::::::: Lista de pipe operartor :::::::::::::::::::::::
