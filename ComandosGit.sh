@@ -66,6 +66,7 @@ git branch -D rama-a-borrar                                         # para borra
 git branch -M main                                                  # Trae la rama master (o la rama en la que estés) a main (a la rama objetivo) y esa pasa a ser la principal, trae a ella todo le historial
 git branch nombre-de-la-rama                                        # con esto creo la rama, con "git show" puedo ver que HEAD esta apuntando a master y a la rama
 git branch -r                                                       # para ver las ramas remotas
+git branch -f <rama> <commit>                                       # sirve para forzar que una rama apunte a otro commit, moviendo su puntero aunque eso haga que se “pierdan” commits (desde esa rama)
 git checkout aquí-va-el-número-de-la-version archivo.ext            # para ver como era ese archivo (siempre colocar el archivo.ext porque o si no vuelve todos los archivos atrás) (puede borrar los que no existían)
 git checkout aquí-va-el-número-de-la-version archivo.ext            # trae un archivo como rama, uno lo puede editar y después enviar a la linea master
 git checkout master archivo.ext                                     # para enviar el archivo editado como rama a la linea master
